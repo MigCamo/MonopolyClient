@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB130DDD-64C2-4465-8D67-7779458946D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UIGameClientTourist</RootNamespace>
+    <AssemblyName>UIGameClientTourist</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Connected Services\Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="GameLogic\MusicService.cs" />
+    <Compile Include="Properties\Resources.es-MX.Designer.cs">
+      <DependentUpon>Resources.es-MX.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.en-US.Designer.cs">
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="XAMLViews\Configuration.xaml.cs">
+      <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\Friends.xaml.cs">
+      <DependentUpon>Friends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\JoinGame.xaml.cs">
+      <DependentUpon>JoinGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\Lobby.xaml.cs">
+      <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\MainMenuGame.xaml.cs">
+      <DependentUpon>MainMenuGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\RegisterPlayers.xaml.cs">
+      <DependentUpon>RegisterPlayers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAMLViews\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameLogic\Bid.cs" />
+    <Compile Include="GameLogic\ImageManager.cs" />
+    <Compile Include="GameLogic\Player.cs" />
+    <Compile Include="GameLogic\Property.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="XAMLViews\Configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\Friends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\JoinGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\Lobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\MainMenuGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\RegisterPlayers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAMLViews\UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es-MX.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\Service\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\PlayerManager.wsdl" />
+    <None Include="Connected Services\Service\UIGameClientTourist.Service.FriendList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\UIGameClientTourist.Service.FriendRequestData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\UIGameClientTourist.Service.Game.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GameResources\Music\utomp3.com-One-Piece-OST-Overtaken-EPIC-VERSION-Drums-of-Liberation_320kbps.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GameResources\Pictures\PropertyImage\1.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\10.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\11.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\12.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\13.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\14.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\15.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\16.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\17.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\18.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\19.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\2.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\3.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\4.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\5.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\6.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\7.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\8.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\9.png" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_024d8419-bec0-4cfc-b423-e3e333c5ddf8.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_03e277f2-80cd-4df3-80e2-935f355fcc3f.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_43c70c85-7bf2-436d-a3a1-419044cd4d3e.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_4f37e2b1-3686-4319-9291-9b5a8a1f8108.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_63562009-c467-4dae-b0e6-3b166d50e140.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_6710050d-e305-4400-850b-80f255213e75.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_724ecb4d-9044-489d-b9a2-77c29cf3b664.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_7dc849b1-aaf7-4b1f-b522-827e471ff86b.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_9d2d0810-a80d-4c30-a054-399f3e44d494.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_a6c423c0-a88e-441c-999b-f6f734ed9dfd.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_d360d1a1-5568-406e-916e-c13cb32e4e42.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_dcfb6006-5cb2-46c0-a977-750d358efeb0.jpg" />
+    <Resource Include="GameResources\Pictures\PropertyImage\_ebd70bff-70b2-44f2-861b-ef865829918d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GameResources\Pictures\1694699208117.png" />
+    <Resource Include="GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" />
+    <Resource Include="GameResources\Pictures\2762408.png" />
+    <Resource Include="GameResources\Pictures\3397388.png" />
+    <Resource Include="GameResources\Pictures\489464.jpg" />
+    <Resource Include="GameResources\Pictures\boton-de-retroceso.png" />
+    <Resource Include="GameResources\Pictures\brdCarPiece.png" />
+    <Resource Include="GameResources\Pictures\brdClockPiece.png" />
+    <Resource Include="GameResources\Pictures\brdDuckPiece.png" />
+    <Resource Include="GameResources\Pictures\brdMPiece.png" />
+    <Resource Include="GameResources\Pictures\brdPlayDiscPiece.png" />
+    <Resource Include="GameResources\Pictures\brdTVPiece.png" />
+    <Resource Include="GameResources\Pictures\copia.png" />
+    <Resource Include="GameResources\Pictures\d4721893-0ff7-4943-8d6c-8e247f99eda0.png" />
+    <Resource Include="GameResources\Pictures\famous-wood-3d-wall-art-with-wondrous-brushed-also-this-question-is-from-x-quilted-decorative.jpg" />
+    <Resource Include="GameResources\Pictures\geojango-maps-CWbbJW_7Fsw-unsplash.jpg" />
+    <Resource Include="GameResources\Pictures\monopoly_casas.png" />
+    <Resource Include="GameResources\Pictures\monopoly_hoteles.png" />
+    <Resource Include="GameResources\Pictures\OIG %281%29.jpg" />
+    <Resource Include="GameResources\Pictures\searching.png" />
+    <Resource Include="GameResources\Pictures\SettingsPicture.png" />
+    <Resource Include="GameResources\Pictures\Side_1.png" />
+    <Resource Include="GameResources\Pictures\Side_2.png" />
+    <Resource Include="GameResources\Pictures\Side_3.png" />
+    <Resource Include="GameResources\Pictures\Side_4.png" />
+    <Resource Include="GameResources\Pictures\Side_5.png" />
+    <Resource Include="GameResources\Pictures\Side_6.png" />
+    <Resource Include="GameResources\Pictures\_9d43118d-b354-475f-a99a-7eef1bcbe990.jpg" />
+    <Resource Include="GameResources\Pictures\_bdd3e1f7-a380-4504-be41-383505e45033.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

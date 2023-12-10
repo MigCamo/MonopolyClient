@@ -1,0 +1,32 @@
+﻿<Window x:Class="UIGameClientTourist.XAMLViews.Friends"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIGameClientTourist.XAMLViews"
+        mc:Ignorable="d"
+        xmlns:p = "clr-namespace:UIGameClientTourist.Properties"
+        Title="Friends" WindowState="Maximized">
+    <Grid Height="1002">
+        <Image HorizontalAlignment="Center" Height="1060" VerticalAlignment="Top" Width="1595" Source="..\GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" Grid.RowSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="692" Margin="798,70,0,0" Stroke="#FF4D5E80" VerticalAlignment="Top" Width="656" Fill="#FF12273C" RadiusX="15" RadiusY="15"/>
+        <Border HorizontalAlignment="Left" Height="77" Margin="182,70,0,0" VerticalAlignment="Top" Width="579" Background="White" CornerRadius="40" BorderThickness="4" BorderBrush="#FF110D0D">
+            <TextBox TextWrapping="Wrap" Text="#ID Usuario" Margin="19,11,68,11" BorderBrush="White" FontSize="33"/>
+        </Border>
+        <Image HorizontalAlignment="Left" Height="46" Margin="694,85,0,0" VerticalAlignment="Top" Width="46" Source="..\GameResources\Pictures\searching.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="586" Margin="190,176,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="562" Fill="White" RadiusX="15" RadiusY="15" />
+        <Label Content="{x:Static p:Resources.SearchFriend_Label}" HorizontalAlignment="Left" Margin="826,101,0,0" VerticalAlignment="Top" FontSize="33" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Foreground="White"/>
+        <TextBox x:Name = "TxtFriend" HorizontalAlignment="Left" Margin="826,165,0,0" TextWrapping="Wrap" Text="#ID usuario" VerticalAlignment="Top" Width="598" Height="54" FontSize="36" BorderBrush="Black" Background="#FF061B30" Foreground="White"/>
+        <Button Content="{x:Static p:Resources.SendRequest_Button}" HorizontalAlignment="Left" Margin="1214,233,0,0" VerticalAlignment="Top" Height="51" Width="210" FontSize="24" FontWeight="Bold" Background="#FFC99C0E" Foreground="White" Click="SendFriendRequest"/>
+        <Rectangle HorizontalAlignment="Left" Height="75" Margin="54,70,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="73" Fill="White" RadiusX="15" RadiusY="15" />
+        <Label Content="{x:Static p:Resources.FriendshipRequests_Label}" HorizontalAlignment="Left" Margin="826,319,0,0" VerticalAlignment="Top" FontSize="33" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Foreground="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="348" Margin="827,387,0,0" Stroke="Black" VerticalAlignment="Top" Width="598" Fill="#FF061B30" RadiusX="15" RadiusY="15"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="40,56,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\boton-de-retroceso.png" Grid.RowSpan="2" MouseLeftButtonDown="GoMainMenuGameWindow"/>
+        <ScrollViewer  Margin="202,192,797,11" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <WrapPanel x:Name ="FriendListDisplay"/>
+        </ScrollViewer>
+        <ScrollViewer Margin="771,391,170,25" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <WrapPanel x:Name="RequestList" Orientation="Vertical"/>
+        </ScrollViewer>
+    </Grid>
+</Window>

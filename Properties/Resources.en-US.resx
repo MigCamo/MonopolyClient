@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptPurchase-Button" xml:space="preserve">
+    <value>Yes, I want to buy this property</value>
+  </data>
+  <data name="Add-Label" xml:space="preserve">
+    <value>To add:</value>
+  </data>
+  <data name="AddBuilding-Label" xml:space="preserve">
+    <value>Add building</value>
+  </data>
+  <data name="AddHouse" xml:space="preserve">
+    <value>Add House</value>
+  </data>
+  <data name="Auction-Label" xml:space="preserve">
+    <value>Auction</value>
+  </data>
+  <data name="Bid-Label" xml:space="preserve">
+    <value>My Offer</value>
+  </data>
+  <data name="Buy-Button" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="BuyPropertie-Label" xml:space="preserve">
+    <value>Would you like to buy this property?</value>
+  </data>
+  <data name="BuyProperty-Label" xml:space="preserve">
+    <value>Would you like to buy this property?</value>
+  </data>
+  <data name="Cancel-Button" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="ChosePlayer-Label" xml:space="preserve">
+    <value>Choose piece</value>
+  </data>
+  <data name="Close-Button" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Continue-Button" xml:space="preserve">
+    <value>Restart game</value>
+  </data>
+  <data name="ContinueChoice-button" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="CostRent-Label" xml:space="preserve">
+    <value>Cost of the property</value>
+  </data>
+  <data name="CreateGame-Button" xml:space="preserve">
+    <value>Create Game</value>
+  </data>
+  <data name="Date-Label" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Description-Label" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="Edit-Button" xml:space="preserve">
+    <value>Modify Profile</value>
+  </data>
+  <data name="ElijaFigura-Label" xml:space="preserve">
+    <value>Select a figure</value>
+  </data>
+  <data name="Email-label" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="eMail-txt" xml:space="preserve">
+    <value>yusgus@gmail.com</value>
+  </data>
+  <data name="EventCard-Label" xml:space="preserve">
+    <value>Event Card</value>
+  </data>
+  <data name="Exit-Button" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ExitGame-Button" xml:space="preserve">
+    <value>Exit the game</value>
+  </data>
+  <data name="Friends-Button" xml:space="preserve">
+    <value>Friends list</value>
+  </data>
+  <data name="FriendshipRequests-Label" xml:space="preserve">
+    <value>Friendship requests</value>
+  </data>
+  <data name="FriendsList-Label" xml:space="preserve">
+    <value>Friends list</value>
+  </data>
+  <data name="GameCode-Label" xml:space="preserve">
+    <value>Game code</value>
+  </data>
+  <data name="GameNoFound-Label" xml:space="preserve">
+    <value>Game not found, verify your code please.</value>
+  </data>
+  <data name="GuestGame-Button" xml:space="preserve">
+    <value>Play as a guest</value>
+  </data>
+  <data name="GuestLogin-Label" xml:space="preserve">
+    <value>Try before registering</value>
+  </data>
+  <data name="ID-label" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="InvalideGameCode-Label" xml:space="preserve">
+    <value>Invalid code, please verify your code.</value>
+  </data>
+  <data name="Invite-Button" xml:space="preserve">
+    <value>Invite</value>
+  </data>
+  <data name="ItemCode-Label" xml:space="preserve">
+    <value>Game code</value>
+  </data>
+  <data name="JoinGame-Button" xml:space="preserve">
+    <value>Join Game</value>
+  </data>
+  <data name="JoinGame-Label" xml:space="preserve">
+    <value>Join Game</value>
+  </data>
+  <data name="KickPlayer-Button" xml:space="preserve">
+    <value>Expel</value>
+  </data>
+  <data name="Language-Label" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="Languaje-Label" xml:space="preserve">
+    <value>Language: </value>
+  </data>
+  <data name="Login-Button" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="Logout-Button" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="Money-Label" xml:space="preserve">
+    <value>Money</value>
+  </data>
+  <data name="Music-Label" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="MusicTitle-Label" xml:space="preserve">
+    <value>Music: </value>
+  </data>
+  <data name="MyProperties-Label" xml:space="preserve">
+    <value>My Properties</value>
+  </data>
+  <data name="Name-Label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Name-txt" xml:space="preserve">
+    <value>KingsLayer123</value>
+  </data>
+  <data name="NickName-Label" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="NickName-txt" xml:space="preserve">
+    <value>KingsLayer123</value>
+  </data>
+  <data name="No-Button" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoHouses-Label" xml:space="preserve">
+    <value>No houses: </value>
+  </data>
+  <data name="NumberBuilding" xml:space="preserve">
+    <value>Already has a building</value>
+  </data>
+  <data name="NumberHouses" xml:space="preserve">
+    <value>Currently has X houses</value>
+  </data>
+  <data name="OK-Button" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Password-Label" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password-txt" xml:space="preserve">
+    <value>myiss32782ERSd10210</value>
+  </data>
+  <data name="Pause-Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Play-Button" xml:space="preserve">
+    <value>Play Game</value>
+  </data>
+  <data name="Player-Label" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="PlayerList-Label" xml:space="preserve">
+    <value>Players connected to the game</value>
+  </data>
+  <data name="Players-Label" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="PlayersUnitedMatch-Label" xml:space="preserve">
+    <value>Players joined to the game</value>
+  </data>
+  <data name="PrisionOrCarcel-Label" xml:space="preserve">
+    <value>Prison or Jail</value>
+  </data>
+  <data name="Profile-Button" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="PropertyTitle" xml:space="preserve">
+    <value>Title to the Property</value>
+  </data>
+  <data name="Pull-Button" xml:space="preserve">
+    <value>Bid</value>
+  </data>
+  <data name="PurchaseDescription-Label" xml:space="preserve">
+    <value>If a player owns ALL Properties of a single color, the rental price is DOUBLED on the UNBUILT properties in that group.</value>
+  </data>
+  <data name="RecoverPassword-Label" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Register-Button" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterUserTitle-Label" xml:space="preserve">
+    <value>Register User</value>
+  </data>
+  <data name="RejectPurchase-Label" xml:space="preserve">
+    <value>No, I do not want to buy this property</value>
+  </data>
+  <data name="Rent-Label" xml:space="preserve">
+    <value>Rent</value>
+  </data>
+  <data name="RepitPassword-txt" xml:space="preserve">
+    <value>myiss32782ERSd10210</value>
+  </data>
+  <data name="Roll-Button" xml:space="preserve">
+    <value>Roll Dice</value>
+  </data>
+  <data name="Save-Button" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SearchFriend-Label" xml:space="preserve">
+    <value>Search new friend</value>
+  </data>
+  <data name="SearchGame-Button" xml:space="preserve">
+    <value>Search for game</value>
+  </data>
+  <data name="SendEMail-Button" xml:space="preserve">
+    <value>Send Mail</value>
+  </data>
+  <data name="SendRequest-Button" xml:space="preserve">
+    <value>Send Request</value>
+  </data>
+  <data name="Settings-Button" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings-Label" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Start-Button" xml:space="preserve">
+    <value>Start Game</value>
+  </data>
+  <data name="Status-Label" xml:space="preserve">
+    <value>Result of the game</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TitleNameGameName-Label" xml:space="preserve">
+    <value>Tourist Fantastic Places</value>
+  </data>
+  <data name="TopOffer-Label" xml:space="preserve">
+    <value>Max. Offer</value>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>Total amount due is: $</value>
+  </data>
+  <data name="Turn-Label" xml:space="preserve">
+    <value>Turn</value>
+  </data>
+  <data name="UnexistingPlayer-Label" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="Verify-Button" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="VerifyCode-label" xml:space="preserve">
+    <value>Enter the code</value>
+  </data>
+  <data name="VerifyCode-txt" xml:space="preserve">
+    <value>102989018302.00</value>
+  </data>
+  <data name="verifyPassword-Label" xml:space="preserve">
+    <value>Verify password</value>
+  </data>
+  <data name="Wait-Label" xml:space="preserve">
+    <value>Please wait......</value>
+  </data>
+  <data name="Winrate-Label" xml:space="preserve">
+    <value>Winning percentage</value>
+  </data>
+  <data name="With1House" xml:space="preserve">
+    <value>With 1 house: </value>
+  </data>
+  <data name="With2Houses" xml:space="preserve">
+    <value>With 2 houses:</value>
+  </data>
+  <data name="With3Houses" xml:space="preserve">
+    <value>With 3 houses:</value>
+  </data>
+  <data name="With4Houses" xml:space="preserve">
+    <value>With 4 houses:</value>
+  </data>
+  <data name="WithBuilding" xml:space="preserve">
+    <value>With building:</value>
+  </data>
+  <data name="WriteGameCode-Label" xml:space="preserve">
+    <value>Enter the game code</value>
+  </data>
+  <data name="WrongNickName-Label" xml:space="preserve">
+    <value>Incorrect user</value>
+  </data>
+  <data name="WrongPassword-label" xml:space="preserve">
+    <value>Incorrect password, please check it.</value>
+  </data>
+  <data name="Yes-Button" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

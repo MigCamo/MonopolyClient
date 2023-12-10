@@ -1,0 +1,68 @@
+﻿<Window x:Class="UIGameClientTourist.XAMLViews.Configuration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIGameClientTourist.XAMLViews"
+        mc:Ignorable="d"
+        xmlns:p = "clr-namespace:UIGameClientTourist.Properties"
+        Title="Configuration" WindowState="Maximized">
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="827" VerticalAlignment="Center" Width="1595" Source="..\GameResources\Pictures\geojango-maps-CWbbJW_7Fsw-unsplash.jpg" StretchDirection="DownOnly" Stretch="Fill"/>
+        <Rectangle HorizontalAlignment="Center" Height="689" Margin="0,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="742" Fill="#FF12273C" RenderTransformOrigin="0.618,0.576" RadiusX="23" RadiusY="23" />
+        <Label Content="{x:Static p:Resources.Languaje_Label}" 
+           HorizontalAlignment="Left" 
+           Margin="524,249,0,0" 
+           VerticalAlignment="Top" 
+           VerticalContentAlignment="Center"
+           FontSize="36" 
+           FontFamily="Sitka Small" 
+           FontWeight="Bold" 
+           Foreground="White" 
+           Height="49" 
+           Width="242" RenderTransformOrigin="0.573,0.608"/>
+
+        <ComboBox Name="cboxLanguages" HorizontalAlignment="Left" Margin="778,252,0,0" VerticalAlignment="Top" Width="264" Height="41" RenderTransformOrigin="0.469,0.339" SelectionChanged="ChangeLanguage"/>
+        <Label Content="{x:Static p:Resources.MusicTitle_Label}" HorizontalAlignment="Left" Margin="524,359,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.55,-0.081" Height="46" Width="162"/>
+
+        <Button x:Name="butAccept" Content="{x:Static p:Resources.OK_Button}" HorizontalAlignment="Center" Margin="0,642,0,0" VerticalAlignment="Top" Height="57" Width="248" FontSize="24" FontWeight="Bold" Background="#FF6925FB" Foreground="White" Click="NavigateToMainMenuGame" />
+        <Slider x:Name="volumeSlider" HorizontalAlignment="Center" Margin="0,534,0,0" VerticalAlignment="Top" Width="488" Height="36" ValueChanged="volumeSlider_ValueChanged"/>
+        <Label Content="{x:Static p:Resources.Music_Label}" HorizontalAlignment="Left" Margin="554,455,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.55,-0.081" Height="46" Width="177"/>
+        <Rectangle HorizontalAlignment="Center" Height="135" Margin="0,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="742" Fill="#FF061B30" RenderTransformOrigin="0.618,0.576" RadiusX="23" RadiusY="23"/>
+        <Label Content="Configuraciones" 
+           HorizontalAlignment="Center" 
+           Margin="0,106,0,0" 
+           VerticalAlignment="Top" 
+           VerticalContentAlignment="Center"
+           FontSize="48" 
+           Foreground="White" 
+           FontFamily="Britannic Bold" 
+           RenderTransformOrigin="0.685,-0.341" 
+           Height="81" 
+           Width="366"/>
+        <GroupBox HorizontalAlignment="Left" Margin="772,355,0,0" VerticalAlignment="Top" BorderBrush="#FF061B30" Width="255" Height="54" BorderThickness="0">
+            <Grid>
+                <RadioButton x:Name="rbutPlayMusic" Content="{x:Static p:Resources.Yes_Button}" Foreground="#FFFFEDED" Margin="31,17,172,16" RenderTransformOrigin="0.5,0.5" Checked="rbutPlayMusic_Checked_1">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton x:Name="rbutPauseMusic" Content="{x:Static p:Resources.No_Button}" Foreground="#FFFFEDED" Margin="140,19,67,10" RenderTransformOrigin="0.5,0.5" Checked="rbutPauseMusic_Checked">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

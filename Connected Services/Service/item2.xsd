@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataBase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataBase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PlayerSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FriendRequest" nillable="true" type="tns:ArrayOfFriendRequest" />
+      <xs:element minOccurs="0" name="FriendRequest1" nillable="true" type="tns:ArrayOfFriendRequest" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="friendship" nillable="true" type="tns:ArrayOffriendship" />
+      <xs:element minOccurs="0" name="friendship1" nillable="true" type="tns:ArrayOffriendship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerSet" nillable="true" type="tns:PlayerSet" />
+  <xs:complexType name="ArrayOfFriendRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FriendRequest" nillable="true" type="tns:FriendRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFriendRequest" nillable="true" type="tns:ArrayOfFriendRequest" />
+  <xs:complexType name="FriendRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDRequest" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayerSet" nillable="true" type="tns:PlayerSet" />
+      <xs:element minOccurs="0" name="PlayerSet1" nillable="true" type="tns:PlayerSet" />
+      <xs:element minOccurs="0" name="PlayerSet1ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayerSet2ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FriendRequest" nillable="true" type="tns:FriendRequest" />
+  <xs:complexType name="ArrayOffriendship">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="friendship" nillable="true" type="tns:friendship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOffriendship" nillable="true" type="tns:ArrayOffriendship" />
+  <xs:complexType name="friendship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PlayerSet" nillable="true" type="tns:PlayerSet" />
+      <xs:element minOccurs="0" name="PlayerSet1" nillable="true" type="tns:PlayerSet" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="player1_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="player2_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="friendship" nillable="true" type="tns:friendship" />
+</xs:schema>

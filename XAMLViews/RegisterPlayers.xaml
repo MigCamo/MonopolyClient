@@ -1,0 +1,45 @@
+﻿<Window x:Class="UIGameClientTourist.XAMLViews.RegisterPlayers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIGameClientTourist.XAMLViews"
+        mc:Ignorable="d"
+        xmlns:p = "clr-namespace:UIGameClientTourist.Properties"
+        Title="RegisterPlayers" Height="675" Width="1179" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,93,-6" Background="#FFE9DDDD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="925*"/>
+            <ColumnDefinition Width="253*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="imgBackground" Height="795" Margin="-323,2,-412,0" VerticalAlignment="Top" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Source="..\GameResources\Pictures\geojango-maps-CWbbJW_7Fsw-unsplash.jpg">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.114"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.598"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Grid x:Name="rectBackground" Background="#FFFFF7F7" Margin="159,43,10,88" Grid.ColumnSpan="4">
+            <Label x:Name="Title" Content="{x:Static p:Resources.RegisterUserTitle_Label}" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Foreground="#FF1679DF" FontFamily="STXingkai" FontSize="48" FontStretch="ExtraExpanded" FontWeight="Bold"/>
+            <GridSplitter HorizontalAlignment="Left" Height="318" Margin="454,132,0,0" VerticalAlignment="Top" Width="5"/>
+            <Label x:Name="lblUserName" Content = "{x:Static p:Resources.NickName_Label}" HorizontalAlignment="Left" Margin="71,132,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.56,0.025" FontFamily="Sitka Text Semibold"/>
+            <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Margin="71,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
+            <Label x:Name="lblPassword" Content = "{x:Static p:Resources.Password_Label}" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Center" FontSize="18" FontFamily="Sitka Text Semibold" FontWeight="Bold"/>
+            <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="71,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
+            <TextBox x:Name="txtConfirmPassword" HorizontalAlignment="Left" Margin="71,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
+            <Label x:Name="lblConfirmPassword" Content = "{x:Static p:Resources.RecoverPassword_Label}" HorizontalAlignment="Left" Margin="77,366,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Sitka Text Semibold" FontWeight="Bold"/>
+            <Label x:Name="lblEMail" Content = "{x:Static p:Resources.Email_label}" HorizontalAlignment="Left" Margin="502,132,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.56,0.025" FontFamily="Sitka Text Semibold"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="502,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
+            <Label x:Name="lblEnterCode" Content = "{x:Static p:Resources.VerifyCode_label}" HorizontalAlignment="Left" Margin="502,307,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.56,0.025" FontFamily="Sitka Text Semibold"/>
+            <TextBox x:Name="txtConfirmCode" HorizontalAlignment="Left" Margin="502,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
+            <Button x:Name="butSendMessage" Content = "{x:Static p:Resources.SendEMail_Button}" HorizontalAlignment="Left" Margin="680,238,0,0" VerticalAlignment="Top" Height="36" Width="162" FontSize="16" Background="#FF57E934" FontWeight="Bold"/>
+            <Button x:Name="butRegister" Content = "{x:Static p:Resources.Register_Button}" HorizontalAlignment="Left" Margin="600,426,0,0" VerticalAlignment="Top" Height="36" Width="161" RenderTransformOrigin="0.818,-0.049" FontSize="16" FontWeight="Bold" Background="#FFA0BFF1" Click="RegisterPlayer"/>
+            <Image Name="imgBackButton" HorizontalAlignment="Left" Height="55" Margin="79,33,0,0" VerticalAlignment="Top" Width="55" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="GoToLoginFromRegisterPlayers" />
+        </Grid>
+    </Grid>
+</Window>

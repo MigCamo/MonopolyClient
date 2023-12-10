@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8082/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="Game">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdGame" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Players" nillable="true" type="q1:QueueOfPlayerTKMUywDq" />
+      <xs:element minOccurs="0" name="PlayersInGame" nillable="true" type="tns:ArrayOfPlayer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Game" nillable="true" type="tns:Game" />
+  <xs:complexType name="ArrayOfPlayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Player" nillable="true" type="tns:Player" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayer" nillable="true" type="tns:ArrayOfPlayer" />
+  <xs:complexType name="Player">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdPlayer" type="xs:int" />
+      <xs:element minOccurs="0" name="Jail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Money" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Piece" />
+      <xs:element minOccurs="0" name="loser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="properties" nillable="true" type="tns:ArrayOfProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Player" nillable="true" type="tns:Player" />
+  <xs:complexType name="Piece">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImagenSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Piece" nillable="true" type="tns:Piece" />
+  <xs:complexType name="ArrayOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty" />
+  <xs:complexType name="Property">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Square">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BuyingCost" type="xs:long" />
+          <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumberHouses" type="xs:int" />
+          <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:Player" />
+          <xs:element minOccurs="0" name="PosicitionX" type="xs:int" />
+          <xs:element minOccurs="0" name="PosicitionY" type="xs:int" />
+          <xs:element minOccurs="0" name="Situation" type="tns:Property.Property_Situation" />
+          <xs:element minOccurs="0" name="Taxes" type="xs:long" />
+          <xs:element minOccurs="0" name="Type" type="tns:Property.Type_Property" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+  <xs:complexType name="Square">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="position" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Square" nillable="true" type="tns:Square" />
+  <xs:simpleType name="Property.Property_Situation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Free" />
+      <xs:enumeration value="Bought" />
+      <xs:enumeration value="House" />
+      <xs:enumeration value="Hotel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Property.Property_Situation" nillable="true" type="tns:Property.Property_Situation" />
+  <xs:simpleType name="Property.Type_Property">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Jail" />
+      <xs:enumeration value="Service" />
+      <xs:enumeration value="Street" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Property.Type_Property" nillable="true" type="tns:Property.Type_Property" />
+</xs:schema>
