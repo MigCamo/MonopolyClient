@@ -15,12 +15,51 @@
         <Button Content="{x:Static p:Resources.Edit_Button}" HorizontalAlignment="Left" Margin="1043,607,0,0" VerticalAlignment="Top" Height="61" Width="324" Background="#FF6925FB" BorderBrush="#FF6925FB" Foreground="White" FontSize="24" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="51" Margin="52,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="67" Fill="White"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="37,64,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="NavigateToMainMenuGame" />
-        <Image HorizontalAlignment="Left" Height="260" Margin="214,76,0,0" VerticalAlignment="Top" Width="244" Source="..\GameResources\Pictures\3397388.png"/>
+        <Image x:Name="imgUserProfile" HorizontalAlignment="Left" Height="230" Margin="214,88,0,0" VerticalAlignment="Top" Width="244" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\UserProfiles\descarga (1).jpg"/>
         <TextBox HorizontalAlignment="Left" Margin="490,124,0,0" TextWrapping="Wrap" Text="TheKingsLayer" VerticalAlignment="Top" Width="464" Height="66" FontSize="48" FontWeight="Bold" BorderBrush="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="631,226,0,0" TextWrapping="Wrap" Text="Descricion del usuario..." VerticalAlignment="Top" Height="86" Width="736"/>
         <Label Content="{x:Static p:Resources.Description_Label}" HorizontalAlignment="Left" Margin="490,216,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="20" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="62" Margin="983,468,0,0" Stroke="#FF1DA616" VerticalAlignment="Top" Width="260" Fill="#FF1DA616" RadiusX="15" RadiusY="15" />
         <Rectangle HorizontalAlignment="Left" Height="62" Margin="1248,468,0,0" Stroke="Black" VerticalAlignment="Top" Width="163"/>
         <Label Content="{x:Static p:Resources.Winrate_Label}" HorizontalAlignment="Left" Margin="989,479,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold"/>
+        
+        <Grid x:Name="profiles" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" Height="494" Margin="474,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="731" RadiusX="10" RadiusY="10">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF1589FF" Offset="1"/>
+                        <GradientStop Color="#FF040C12" Offset="0"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Border x:Name="brdProfile1" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile1" HorizontalAlignment="Left" Height="100" Margin="864,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\√ Xbox 360 Og Gamerpics - 360 Gamerpics.jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile2" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile2" HorizontalAlignment="Left" Height="100" Margin="698,226,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (1).jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile3" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile3" HorizontalAlignment="Left" Height="100" Margin="542,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\☠️.jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile4" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile4" HorizontalAlignment="Left" Height="100" Margin="542,382,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (2).jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile5" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile5" HorizontalAlignment="Left" Height="100" Margin="1020,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (3).jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile6" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile6" HorizontalAlignment="Left" Height="100" Margin="864,380,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\Xbox 360 dragon gamerpic.jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile7" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
+                <Image x:Name="imgProfile7" HorizontalAlignment="Left" Height="100" Margin="1020,380,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\Xbox 360 dog gamerpic.jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Border x:Name="brdProfile8" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3" >
+                <Image x:Name="imgProfile8" HorizontalAlignment="Left" Height="100" Margin="698,382,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga.jpg" RenderTransformOrigin="0.568,0.772"/>
+            </Border>
+            <Label Content="Elija Perfil" HorizontalAlignment="Left" Margin="745,139,0,0" VerticalAlignment="Top" Foreground="White" FontSize="35" FontFamily="Arial Rounded MT Bold"/>
+            <Button Content="Cambiar Perfil" HorizontalAlignment="Left" Margin="745,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.829,-12.588" Height="35" Width="176"/>
+        </Grid>
+        
     </Grid>
 </Window>

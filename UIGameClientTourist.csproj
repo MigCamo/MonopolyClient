@@ -241,6 +241,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GameResources\Music\utomp3.com-One-Piece-OST-Overtaken-EPIC-VERSION-Drums-of-Liberation_320kbps.wav" />
+    <Resource Include="GameResources\Pictures\UserProfiles\descarga %281%29.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\descarga %282%29.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\descarga %283%29.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\descarga.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\Xbox 360 dog gamerpic.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\Xbox 360 dragon gamerpic.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\√ Xbox 360 Og Gamerpics - 360 Gamerpics.jpg" />
+    <Resource Include="GameResources\Pictures\UserProfiles\☠️.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="GameResources\Pictures\PropertyImage\1.png" />
