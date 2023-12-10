@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UIGameClientTourist.GameLogic;
 
 namespace UIGameClientTourist.XAMLViews
 {
@@ -25,7 +26,6 @@ namespace UIGameClientTourist.XAMLViews
             InitializeComponent();
             this.idPlayer = idPlayer;
         }
-
         private void NavigateToMainMenuGame(object sender, RoutedEventArgs e)
         {
             MainMenuGame menuWindow = new MainMenuGame(idPlayer);
@@ -33,5 +33,13 @@ namespace UIGameClientTourist.XAMLViews
             menuWindow.Show();
         }
 
+        private void ProfileImage_Click(object sender, MouseButtonEventArgs e)
+        {
+            Border selectedBorder = (Border)sender;
+            selectedBorder.BorderBrush = Brushes.Green;
+            Image selectedImage = (Image)selectedBorder.Child;
+            string selectedImagePath = selectedImage.Source.ToString();
+            imgUserProfile.Source = ImageManager.GetSourceImage(selectedImagePath) ;
+        }
     }
 }
