@@ -576,6 +576,26 @@ namespace UIGameClientTourist.XAMLViews
             scrollViewer.Content = stackPanelContainer;
             PlayersInGame.Children.Add(scrollViewer);
         }
+
+        public void ShowEvent(int action)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GoToJail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PayTaxes(int taxes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetPay(int money)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

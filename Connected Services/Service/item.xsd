@@ -60,6 +60,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMyPlayersName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPlayer" type="xs:int" />
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyPlayersNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMyPlayersNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SavePlayerSession">
     <xs:complexType>
       <xs:sequence>
@@ -152,7 +167,7 @@
   <xs:element name="AddPlayerToGame">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Game" type="xs:int" />
+        <xs:element minOccurs="0" name="game" type="xs:int" />
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q5:Player" />
       </xs:sequence>
     </xs:complexType>
@@ -162,10 +177,23 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddGuestToGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+        <xs:element minOccurs="0" name="idPlayer" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGuestToGameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UpdatePlayers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="IdGame" type="xs:int" />
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -370,6 +398,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetActionCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MovePlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+        <xs:element minOccurs="0" name="spaces" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PlayDie">
     <xs:complexType>
       <xs:sequence>
@@ -471,6 +514,52 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ShowEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="action" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GoToJail">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GoToJailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayTaxes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taxes" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayTaxesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="money" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFriendRequests">
     <xs:complexType>
       <xs:sequence>
@@ -496,6 +585,48 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Contracts.IDataBase" minOccurs="0" name="GetFriendsResult" nillable="true" type="q29:ArrayOfFriendList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsGameFull">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsGameFullResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsGameFullResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchGameByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchGameByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchGameByCodeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsGameOngoing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsGameOngoingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsGameOngoingResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

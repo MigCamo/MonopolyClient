@@ -31,9 +31,26 @@ namespace UIGameClientTourist.XAMLViews
         private Service.Game game = new Service.Game();
         private Service.Piece piecePlayer = new Service.Piece();
         private Dictionary<string, (Border, Ellipse)> pieceMappings;
+        private bool isInvited = false;
+        
         public Lobby(int idGame, int idPlayer)
         {
             this.IdPlayer = idPlayer;
+            InstanceContext context = new InstanceContext(this);
+            GameManagerClient = new Service.GameManagerClient(context);
+            SesionService = new Service.FriendsClient(context);
+            friendListService = new Service.FriendListClient();
+            SesionService.UpdatePlayerSession(idPlayer);
+            InitializeComponent();
+            InicializePieceMappings();
+            InicializeLobby(idGame, idPlayer);
+            ShowFriends(idPlayer);
+        }
+
+        public Lobby(int idGame, int idPlayer, bool invited)
+        {
+            this.IdPlayer = idPlayer;
+            this.isInvited = invited;
             InstanceContext context = new InstanceContext(this);
             GameManagerClient = new Service.GameManagerClient(context);
             SesionService = new Service.FriendsClient(context);
@@ -71,7 +88,8 @@ namespace UIGameClientTourist.XAMLViews
             }
             lblshowCodeGame.Content = game.IdGame.ToString();
             butGoToLobbyWindow.Visibility = Visibility.Hidden;
-            lblTitleUsername.Content = GetPlayerInfo(idPlayer).Name;
+            Service.PlayerClient playerClient = new Service.PlayerClient();
+            lblTitleUsername.Content = playerClient.GetMyPlayersName(IdPlayer, game.IdGame);
         }
 
         public void ShowFriends(int idPlayer)
@@ -147,10 +165,30 @@ namespace UIGameClientTourist.XAMLViews
 
         private void GoMainMenuGameWindow(object sender, RoutedEventArgs e)
         {
-            MainMenuGame menuWindow = new MainMenuGame(IdPlayer);
+            if (isInvited)
+            {
+                OpenMainWindow();
+            }
+            else
+            {
+                OpenMainMenuGame(IdPlayer);
+            }
+
             this.Close();
-            menuWindow.Show();
         }
+
+        private void OpenMainWindow()
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
+
+        private void OpenMainMenuGame(int playerId)
+        {
+            MainMenuGame mainMenuGame = new MainMenuGame(playerId);
+            mainMenuGame.Show();
+        }
+
 
         private void NavigateToCreateGameWindow(object sender, RoutedEventArgs e)
         {
@@ -186,6 +224,8 @@ namespace UIGameClientTourist.XAMLViews
         {
             Player player = GetPlayerInfo(IdPlayer);
             game.IdGame = GenerateGameCode();
+            game.Slot = 3;
+            game.Status = Service.Game.Game_Situation.ByStart;
             GameManagerClient.AddGame(game);
             GameManagerClient.AddPlayerToGame(game.IdGame, player);
             GameManagerClient.UpdatePlayers(this.game.IdGame);
@@ -194,8 +234,16 @@ namespace UIGameClientTourist.XAMLViews
         private void LoadGame(int idGame)
         {
             this.game = PlayerService.GetGame(idGame);
-            Player player = GetPlayerInfo(IdPlayer);
-            GameManagerClient.AddPlayerToGame(idGame, player);
+            if (isInvited)
+            {
+                GameManagerClient.AddGuestToGame(idGame, IdPlayer);
+            }
+            else
+            {
+                Player player = GetPlayerInfo(IdPlayer);
+                GameManagerClient.AddPlayerToGame(idGame, player);
+            }
+            
             GameManagerClient.UpdatePlayers(this.game.IdGame);
         }
 
@@ -208,7 +256,7 @@ namespace UIGameClientTourist.XAMLViews
             player.properties = null;
             player.Position = -1;
             player.Jail = false;
-            player.loser = false;
+            player.Loser = false;
             player.Money = 10000;
             player.Token = piecePlayer;
             return player;
@@ -217,7 +265,7 @@ namespace UIGameClientTourist.XAMLViews
         public void AddVisualPlayers()
         {
             wpPlayers.Children.Clear();
-            foreach (var player in game.Players)
+            foreach (var player in game.PlayersInGame)
             {
                 Border brdBackground = new Border
                 {
@@ -303,8 +351,8 @@ namespace UIGameClientTourist.XAMLViews
         {
             if (e.Key == Key.Enter && !string.IsNullOrWhiteSpace(Message.Text))
             {
-                string PlayerName = GetPlayerInfo(IdPlayer).Name;
-                string message = PlayerName + ": " + Message.Text.Trim();
+                Service.PlayerClient playerClient = new Service.PlayerClient();
+                string message = playerClient.GetMyPlayersName(IdPlayer, game.IdGame) + ": " + Message.Text.Trim();
                 GameManagerClient.SendMessage(game.IdGame, message);
                 Message.Text = "";
             }
