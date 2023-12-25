@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UIGameClientTourist.GameLogic;
 using UIGameClientTourist.Service;
 
 namespace UIGameClientTourist.XAMLViews
@@ -85,7 +86,22 @@ namespace UIGameClientTourist.XAMLViews
 
         private void SendFriendRequest(object sender, RoutedEventArgs e)
         {
-            SesionService.MakeFriendRequest(idPlayer, TxtFriend.Text);
+            ResourceHandler resource = new ResourceHandler();
+            switch (SesionService.MakeFriendRequest(idPlayer, TxtFriend.Text))
+            {
+                case 0:
+                    MessageBox.Show(Properties.Resources.AlertConfirmationSendFriendRequest_Label);
+                    break;
+                case 1:
+                    MessageBox.Show(Properties.Resources.AlreadyExistingAmigoAlert_Label);
+                    break;
+                case 2:
+                    MessageBox.Show(Properties.Resources.AlertExistingUser_Label);
+                    break;
+                case 3:
+                    MessageBox.Show(Properties.Resources.AlertExistingRequest_Label);
+                    break;
+            }
         }
 
         private void AddRequest(int IdPlayer)
@@ -112,7 +128,7 @@ namespace UIGameClientTourist.XAMLViews
 
                 Button butAccept = new Button
                 {
-                    Content = "Aceptar",
+                    Content = Properties.Resources.AcceptPurchase_Button,
                     Width = 80,
                     Height = 20,
                     Margin = new Thickness(100, 10, 0, 0),
@@ -120,7 +136,7 @@ namespace UIGameClientTourist.XAMLViews
 
                 Button butReject = new Button
                 {
-                    Content = "Rechazar",
+                    Content = Properties.Resources.Reject_Button,
                     Width = 80,
                     Height = 20,
                     Margin = new Thickness(300, 10, 0, 0),

@@ -4,6 +4,7 @@
   <xs:complexType name="Game">
     <xs:sequence>
       <xs:element minOccurs="0" name="IdGame" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberPlayersReady" type="xs:int" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Players" nillable="true" type="q1:QueueOfPlayerTKMUywDq" />
       <xs:element minOccurs="0" name="PlayersInGame" nillable="true" type="tns:ArrayOfPlayer" />
       <xs:element minOccurs="0" name="Slot" type="xs:int" />

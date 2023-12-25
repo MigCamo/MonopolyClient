@@ -43,7 +43,7 @@ namespace UIGameClientTourist.XAMLViews
             SesionService.UpdatePlayerSession(idPlayer);
             InitializeComponent();
             InicializePieceMappings();
-            InicializeLobby(idGame, idPlayer);
+            InicializeLobby(idGame);
             ShowFriends(idPlayer);
         }
 
@@ -58,7 +58,7 @@ namespace UIGameClientTourist.XAMLViews
             SesionService.UpdatePlayerSession(idPlayer);
             InitializeComponent();
             InicializePieceMappings();
-            InicializeLobby(idGame, idPlayer);
+            InicializeLobby(idGame);
             ShowFriends(idPlayer);
         }
 
@@ -75,7 +75,7 @@ namespace UIGameClientTourist.XAMLViews
             };
         }
 
-        private void InicializeLobby(int idGame, int idPlayer)
+        private void InicializeLobby(int idGame)
         {
             if (idGame == 0)
             {
@@ -84,6 +84,7 @@ namespace UIGameClientTourist.XAMLViews
             else
             {
                 LoadGame(idGame);
+                GameManagerClient.InactivateBeginGameControls(idGame);
                 butStartGame.Visibility = Visibility.Hidden;
             }
             lblshowCodeGame.Content = game.IdGame.ToString();
@@ -147,7 +148,7 @@ namespace UIGameClientTourist.XAMLViews
             if (sender is Border selectedToken && pieceMappings.TryGetValue(selectedToken.Name, out var pieces))
             {
                 pieces.Item2.Fill = new SolidColorBrush(Colors.Aquamarine);
-                piecePlayer.ImagenSource = $"..\\ImageResourceManager\\{selectedToken.Name}.png";
+                piecePlayer.ImagenSource = $"..\\GameResources\\Pictures\\{selectedToken.Name}.png";
                 piecePlayer.Name = selectedToken.Name;
                 GameManagerClient.SelectedPiece(game, piecePlayer.Name);
             }
@@ -193,6 +194,7 @@ namespace UIGameClientTourist.XAMLViews
         private void NavigateToCreateGameWindow(object sender, RoutedEventArgs e)
         {
             GameManagerClient.UnSelectedPiece(this.game, piecePlayer.Name);
+            GameManagerClient.UnCheckReadyToStartGame(game);
             butGoToLobbyWindow.Visibility = Visibility.Hidden;
             grdLobbyWindow.Visibility = Visibility.Collapsed;
             grdCreateGameWindow.Visibility = Visibility.Visible;
@@ -201,6 +203,7 @@ namespace UIGameClientTourist.XAMLViews
         private void NavigateToLobbyWindow(object sender, RoutedEventArgs e)
         {
             imgPlayerCard.Source = ImageManager.GetSourceImage(piecePlayer.ImagenSource);
+            GameManagerClient.CheckReadyToStartGame(game);
             GameManagerClient.SelectedPiece(this.game, piecePlayer.Name);
             grdLobbyWindow.Visibility = Visibility.Visible;
             grdCreateGameWindow.Visibility = Visibility.Collapsed;
@@ -303,9 +306,7 @@ namespace UIGameClientTourist.XAMLViews
 
         public void UpdateFriendDisplay()
         {
-            Console.WriteLine("AQUI PASA");
             ShowFriends(IdPlayer);
-            Console.WriteLine("AQUI YA NO");
         }
 
         public void GetMessage(string message)
@@ -404,6 +405,16 @@ namespace UIGameClientTourist.XAMLViews
             string contenidoLabel = lblshowCodeGame.Content.ToString();
             Clipboard.SetText(contenidoLabel);
             MessageBox.Show("Contenido copiado al portapapeles", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void EnableStartGameButton()
+        {
+            butStartGame.IsEnabled = true;
+        }
+
+        public void DisableStartGameButton()
+        {
+            butStartGame.IsEnabled = false;
         }
     }
 }

@@ -129,6 +129,24 @@
   <data name="AddHouse" xml:space="preserve">
     <value>Add House</value>
   </data>
+  <data name="AlertConfirmationSendFriendRequest-Label" xml:space="preserve">
+    <value>Friend request has been successfully sent</value>
+  </data>
+  <data name="AlertExistingRequest-Label" xml:space="preserve">
+    <value>A friend request has already been sent to this user.</value>
+  </data>
+  <data name="AlertExistingUser-Label" xml:space="preserve">
+    <value>The friend request could not be sent. The player to whom you sent a friend request does not exist.</value>
+  </data>
+  <data name="AlertInvalidCode-Label" xml:space="preserve">
+    <value>Please enter a valid departure code</value>
+  </data>
+  <data name="AlreadyExistingAmigoAlert-Label" xml:space="preserve">
+    <value>The friend request could not be sent. The player to whom you sent a friend request is already your friend.</value>
+  </data>
+  <data name="AlreadyStartedAlert-Label" xml:space="preserve">
+    <value>Line item not found. Verify that the code is correct or that the line item exists.</value>
+  </data>
   <data name="Auction-Label" xml:space="preserve">
     <value>Auction</value>
   </data>
@@ -158,6 +176,9 @@
   </data>
   <data name="ContinueChoice-button" xml:space="preserve">
     <value>Continue</value>
+  </data>
+  <data name="CopyConfirmationAlert-Label" xml:space="preserve">
+    <value>Content copied to clipboard</value>
   </data>
   <data name="CostRent-Label" xml:space="preserve">
     <value>Cost of the property</value>
@@ -201,6 +222,9 @@
   <data name="FriendsList-Label" xml:space="preserve">
     <value>Friends list</value>
   </data>
+  <data name="FullLineItemAlert-Label" xml:space="preserve">
+    <value>Sorry, the game is currently full.</value>
+  </data>
   <data name="GameCode-Label" xml:space="preserve">
     <value>Game code</value>
   </data>
@@ -225,6 +249,9 @@
   <data name="ItemCode-Label" xml:space="preserve">
     <value>Game code</value>
   </data>
+  <data name="ItemNotFoundAlert-Label" xml:space="preserve">
+    <value>Partida no encontrada. Verifique que el código sea correcto o que la partida exista.</value>
+  </data>
   <data name="JoinGame-Button" xml:space="preserve">
     <value>Join Game</value>
   </data>
@@ -236,6 +263,12 @@
   </data>
   <data name="Language-Label" xml:space="preserve">
     <value>Change language</value>
+  </data>
+  <data name="LanguageEnglish-Label" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LanguageSpanish-Label" xml:space="preserve">
+    <value>Spanish</value>
   </data>
   <data name="Languaje-Label" xml:space="preserve">
     <value>Language: </value>
@@ -333,6 +366,9 @@
   <data name="RegisterUserTitle-Label" xml:space="preserve">
     <value>Register User</value>
   </data>
+  <data name="Reject-Button" xml:space="preserve">
+    <value>Reject</value>
+  </data>
   <data name="RejectPurchase-Label" xml:space="preserve">
     <value>No, I do not want to buy this property</value>
   </data>
@@ -374,6 +410,9 @@
   </data>
   <data name="String" xml:space="preserve">
     <value />
+  </data>
+  <data name="SuccessConfirmationAlert-Label" xml:space="preserve">
+    <value>Successful</value>
   </data>
   <data name="TitleNameGameName-Label" xml:space="preserve">
     <value>Tourist Fantastic Places</value>

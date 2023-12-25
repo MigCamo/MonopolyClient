@@ -53,7 +53,7 @@ namespace UIGameClientTourist.XAMLViews
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un código de partida válido.");
+                    MessageBox.Show(Properties.Resources.AlertInvalidCode_Label);
                 }
             }
             catch (Exception ex)
@@ -66,19 +66,19 @@ namespace UIGameClientTourist.XAMLViews
         {
             bool result = true;
 
-            if (managerClient.SearchGameByCode(codeGame) == 1)
+            if (managerClient.SearchGameByCode(codeGame) != 0)
             {
-                MessageBox.Show("Partida no encontrada. Verifique que el código sea correcto o que la partida exista.");
+                MessageBox.Show(Properties.Resources.ItemNotFoundAlert_Label);
                 result = false;
             } 
-            else if (managerClient.IsGameOngoing(codeGame) == 1)
+            else if (managerClient.IsGameOngoing(codeGame) != 0)
             {
-                MessageBox.Show("Lo siento, la partida ya ha comenzado.");
+                MessageBox.Show(Properties.Resources.AlreadyStartedAlert_Label);
                 result = false;
             } 
-            else if (managerClient.IsGameFull(codeGame) == 1)
+            else if (managerClient.IsGameFull(codeGame) != 0)
             {
-                MessageBox.Show("Lo siento, la partida se encuentra completa en este momento.");
+                MessageBox.Show(Properties.Resources.FullLineItemAlert_Label);
                 result = false;
             }
             

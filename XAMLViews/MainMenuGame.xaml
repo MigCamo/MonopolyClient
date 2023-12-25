@@ -11,11 +11,11 @@
         <Image x:Name="imgBackground" Height="1082" VerticalAlignment="Top" Source="..\GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" HorizontalAlignment="Center" Width="1595"/>
         <Border>
             <Grid x:Name="grdDynamicButtons" MouseLeftButtonDown="OpenSlidingMenu">
-                <Button x:Name="butProfile" Content="Mi Perfil" Margin="1170,3,0,0" Click="GoToUserProfileFromMainMenuGame" Height="64" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363" />
-                <Button x:Name="butLogOut" Content="{x:Static p:Resources.Logout_Button}" Margin="1170,3,0,0" Click="LogOut" Height="64" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363"/>
-                <Rectangle x:Name="rectBackgroundButtons" HorizontalAlignment="Left" Height="63" Margin="1169,4,0,0" Stroke="Black" VerticalAlignment="Top" Width="364" Fill="#FF097CAB"/>
-                <Image x:Name="imgProfile" HorizontalAlignment="Left" Height="52" Margin="1202,9,0,0" VerticalAlignment="Top" Width="61" Source="..\GameResources\Pictures\3397388.png"/>
-                <Label Content="KingsLayer" HorizontalAlignment="Left" Margin="1277,11,0,0" VerticalAlignment="Top" Foreground="#FFFCFCFC" FontSize="32" FontWeight="Bold" FontFamily="Harlow Solid Italic"/>
+                <Button x:Name="butProfile" Content="Mi Perfil" Margin="1170,3,0,0" Click="GoToUserProfileFromMainMenuGame" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363" />
+                <Button x:Name="butLogOut" Content="{x:Static p:Resources.Logout_Button}" Margin="1170,3,0,0" Click="LogOut" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363"/>
+                <Rectangle x:Name="rectBackgroundButtons" HorizontalAlignment="Left" Height="63" Margin="1169,4,0,0" Stroke="Black" VerticalAlignment="Top" Width="364"  Fill="#FF097CAB"/>
+                <Image x:Name="imgProfile" HorizontalAlignment="Left" Height="52" Margin="1190,9,0,0" VerticalAlignment="Top" Width="61" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\UserProfiles\descarga (1).jpg"/>
+                <Label x:Name="lblPlayerName" Content="KingsLayer" HorizontalAlignment="Left" Margin="1248,11,0,0" VerticalAlignment="Top" Foreground="#FFFCFCFC" FontSize="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Harlow Solid Italic" Width="241"/>
             </Grid>
         </Border>
 
@@ -184,15 +184,17 @@
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <Label HorizontalAlignment="Center" 
-                       Margin="302,206,0,0" 
-                       VerticalAlignment="Center" 
+                    <Label HorizontalAlignment="Left" 
+                       Margin="300,201,0,0" 
+                       VerticalAlignment="Top" 
                        VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"  
                        Foreground="#FFFCFCFC" 
                        FontSize="39" 
                        FontWeight="Bold" 
+                       Content="{x:Static p:Resources.JoinGame_Button}"
                        FontFamily="Harlow Solid Italic" 
-                       RenderTransformOrigin="0.5,0.5">
+                       RenderTransformOrigin="0.5,0.5" Width="289" Height="59">
                         <Label.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -201,7 +203,6 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </Label.RenderTransform>
-                        <TextBlock Text="{x:Static p:Resources.JoinGame_Button}" TextAlignment="Center"/>
                     </Label>
                 </Grid>
             </Border>
@@ -237,7 +238,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Label HorizontalAlignment="Left" Margin="967,202,0,0" VerticalAlignment="Top" Foreground="#FFFCFCFC" FontSize="39" FontWeight="Bold" FontFamily="Harlow Solid Italic" RenderTransformOrigin="0.5,0.5">
+                    <Label HorizontalAlignment="Left" Margin="941,203,0,0" VerticalAlignment="Top" Content="{x:Static p:Resources.CreateGame_Button}" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFFCFCFC" FontSize="39" FontWeight="Bold" FontFamily="Harlow Solid Italic" RenderTransformOrigin="0.5,0.5" Width="297" Height="55">
                         <Label.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -246,7 +247,6 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </Label.RenderTransform>
-                        <TextBlock Text="{x:Static p:Resources.CreateGame_Button}" TextAlignment="Center"/>
                     </Label>
                 </Grid>
             </Border>

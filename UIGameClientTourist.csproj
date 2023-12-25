@@ -93,6 +93,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="GameLogic\MusicService.cs" />
+    <Compile Include="GameLogic\ResourceHandler.cs" />
     <Compile Include="Properties\Resources.es-MX.Designer.cs">
       <DependentUpon>Resources.es-MX.resx</DependentUpon>
       <AutoGen>True</AutoGen>

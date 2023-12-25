@@ -401,6 +401,9 @@ namespace UIGameClientTourist.Service {
         private int IdGameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberPlayersReadyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.Queue<UIGameClientTourist.Service.Player> PlayersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -431,6 +434,19 @@ namespace UIGameClientTourist.Service {
                 if ((this.IdGameField.Equals(value) != true)) {
                     this.IdGameField = value;
                     this.RaisePropertyChanged("IdGame");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NumberPlayersReady {
+            get {
+                return this.NumberPlayersReadyField;
+            }
+            set {
+                if ((this.NumberPlayersReadyField.Equals(value) != true)) {
+                    this.NumberPlayersReadyField = value;
+                    this.RaisePropertyChanged("NumberPlayersReady");
                 }
             }
         }
@@ -1439,6 +1455,24 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UnSelectedPiece")]
         System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CheckReadyToStartGame")]
+        void CheckReadyToStartGame(UIGameClientTourist.Service.Game game);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CheckReadyToStartGame")]
+        System.Threading.Tasks.Task CheckReadyToStartGameAsync(UIGameClientTourist.Service.Game game);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UnCheckReadyToStartGame")]
+        void UnCheckReadyToStartGame(UIGameClientTourist.Service.Game game);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UnCheckReadyToStartGame")]
+        System.Threading.Tasks.Task UnCheckReadyToStartGameAsync(UIGameClientTourist.Service.Game game);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/InactivateBeginGameControls")]
+        void InactivateBeginGameControls(int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/InactivateBeginGameControls")]
+        System.Threading.Tasks.Task InactivateBeginGameControlsAsync(int idGame);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1467,6 +1501,12 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UnblockPiece", ReplyAction="http://tempuri.org/IGameManager/UnblockPieceResponse")]
         void UnblockPiece(string piece);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/EnableStartGameButton", ReplyAction="http://tempuri.org/IGameManager/EnableStartGameButtonResponse")]
+        void EnableStartGameButton();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/DisableStartGameButton", ReplyAction="http://tempuri.org/IGameManager/DisableStartGameButtonResponse")]
+        void DisableStartGameButton();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1575,6 +1615,30 @@ namespace UIGameClientTourist.Service {
         
         public System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece) {
             return base.Channel.UnSelectedPieceAsync(game, piece);
+        }
+        
+        public void CheckReadyToStartGame(UIGameClientTourist.Service.Game game) {
+            base.Channel.CheckReadyToStartGame(game);
+        }
+        
+        public System.Threading.Tasks.Task CheckReadyToStartGameAsync(UIGameClientTourist.Service.Game game) {
+            return base.Channel.CheckReadyToStartGameAsync(game);
+        }
+        
+        public void UnCheckReadyToStartGame(UIGameClientTourist.Service.Game game) {
+            base.Channel.UnCheckReadyToStartGame(game);
+        }
+        
+        public System.Threading.Tasks.Task UnCheckReadyToStartGameAsync(UIGameClientTourist.Service.Game game) {
+            return base.Channel.UnCheckReadyToStartGameAsync(game);
+        }
+        
+        public void InactivateBeginGameControls(int idGame) {
+            base.Channel.InactivateBeginGameControls(idGame);
+        }
+        
+        public System.Threading.Tasks.Task InactivateBeginGameControlsAsync(int idGame) {
+            return base.Channel.InactivateBeginGameControlsAsync(idGame);
         }
     }
     

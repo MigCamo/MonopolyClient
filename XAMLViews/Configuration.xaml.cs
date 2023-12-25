@@ -32,8 +32,8 @@ namespace UIGameClientTourist.XAMLViews
 
         private void fullcomboBox()
         {
-            cboxLanguages.Items.Add("Español");
-            cboxLanguages.Items.Add("Ingles");
+            cboxLanguages.Items.Add(Properties.Resources.LanguageSpanish_Label);
+            cboxLanguages.Items.Add(Properties.Resources.LanguageEnglish_Label);
         }
 
         private void ChangeLanguage(object sender, SelectionChangedEventArgs e)
@@ -42,11 +42,11 @@ namespace UIGameClientTourist.XAMLViews
             {
                 string selectedLanguage = cboxLanguages.SelectedItem.ToString();
 
-                if (selectedLanguage == "Español")
+                if (selectedLanguage == Properties.Resources.LanguageSpanish_Label)
                 {
                     App.SetAppCulture("es-ES");
                 }
-                else if (selectedLanguage == "Ingles")
+                else if (selectedLanguage == Properties.Resources.LanguageEnglish_Label)
                 {
                     App.SetAppCulture("en-US");
                 }

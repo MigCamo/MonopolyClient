@@ -187,6 +187,15 @@
   <wsdl:message name="IGameManager_UnSelectedPiece_InputMessage">
     <wsdl:part name="parameters" element="tns:UnSelectedPiece" />
   </wsdl:message>
+  <wsdl:message name="IGameManager_CheckReadyToStartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckReadyToStartGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_UnCheckReadyToStartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnCheckReadyToStartGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_InactivateBeginGameControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivateBeginGameControls" />
+  </wsdl:message>
   <wsdl:message name="IGameManager_AddVisualPlayers_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:AddVisualPlayers" />
   </wsdl:message>
@@ -234,6 +243,18 @@
   </wsdl:message>
   <wsdl:message name="IGameManager_UnblockPiece_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UnblockPieceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_EnableStartGameButton_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnableStartGameButton" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_EnableStartGameButton_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnableStartGameButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_DisableStartGameButton_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DisableStartGameButton" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_DisableStartGameButton_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DisableStartGameButtonResponse" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_PlayTurn_InputMessage">
     <wsdl:part name="parameters" element="tns:PlayTurn" />
@@ -448,6 +469,15 @@
     <wsdl:operation name="UnSelectedPiece">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnSelectedPiece" message="tns:IGameManager_UnSelectedPiece_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CheckReadyToStartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/CheckReadyToStartGame" message="tns:IGameManager_CheckReadyToStartGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnCheckReadyToStartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnCheckReadyToStartGame" message="tns:IGameManager_UnCheckReadyToStartGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivateBeginGameControls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/InactivateBeginGameControls" message="tns:IGameManager_InactivateBeginGameControls_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddVisualPlayers">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/AddVisualPlayers" message="tns:IGameManager_AddVisualPlayers_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/AddVisualPlayersResponse" message="tns:IGameManager_AddVisualPlayers_InputCallbackMessage" />
@@ -479,6 +509,14 @@
     <wsdl:operation name="UnblockPiece">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/UnblockPiece" message="tns:IGameManager_UnblockPiece_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnblockPieceResponse" message="tns:IGameManager_UnblockPiece_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableStartGameButton">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/EnableStartGameButton" message="tns:IGameManager_EnableStartGameButton_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/EnableStartGameButtonResponse" message="tns:IGameManager_EnableStartGameButton_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableStartGameButton">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/DisableStartGameButton" message="tns:IGameManager_DisableStartGameButton_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/DisableStartGameButtonResponse" message="tns:IGameManager_DisableStartGameButton_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IGameLogicManager">
@@ -764,6 +802,24 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="CheckReadyToStartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/CheckReadyToStartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UnCheckReadyToStartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/UnCheckReadyToStartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InactivateBeginGameControls">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/InactivateBeginGameControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="AddVisualPlayers">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/AddVisualPlayers" style="document" />
       <wsdl:input>
@@ -829,6 +885,24 @@
     </wsdl:operation>
     <wsdl:operation name="UnblockPiece">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/UnblockPiece" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableStartGameButton">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/EnableStartGameButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableStartGameButton">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/DisableStartGameButton" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
