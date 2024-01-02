@@ -97,6 +97,60 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Se ha enviado correctamente la solicitud de amistad.
+        /// </summary>
+        public static string AlertConfirmationSendFriendRequest_Label {
+            get {
+                return ResourceManager.GetString("AlertConfirmationSendFriendRequest-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ya se ha enviado previamente una solicitud de amistad a este usuario.
+        /// </summary>
+        public static string AlertExistingRequest_Label {
+            get {
+                return ResourceManager.GetString("AlertExistingRequest-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La solicitud de amistad no se pudo enviar. El jugador al cual le mandaste una solicitud, no existe.
+        /// </summary>
+        public static string AlertExistingUser_Label {
+            get {
+                return ResourceManager.GetString("AlertExistingUser-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, ingrese un código de partida válido.
+        /// </summary>
+        public static string AlertInvalidCode_Label {
+            get {
+                return ResourceManager.GetString("AlertInvalidCode-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La solicitud de amistad no se pudo enviar. El jugador al cual le mandaste una solicitud, ya es tu amigo.
+        /// </summary>
+        public static string AlreadyExistingAmigoAlert_Label {
+            get {
+                return ResourceManager.GetString("AlreadyExistingAmigoAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lo siento, la partida ya ha comenzado..
+        /// </summary>
+        public static string AlreadyStartedAlert_Label {
+            get {
+                return ResourceManager.GetString("AlreadyStartedAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Subasta.
         /// </summary>
         public static string Auction_Label {
@@ -183,6 +237,15 @@ namespace UIGameClientTourist.Properties {
         public static string ContinueChoice_button {
             get {
                 return ResourceManager.GetString("ContinueChoice-button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contenido copiado al portapapeles.
+        /// </summary>
+        public static string CopyConfirmationAlert_Label {
+            get {
+                return ResourceManager.GetString("CopyConfirmationAlert-Label", resourceCulture);
             }
         }
         
@@ -313,6 +376,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lo siento, la partida se encuentra completa en este momento..
+        /// </summary>
+        public static string FullLineItemAlert_Label {
+            get {
+                return ResourceManager.GetString("FullLineItemAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Codigo de la partida.
         /// </summary>
         public static string GameCode_Label {
@@ -385,6 +457,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Partida no encontrada. Verifique que el código sea correcto o que la partida exista..
+        /// </summary>
+        public static string ItemNotFoundAlert_Label {
+            get {
+                return ResourceManager.GetString("ItemNotFoundAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Unirse a partida.
         /// </summary>
         public static string JoinGame_Button {
@@ -417,6 +498,24 @@ namespace UIGameClientTourist.Properties {
         public static string Language_Label {
             get {
                 return ResourceManager.GetString("Language-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingles.
+        /// </summary>
+        public static string LanguageEnglish_Label {
+            get {
+                return ResourceManager.GetString("LanguageEnglish-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Español.
+        /// </summary>
+        public static string LanguageSpanish_Label {
+            get {
+                return ResourceManager.GetString("LanguageSpanish-Label", resourceCulture);
             }
         }
         
@@ -709,6 +808,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rechazar.
+        /// </summary>
+        public static string Reject_Button {
+            get {
+                return ResourceManager.GetString("Reject-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No, no quiero comprar esta propiedad.
         /// </summary>
         public static string RejectPurchase_Label {
@@ -831,6 +939,15 @@ namespace UIGameClientTourist.Properties {
         public static string String {
             get {
                 return ResourceManager.GetString("String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Exito.
+        /// </summary>
+        public static string SuccessConfirmationAlert_Label {
+            get {
+                return ResourceManager.GetString("SuccessConfirmationAlert-Label", resourceCulture);
             }
         }
         

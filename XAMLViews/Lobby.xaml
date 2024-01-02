@@ -14,8 +14,8 @@
             <Rectangle HorizontalAlignment="Left" Height="621" Margin="749,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="White"/>
             <Rectangle HorizontalAlignment="Left" Height="59" Margin="771,55,0,0" Stroke="Black" VerticalAlignment="Top" Width="646" Fill="#FFE05E5E"/>
             <Rectangle HorizontalAlignment="Left" Height="80" Margin="169,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="519" Fill="#FF061B30"/>
-            <Label x:Name="lblFriendsList" Content="{x:Static p:Resources.FriendsList_Label}" HorizontalAlignment="Left" Margin="944,52,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="39" FontWeight="Bold"/>
-            <Label x:Name="lblPlayer" Content="{x:Static p:Resources.Player_Label}" HorizontalAlignment="Left" Margin="333,38,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="48" FontWeight="Bold"/>
+            <Label x:Name="lblFriendsList" Content="{x:Static p:Resources.FriendsList_Label}" HorizontalAlignment="Left" Margin="771,52,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFF4F4F4" FontSize="39" FontWeight="Bold" Width="646"/>
+            <Label x:Name="lblPlayer" Content="{x:Static p:Resources.Player_Label}" HorizontalAlignment="Left" Margin="169,38,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF4F4F4" FontSize="48" FontWeight="Bold" Width="519"/>
             <Rectangle x:Name="rectBackgroundStartingCode" HorizontalAlignment="Left" Height="82" Margin="749,672,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" RenderTransformOrigin="-0.256,0.11" Fill="#FF6E3AD2"/>
             <Border x:Name="brdClockPiece" MouseLeftButtonDown="PieceSelected">
                 <Grid>
@@ -53,9 +53,9 @@
                     <Image x:Name="imgPiece6" HorizontalAlignment="Left" Height="72" Margin="536,428,0,0" VerticalAlignment="Top" Width="82" Source="..\GameResources\Pictures\brdTVPiece.png" RenderTransformOrigin="0.634,0.495"/>
                 </Grid>
             </Border>
-            <Label x:Name="lblSelectPiece" Content="{x:Static p:Resources.ChosePlayer_Label}" HorizontalAlignment="Left" Margin="319,176,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="30" FontWeight="Bold" FontFamily="Bahnschrift"/>
+            <Label x:Name="lblSelectPiece" Content="{x:Static p:Resources.ChosePlayer_Label}" HorizontalAlignment="Left" Margin="169,170,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="30" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" Width="519"/>
             <Button x:Name="butGoToLobbyWindow" Content="{x:Static p:Resources.ContinueChoice_button}" HorizontalAlignment="Left" Margin="290,617,0,0" VerticalAlignment="Top" Height="62" Width="272" Background="#FFDB9F1D" Foreground="White" FontSize="24" BorderThickness="3"  FontWeight="Bold" BorderBrush="#FF8C640D" Click="NavigateToLobbyWindow"/>
-            <Label x:Name ="lblshowCodeGame" Content="" Margin="1074,688,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="30" BorderThickness="3"  FontWeight="Bold" />
+            <Label x:Name ="lblshowCodeGame" Content="" Margin="1074,688,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="30" BorderThickness="3"  FontWeight="Bold" Width="278" RenderTransformOrigin="0.041,0.507" />
             <Label x:Name="lblCodeGame" Content="{x:Static p:Resources.GameCode_Label}" HorizontalAlignment="Left" Margin="763,688,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="30" FontWeight="Bold"/>
             <Rectangle HorizontalAlignment="Left" Height="34" Margin="49,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" Fill="White"/>
             <Image x:Name="imgBackButton" HorizontalAlignment="Left" Height="78" Margin="28,39,0,0" VerticalAlignment="Top" Width="84" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="GoMainMenuGameWindow" />
@@ -72,7 +72,7 @@
             <Rectangle x:Name="rectBackgroundUserName" HorizontalAlignment="Left" Height="275" Margin="868,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="482" Fill="#FF12273C"/>
             <Rectangle x:Name="rectBackgroundChat" HorizontalAlignment="Left" Height="320" Margin="241,362,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="1109" Fill="White"/>
             <Rectangle HorizontalAlignment="Left" Height="48" Margin="255,83,0,0" Stroke="#FF39596C" VerticalAlignment="Top" Width="573" Fill="#FF39596C"/>
-            <Label x:Name="lblTitlePlayersJoinedGame" Content="{x:Static p:Resources.PlayersUnitedMatch_Label}" HorizontalAlignment="Left" Margin="336,86,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
+            <Label x:Name="lblTitlePlayersJoinedGame" Content="{x:Static p:Resources.PlayersUnitedMatch_Label}" HorizontalAlignment="Left" Margin="255,86,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="White" FontSize="28" FontWeight="Bold" FontFamily="Arial Rounded MT Bold" Width="573"/>
             <Rectangle HorizontalAlignment="Left" Height="78" Margin="868,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="481" Fill="#FF061B30"/>
             <Rectangle HorizontalAlignment="Left" Height="48" Margin="256,378,0,0" Stroke="#FFCEB640" VerticalAlignment="Top" Width="1078" Fill="#FFCEB640"/>
             <Label x:Name="lblTitleChat" Content="Chat" HorizontalAlignment="Left" Margin="766,381,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
@@ -83,14 +83,14 @@
             <Image x:Name="imgSendMessageButton" HorizontalAlignment="Left" Height="46" Margin="1275,620,0,0" VerticalAlignment="Top" Width="53" Source="..\GameResources\Pictures\2762408.png" MouseLeftButtonDown="SendMessage"/>
             <Ellipse x:Name="rectBackgroundPlayerCard" HorizontalAlignment="Left" Height="118" Margin="907,182,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E"/>
             <Image x:Name="imgPlayerCard" HorizontalAlignment="Left" Height="78" Margin="928,202,0,0" VerticalAlignment="Top" Width="78" Stretch="Fill"/>
-            <Label x:Name="lblTitleUsername" Content="UserName" HorizontalAlignment="Left" Margin="1053,215,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFFFFEFE"/>
+            <Label x:Name="lblTitleUsername" Content="UserName" HorizontalAlignment="Left" Margin="1033,215,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFFFFEFE" Width="316"/>
             <ScrollViewer Margin="256,136,767,518" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <WrapPanel x:Name="wpPlayers" Orientation="Vertical"/>
             </ScrollViewer>
             <ScrollViewer Margin="261,431,266,233" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <WrapPanel x:Name ="wpChatMessages" Orientation="Vertical" Width="1065"/>
             </ScrollViewer>
-            <Button x:Name ="butStartGame" Content="{x:Static p:Resources.Play_Button}" HorizontalAlignment="Left" Margin="1124,718,0,0" VerticalAlignment="Top" Height="52" Width="226" Background="#FF6C25D2" Foreground="White" FontSize="22" FontWeight="Bold" Click="GoGameWindow"/>
+            <Button x:Name ="butStartGame" Content="{x:Static p:Resources.Play_Button}" HorizontalAlignment="Left" Margin="1124,718,0,0" VerticalAlignment="Top" Height="52" Width="226" Background="#FF6C25D2" Foreground="White" FontSize="22" FontWeight="Bold" Click="GoGameWindow" IsEnabled="True"/>
         </Grid>
     </Grid>
 </Window>

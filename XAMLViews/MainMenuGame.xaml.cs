@@ -25,6 +25,7 @@ namespace UIGameClientTourist.XAMLViews
         private int idPlayer;
         private TranslateTransform butProfileTranslateTransform;
         private TranslateTransform butLogOutTranslateTransform;
+
         Service.FriendsClient SesionContext;
         private bool areButtonsVisible = false;
 
@@ -35,6 +36,8 @@ namespace UIGameClientTourist.XAMLViews
             InitializeAnimation();
             InstanceContext context = new InstanceContext(this);
             SesionContext = new Service.FriendsClient(context);
+            Service.PlayerClient playerClient = new Service.PlayerClient();
+            lblPlayerName.Content = playerClient.GetPlayerName(idPlayer);
             SesionContext.SavePlayerSession(idPlayer);
         }
 
@@ -62,7 +65,7 @@ namespace UIGameClientTourist.XAMLViews
         {
             DoubleAnimation moveButProfile = new DoubleAnimation(0, 66, TimeSpan.FromSeconds(0.5));
             butProfileTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButProfile);
-            DoubleAnimation moveButLogOut = new DoubleAnimation(0, 117.5, TimeSpan.FromSeconds(0.5));
+            DoubleAnimation moveButLogOut = new DoubleAnimation(0, 115, TimeSpan.FromSeconds(0.5));
             butLogOutTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButLogOut);
             areButtonsVisible = true;
         }

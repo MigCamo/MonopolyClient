@@ -14,7 +14,7 @@ namespace UIGameClientTourist
         {
             base.OnStartup(e);
             SetAppCulture("en-US");
-            MusicService.Instance.PlayMusic();
+            //MusicService.Instance.PlayMusic();
         }
 
         public static void SetAppCulture(string cultureCode)

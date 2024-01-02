@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
 using UIGameClientTourist.XAMLViews;
@@ -17,41 +18,47 @@ namespace UIGameClientTourist
 
         private void LogIn(object sender, RoutedEventArgs e)
         {
-            string message = "";
             try
             {
-                string password = new System.Net.NetworkCredential(string.Empty, pwdPassword.Password).Password;
+                if (ValidateInput())
+                {
+                    string userName = txtUserName.Text;
+                    string password = pwdPassword.Password;
 
-                if (!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(password))
-                {
-                    var newPlayer = new Service.PlayerSet { Nickname = txtUserName.Text, Password = pwdPassword.Password };
-                    Service.PlayerClient playerClient = new Service.PlayerClient();
-                    int playerID = playerClient.PlayerSearch(newPlayer);
-                    if (playerID != 0)
+                    using (var playerClient = new Service.PlayerClient())
                     {
-                        GoToMenuFromLogin(playerID);
+                        var newPlayer = new Service.PlayerSet { Nickname = userName, Password = password };
+                        int playerID = playerClient.PlayerSearch(newPlayer);
+                        if (playerID != 0)
+                        {
+                            GoToMenuFromLogin(playerID);
+                        }
+                        else
+                        {
+                            InvalidCampsAlert();
+                            MessageBox.Show("Credenciales incorrectas. Inténtelo de nuevo.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
                     }
-                    else
-                    {
-                        InvalidCampsAlert();
-                        message = "Credenciales incorrectas. Inténtelo de nuevo.";
-                    }
-                }
-                else
-                {
-                    InvalidCampsAlert();
-                    message = "Campos vacios, llene por favor complete todo los campos";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error al iniciar sesión: {ex.Message}");
-                message = "Se produjo un error al iniciar sesión. Por favor, inténtelo de nuevo.";
+                MessageBox.Show("Se produjo un error al iniciar sesión. Por favor, inténtelo de nuevo.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            MessageBox.Show(message, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
-            
         }
 
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrEmpty(txtUserName.Text) || string.IsNullOrEmpty(pwdPassword.Password))
+            {
+                InvalidCampsAlert();
+                MessageBox.Show("Campos vacíos. Por favor, complete todos los campos.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            return true;
+        }
 
         private void GoToMenuFromLogin(int playerID)
         {
@@ -65,7 +72,6 @@ namespace UIGameClientTourist
             RegisterPlayers registerPlayersWindow = new RegisterPlayers();
             this.Close();
             registerPlayersWindow.Show();
-            
         }
 
         private void InvalidCampsAlert()
@@ -78,7 +84,8 @@ namespace UIGameClientTourist
 
         private void GoToJoinGameFromLogin(object sender, RoutedEventArgs e)
         {
-            JoinGame mainMenuGameWindow = new JoinGame(0);
+            Random random = new Random();
+            JoinGame mainMenuGameWindow = new JoinGame(random.Next(1, 1000000000), true);
             this.Close();
             mainMenuGameWindow.Show();
         }
