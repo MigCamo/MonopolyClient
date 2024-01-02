@@ -60,6 +60,18 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IPlayAsGuestManager_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -93,6 +105,12 @@
   </wsdl:message>
   <wsdl:message name="IPlayer_GetGame_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_GetMyPlayersName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyPlayersName" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_GetMyPlayersName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyPlayersNameResponse" />
   </wsdl:message>
   <wsdl:message name="IFriends_SavePlayerSession_InputMessage">
     <wsdl:part name="parameters" element="tns:SavePlayerSession" />
@@ -142,6 +160,12 @@
   <wsdl:message name="IGameManager_AddPlayerToGame_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddPlayerToGameResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameManager_AddGuestToGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGuestToGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_AddGuestToGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGuestToGameResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameManager_UpdatePlayers_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePlayers" />
   </wsdl:message>
@@ -162,6 +186,15 @@
   </wsdl:message>
   <wsdl:message name="IGameManager_UnSelectedPiece_InputMessage">
     <wsdl:part name="parameters" element="tns:UnSelectedPiece" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_CheckReadyToStartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckReadyToStartGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_UnCheckReadyToStartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnCheckReadyToStartGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_InactivateBeginGameControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivateBeginGameControls" />
   </wsdl:message>
   <wsdl:message name="IGameManager_AddVisualPlayers_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:AddVisualPlayers" />
@@ -211,6 +244,18 @@
   <wsdl:message name="IGameManager_UnblockPiece_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UnblockPieceResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameManager_EnableStartGameButton_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnableStartGameButton" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_EnableStartGameButton_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnableStartGameButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_DisableStartGameButton_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DisableStartGameButton" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_DisableStartGameButton_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DisableStartGameButtonResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameLogicManager_PlayTurn_InputMessage">
     <wsdl:part name="parameters" element="tns:PlayTurn" />
   </wsdl:message>
@@ -231,6 +276,12 @@
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_UpdateQueu_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateQueu" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GetActionCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionCard" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_MovePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:MovePlayer" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_PlayDie_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayDie" />
@@ -280,6 +331,30 @@
   <wsdl:message name="IGameLogicManager_LoadFriends_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:LoadFriendsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ShowEvent_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowEvent" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ShowEvent_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GoToJail_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GoToJail" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GoToJail_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GoToJailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_PayTaxes_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PayTaxes" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_PayTaxes_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PayTaxesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GetPay_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetPay" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GetPay_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetPayResponse" />
+  </wsdl:message>
   <wsdl:message name="IFriendList_GetFriendRequests_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendRequests" />
   </wsdl:message>
@@ -291,6 +366,24 @@
   </wsdl:message>
   <wsdl:message name="IFriendList_GetFriends_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_IsGameFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsGameFull" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_IsGameFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsGameFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_SearchGameByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchGameByCode" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_SearchGameByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchGameByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_IsGameOngoing_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsGameOngoing" />
+  </wsdl:message>
+  <wsdl:message name="IPlayAsGuestManager_IsGameOngoing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsGameOngoingResponse" />
   </wsdl:message>
   <wsdl:portType name="IPlayer">
     <wsdl:operation name="RegisterPlayer">
@@ -308,6 +401,10 @@
     <wsdl:operation name="GetGame">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/GetGame" message="tns:IPlayer_GetGame_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/GetGameResponse" message="tns:IPlayer_GetGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPlayersName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/GetMyPlayersName" message="tns:IPlayer_GetMyPlayersName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/GetMyPlayersNameResponse" message="tns:IPlayer_GetMyPlayersName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IFriends">
@@ -347,6 +444,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/AddPlayerToGame" message="tns:IGameManager_AddPlayerToGame_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/AddPlayerToGameResponse" message="tns:IGameManager_AddPlayerToGame_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddGuestToGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/AddGuestToGame" message="tns:IGameManager_AddGuestToGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/AddGuestToGameResponse" message="tns:IGameManager_AddGuestToGame_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UpdatePlayers">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UpdatePlayers" message="tns:IGameManager_UpdatePlayers_InputMessage" />
     </wsdl:operation>
@@ -367,6 +468,15 @@
     </wsdl:operation>
     <wsdl:operation name="UnSelectedPiece">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnSelectedPiece" message="tns:IGameManager_UnSelectedPiece_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckReadyToStartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/CheckReadyToStartGame" message="tns:IGameManager_CheckReadyToStartGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnCheckReadyToStartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnCheckReadyToStartGame" message="tns:IGameManager_UnCheckReadyToStartGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivateBeginGameControls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/InactivateBeginGameControls" message="tns:IGameManager_InactivateBeginGameControls_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddVisualPlayers">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/AddVisualPlayers" message="tns:IGameManager_AddVisualPlayers_OutputCallbackMessage" />
@@ -400,6 +510,14 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/UnblockPiece" message="tns:IGameManager_UnblockPiece_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UnblockPieceResponse" message="tns:IGameManager_UnblockPiece_InputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="EnableStartGameButton">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/EnableStartGameButton" message="tns:IGameManager_EnableStartGameButton_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/EnableStartGameButtonResponse" message="tns:IGameManager_EnableStartGameButton_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableStartGameButton">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/DisableStartGameButton" message="tns:IGameManager_DisableStartGameButton_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/DisableStartGameButtonResponse" message="tns:IGameManager_DisableStartGameButton_InputCallbackMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IGameLogicManager">
     <wsdl:operation name="PlayTurn">
@@ -422,6 +540,12 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateQueu">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateQueu" message="tns:IGameLogicManager_UpdateQueu_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActionCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GetActionCard" message="tns:IGameLogicManager_GetActionCard_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MovePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/MovePlayer" message="tns:IGameLogicManager_MovePlayer_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PlayDie">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PlayDie" message="tns:IGameLogicManager_PlayDie_OutputCallbackMessage" />
@@ -455,6 +579,22 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/LoadFriends" message="tns:IGameLogicManager_LoadFriends_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/LoadFriendsResponse" message="tns:IGameLogicManager_LoadFriends_InputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ShowEvent">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/ShowEvent" message="tns:IGameLogicManager_ShowEvent_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ShowEventResponse" message="tns:IGameLogicManager_ShowEvent_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GoToJail">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJail" message="tns:IGameLogicManager_GoToJail_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJailResponse" message="tns:IGameLogicManager_GoToJail_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PayTaxes">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PayTaxes" message="tns:IGameLogicManager_PayTaxes_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PayTaxesResponse" message="tns:IGameLogicManager_PayTaxes_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPay">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GetPay" message="tns:IGameLogicManager_GetPay_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GetPayResponse" message="tns:IGameLogicManager_GetPay_InputCallbackMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IFriendList">
     <wsdl:operation name="GetFriendRequests">
@@ -464,6 +604,20 @@
     <wsdl:operation name="GetFriends">
       <wsdl:input wsaw:Action="http://tempuri.org/IFriendList/GetFriends" message="tns:IFriendList_GetFriends_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFriendList/GetFriendsResponse" message="tns:IFriendList_GetFriends_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPlayAsGuestManager">
+    <wsdl:operation name="IsGameFull">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayAsGuestManager/IsGameFull" message="tns:IPlayAsGuestManager_IsGameFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayAsGuestManager/IsGameFullResponse" message="tns:IPlayAsGuestManager_IsGameFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGameByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayAsGuestManager/SearchGameByCode" message="tns:IPlayAsGuestManager_SearchGameByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayAsGuestManager/SearchGameByCodeResponse" message="tns:IPlayAsGuestManager_SearchGameByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGameOngoing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayAsGuestManager/IsGameOngoing" message="tns:IPlayAsGuestManager_IsGameOngoing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayAsGuestManager/IsGameOngoingResponse" message="tns:IPlayAsGuestManager_IsGameOngoing_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IPlayer" type="tns:IPlayer">
@@ -498,6 +652,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetGame">
       <soap12:operation soapAction="http://tempuri.org/IPlayer/GetGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPlayersName">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/GetMyPlayersName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -588,6 +751,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddGuestToGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/AddGuestToGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdatePlayers">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/UpdatePlayers" style="document" />
       <wsdl:input>
@@ -626,6 +798,24 @@
     </wsdl:operation>
     <wsdl:operation name="UnSelectedPiece">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/UnSelectedPiece" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CheckReadyToStartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/CheckReadyToStartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UnCheckReadyToStartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/UnCheckReadyToStartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InactivateBeginGameControls">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/InactivateBeginGameControls" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -702,6 +892,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnableStartGameButton">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/EnableStartGameButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableStartGameButton">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/DisableStartGameButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IGameLogicManager" type="tns:IGameLogicManager">
     <wsp:PolicyReference URI="#NetTcpBinding_IGameLogicManager_policy" />
@@ -744,6 +952,18 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateQueu">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdateQueu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionCard">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GetActionCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MovePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/MovePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -820,6 +1040,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ShowEvent">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ShowEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GoToJail">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GoToJail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayTaxes">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/PayTaxes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPay">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GetPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IFriendList" type="tns:IFriendList">
     <wsp:PolicyReference URI="#NetTcpBinding_IFriendList_policy" />
@@ -835,6 +1091,37 @@
     </wsdl:operation>
     <wsdl:operation name="GetFriends">
       <soap12:operation soapAction="http://tempuri.org/IFriendList/GetFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IPlayAsGuestManager" type="tns:IPlayAsGuestManager">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPlayAsGuestManager_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="IsGameFull">
+      <soap12:operation soapAction="http://tempuri.org/IPlayAsGuestManager/IsGameFull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGameByCode">
+      <soap12:operation soapAction="http://tempuri.org/IPlayAsGuestManager/SearchGameByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGameOngoing">
+      <soap12:operation soapAction="http://tempuri.org/IPlayAsGuestManager/IsGameOngoing" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -872,6 +1159,12 @@
       <soap12:address location="net.tcp://localhost:8080/FriendService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8080/FriendService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IPlayAsGuestManager" binding="tns:NetTcpBinding_IPlayAsGuestManager">
+      <soap12:address location="net.tcp://localhost:8080/PlayAsGuestService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8080/PlayAsGuestService</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

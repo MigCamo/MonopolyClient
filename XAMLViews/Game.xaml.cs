@@ -43,10 +43,6 @@ namespace UIGameClientTourist.XAMLViews
             InitializeUsers();
             InitializeBoardPieces();
             InitializeComboBoxes();
-            if (game.Players.Peek().IdPlayer != player.IdPlayer)
-            {
-                butRollingDice.IsEnabled = false;
-            }
         }
 
         private void InitializeUsers()
@@ -55,7 +51,8 @@ namespace UIGameClientTourist.XAMLViews
             lblPlayerTurn.Content = game.Players.Peek().Name;
             lblPlayerTurn.HorizontalContentAlignment = HorizontalAlignment.Center;
             lblPlayerTurn.VerticalContentAlignment = VerticalAlignment.Center;
-            lblUserName.Content = player.Name;
+            Service.PlayerClient playerClient = new Service.PlayerClient();
+            lblUserName.Content = playerClient.GetMyPlayersName(player.IdPlayer, game.IdGame);
             lblPlayerMoney.Content = $" M {player.Money}.00 ";
             Myproperties = new List<Service.Property>();
         }
@@ -183,8 +180,8 @@ namespace UIGameClientTourist.XAMLViews
 
         void IGameLogicManagerCallback.PlayDie(int firstDieValue, int SecondDieValue)
         {
-            string imagePathDieOne = $"..\\ImageResourceManager\\Side_{firstDieValue}.png";
-            string imagePathDieSecond = $"..\\ImageResourceManager\\Side_{SecondDieValue}.png";
+            string imagePathDieOne = $"..\\GameResources\\Pictures\\Side_{firstDieValue}.png";
+            string imagePathDieSecond = $"..\\GameResources\\Pictures\\Side_{SecondDieValue}.png";
             UpdateDieFace(imagePathDieOne, imgDieOne);
             UpdateDieFace(imagePathDieSecond, imgDieSecond);
         }
@@ -386,11 +383,13 @@ namespace UIGameClientTourist.XAMLViews
             {
                 grdPrisonSquare.Visibility = Visibility.Visible;
                 butCloseEvento.Visibility = Visibility.Visible;
+                player.Jail = true;
             }
             else if (property.Name == "Evento")
             {
                 grdEventSquare.Visibility = Visibility.Visible;
                 butCloseEvento.Visibility = Visibility.Visible;
+                managerClient.GetActionCard(game.IdGame);
             }
             else
             {
@@ -464,7 +463,7 @@ namespace UIGameClientTourist.XAMLViews
         async Task ColdDownBid()
         {
             await Task.Delay(5000);
-            await Console.Out.WriteLineAsync("Pasaron 3 segunfos");
+            await Console.Out.WriteLineAsync("Pasaron 3 segundos");
             btnBid.IsEnabled = true;
         }
 
@@ -494,7 +493,16 @@ namespace UIGameClientTourist.XAMLViews
             UpdateTurnVisual();
             if (game.Players.Peek().IdPlayer == player.IdPlayer)
             {
-                this.butRollingDice.IsEnabled = true;
+                if (player.Jail == false)
+                {
+                    this.butRollingDice.IsEnabled = true;
+                }
+                else
+                {
+                    player.Jail = false;
+                    managerClient.UpdateQueu(game.IdGame);
+                }
+
             }
         }
 
@@ -575,6 +583,37 @@ namespace UIGameClientTourist.XAMLViews
 
             scrollViewer.Content = stackPanelContainer;
             PlayersInGame.Children.Add(scrollViewer);
+        }
+
+        public void ShowEvent(int action)
+        {
+            Console.WriteLine(action);
+        }
+
+        public void GoToJail()
+        {
+            int[] targetPositions = { 10, 20, 30 };
+            int closestPosition = targetPositions[0];
+            foreach (int targetPosition in targetPositions)
+            {
+                if (Math.Abs(targetPosition - player.Position) < Math.Abs(closestPosition - player.Position))
+                {
+                    closestPosition = targetPosition;
+                }
+            }
+            managerClient.MovePlayer(game.IdGame, (-1 * player.Position - closestPosition));
+        }
+
+        public void PayTaxes(int taxes)
+        {
+            player.Money -= taxes;
+            lblPlayerMoney.Content = $" M {player.Money}.00 ";
+        }
+
+        public void GetPay(int money)
+        {
+            player.Money += money;
+            lblPlayerMoney.Content = $" M {player.Money}.00 ";
         }
     }
 }
