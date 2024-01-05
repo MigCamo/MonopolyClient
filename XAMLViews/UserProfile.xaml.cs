@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using UIGameClientTourist.GameLogic;
 
 namespace UIGameClientTourist.XAMLViews
@@ -39,7 +30,7 @@ namespace UIGameClientTourist.XAMLViews
             selectedBorder.BorderBrush = Brushes.Green;
             Image selectedImage = (Image)selectedBorder.Child;
             string selectedImagePath = selectedImage.Source.ToString();
-            imgUserProfile.Source = ImageManager.GetSourceImage(selectedImagePath) ;
+            imgUserProfile.Source = ImageManager.GetSourceImage(selectedImagePath);
         }
     }
 }

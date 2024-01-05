@@ -26,7 +26,7 @@
         <Label Content="{x:Static p:Resources.MusicTitle_Label}" HorizontalAlignment="Left" Margin="524,359,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.55,-0.081" Height="46" Width="162"/>
 
         <Button x:Name="butAccept" Content="{x:Static p:Resources.OK_Button}" HorizontalAlignment="Center" Margin="0,642,0,0" VerticalAlignment="Top" Height="57" Width="248" FontSize="24" FontWeight="Bold" Background="#FF6925FB" Foreground="White" Click="NavigateToMainMenuGame" />
-        <Slider x:Name="volumeSlider" HorizontalAlignment="Center" Margin="0,534,0,0" VerticalAlignment="Top" Width="488" Height="36" ValueChanged="volumeSlider_ValueChanged"/>
+        <Slider x:Name="volumeSlider" HorizontalAlignment="Center" Margin="0,534,0,0" VerticalAlignment="Top" Width="488" Height="36" ValueChanged="VolumeSliderValueChanged"/>
         <Label Content="{x:Static p:Resources.Music_Label}" HorizontalAlignment="Left" Margin="554,455,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.55,-0.081" Height="46" Width="177"/>
         <Rectangle HorizontalAlignment="Center" Height="135" Margin="0,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="742" Fill="#FF061B30" RenderTransformOrigin="0.618,0.576" RadiusX="23" RadiusY="23"/>
         <Label Content="Configuraciones" 
@@ -42,7 +42,7 @@
            Width="366"/>
         <GroupBox HorizontalAlignment="Left" Margin="772,355,0,0" VerticalAlignment="Top" BorderBrush="#FF061B30" Width="255" Height="54" BorderThickness="0">
             <Grid>
-                <RadioButton x:Name="rbutPlayMusic" Content="{x:Static p:Resources.Yes_Button}" Foreground="#FFFFEDED" Margin="31,17,172,16" RenderTransformOrigin="0.5,0.5" Checked="rbutPlayMusic_Checked_1">
+                <RadioButton x:Name="rbutPlayMusic" Content="{x:Static p:Resources.Yes_Button}" Foreground="#FFFFEDED" Margin="31,17,172,16" RenderTransformOrigin="0.5,0.5" Checked="ButPlayMusic">
                     <RadioButton.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="2" ScaleY="2"/>
@@ -52,7 +52,7 @@
                         </TransformGroup>
                     </RadioButton.RenderTransform>
                 </RadioButton>
-                <RadioButton x:Name="rbutPauseMusic" Content="{x:Static p:Resources.No_Button}" Foreground="#FFFFEDED" Margin="140,19,67,10" RenderTransformOrigin="0.5,0.5" Checked="rbutPauseMusic_Checked">
+                <RadioButton x:Name="rbutPauseMusic" Content="{x:Static p:Resources.No_Button}" Foreground="#FFFFEDED" Margin="140,19,67,10" RenderTransformOrigin="0.5,0.5" Checked="ButPauseMusic">
                     <RadioButton.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="2" ScaleY="2"/>

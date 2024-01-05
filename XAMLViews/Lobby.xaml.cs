@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using UIGameClientTourist.GameLogic;
 using UIGameClientTourist.Service;
@@ -32,7 +26,7 @@ namespace UIGameClientTourist.XAMLViews
         private Service.Piece piecePlayer = new Service.Piece();
         private Dictionary<string, (Border, Ellipse)> pieceMappings;
         private bool isInvited = false;
-        
+
         public Lobby(int idGame, int idPlayer)
         {
             this.IdPlayer = idPlayer;
@@ -228,7 +222,7 @@ namespace UIGameClientTourist.XAMLViews
             Player player = GetPlayerInfo(IdPlayer);
             game.IdGame = GenerateGameCode();
             game.Slot = 3;
-            game.Status = Service.Game.Game_Situation.ByStart;
+            game.Status = Service.Game.GameSituation.ByStart;
             GameManagerClient.AddGame(game);
             GameManagerClient.AddPlayerToGame(game.IdGame, player);
             GameManagerClient.UpdatePlayers(this.game.IdGame);
@@ -246,29 +240,31 @@ namespace UIGameClientTourist.XAMLViews
                 Player player = GetPlayerInfo(IdPlayer);
                 GameManagerClient.AddPlayerToGame(idGame, player);
             }
-            
+
             GameManagerClient.UpdatePlayers(this.game.IdGame);
         }
 
         private Service.Player GetPlayerInfo(int idPlayer)
         {
             Service.PlayerClient playerClient = new Service.PlayerClient();
-            Service.Player player = new Service.Player();
-            player.IdPlayer = idPlayer;
-            player.Name = playerClient.GetPlayerName(idPlayer);
-            player.properties = null;
-            player.Position = -1;
-            player.Jail = false;
-            player.Loser = false;
-            player.Money = 10000;
-            player.Token = piecePlayer;
+            Service.Player player = new Service.Player
+            {
+                IdPlayer = idPlayer,
+                Name = playerClient.GetPlayerName(idPlayer),
+                properties = null,
+                Position = 0,
+                Jail = false,
+                Loser = false,
+                Money = 1500,
+                Token = piecePlayer
+            };
             return player;
         }
 
         public void AddVisualPlayers()
         {
             wpPlayers.Children.Clear();
-            foreach (var player in game.PlayersInGame)
+            foreach (var player in game.Players)
             {
                 Border brdBackground = new Border
                 {
