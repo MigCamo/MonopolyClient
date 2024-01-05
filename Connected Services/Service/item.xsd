@@ -400,7 +400,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q19:Property" />
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q20:Player" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="buyer" nillable="true" type="q20:Player" />
         <xs:element minOccurs="0" name="idGame" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -443,14 +443,42 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idGame" type="xs:int" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q23:Player" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="card" nillable="true" type="q24:Card" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="MovePlayer">
+  <xs:element name="JailPlayer">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idGame" type="xs:int" />
-        <xs:element minOccurs="0" name="spaces" type="xs:int" />
+        <xs:element minOccurs="0" name="idPlayer" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizePropertyMortgage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q25:Property" />
+        <xs:element minOccurs="0" name="idPlayer" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeclareLosingPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="loserPlayer" nillable="true" type="q26:Player" />
+        <xs:element minOccurs="0" name="idGame" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PayPropertyMortgage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="game" nillable="true" type="q27:Game" />
+        <xs:element minOccurs="0" name="idPlayer" type="xs:int" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="mortgagedProperty" nillable="true" type="q28:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -470,8 +498,8 @@
   <xs:element name="MovePlayerPieceOnBoard">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q23:Player" />
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q24:Property" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q29:Player" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q30:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -483,7 +511,7 @@
   <xs:element name="ShowCard">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q25:Property" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q31:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -495,7 +523,7 @@
   <xs:element name="OpenAuctionWindow">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q26:Property" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q32:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -520,7 +548,7 @@
   <xs:element name="EndAuction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q27:Property" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q33:Property" />
         <xs:element minOccurs="0" name="winner" type="xs:int" />
         <xs:element minOccurs="0" name="winnerBid" type="xs:int" />
       </xs:sequence>
@@ -534,7 +562,7 @@
   <xs:element name="UpdateTurns">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="turns" nillable="true" type="q28:QueueOfPlayerTKMUywDq" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="turns" nillable="true" type="q34:QueueOfPlayerTKMUywDq" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -546,7 +574,7 @@
   <xs:element name="LoadFriends">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="friends" nillable="true" type="q29:QueueOfPlayerTKMUywDq" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="friends" nillable="true" type="q35:QueueOfPlayerTKMUywDq" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -577,26 +605,62 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="PayTaxes">
+  <xs:element name="NotifyPlayerOfEvent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="taxes" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="PayTaxesResponse">
+  <xs:element name="NotifyPlayerOfEventResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPay">
+  <xs:element name="UpgradePlayerMoney">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="money" type="xs:int" />
+        <xs:element minOccurs="0" name="money" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPayResponse">
+  <xs:element name="UpgradePlayerMoneyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveGamePiece">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="player" nillable="true" type="q36:Player" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveGamePieceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWinner" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndGameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Contracts.IGameManager" minOccurs="0" name="property" nillable="true" type="q37:Property" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyStatusResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -611,7 +675,7 @@
   <xs:element name="GetFriendRequestsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Contracts.IDataBase" minOccurs="0" name="GetFriendRequestsResult" nillable="true" type="q30:ArrayOfFriendRequestData" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Contracts.IDataBase" minOccurs="0" name="GetFriendRequestsResult" nillable="true" type="q38:ArrayOfFriendRequestData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -625,7 +689,7 @@
   <xs:element name="GetFriendsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Contracts.IDataBase" minOccurs="0" name="GetFriendsResult" nillable="true" type="q31:ArrayOfFriendList" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Contracts.IDataBase" minOccurs="0" name="GetFriendsResult" nillable="true" type="q39:ArrayOfFriendList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

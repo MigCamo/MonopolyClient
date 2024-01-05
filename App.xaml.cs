@@ -1,7 +1,6 @@
-﻿using System.Globalization;
-using System;
+﻿using System;
+using System.Globalization;
 using System.Windows;
-using UIGameClientTourist.GameLogic;
 
 namespace UIGameClientTourist
 {

@@ -413,7 +413,7 @@ namespace UIGameClientTourist.Service {
         private int SlotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UIGameClientTourist.Service.Game.Game_Situation StatusField;
+        private UIGameClientTourist.Service.Game.GameSituation StatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -491,7 +491,7 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UIGameClientTourist.Service.Game.Game_Situation Status {
+        public UIGameClientTourist.Service.Game.GameSituation Status {
             get {
                 return this.StatusField;
             }
@@ -513,8 +513,8 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Game.Game_Situation", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
-        public enum Game_Situation : int {
+        [System.Runtime.Serialization.DataContractAttribute(Name="Game.GameSituation", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
+        public enum GameSituation : int {
             
             [System.Runtime.Serialization.EnumMemberAttribute()]
             ByStart = 0,
@@ -765,7 +765,10 @@ namespace UIGameClientTourist.Service {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
     [System.SerializableAttribute()]
-    public partial class Property : UIGameClientTourist.Service.Square {
+    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long BuyingCostField;
@@ -774,7 +777,13 @@ namespace UIGameClientTourist.Service {
         private string ColorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long DefinitiveCostField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ImageSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsMortgagedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -792,13 +801,23 @@ namespace UIGameClientTourist.Service {
         private int PosicitionYField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UIGameClientTourist.Service.Property.Property_Situation SituationField;
+        private UIGameClientTourist.Service.Property.PropertySituation SituationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long TaxesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UIGameClientTourist.Service.Property.Type_Property TypeField;
+        private UIGameClientTourist.Service.Property.TypeProperty TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long BuyingCost {
@@ -827,6 +846,19 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public long DefinitiveCost {
+            get {
+                return this.DefinitiveCostField;
+            }
+            set {
+                if ((this.DefinitiveCostField.Equals(value) != true)) {
+                    this.DefinitiveCostField = value;
+                    this.RaisePropertyChanged("DefinitiveCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ImageSource {
             get {
                 return this.ImageSourceField;
@@ -835,6 +867,19 @@ namespace UIGameClientTourist.Service {
                 if ((object.ReferenceEquals(this.ImageSourceField, value) != true)) {
                     this.ImageSourceField = value;
                     this.RaisePropertyChanged("ImageSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsMortgaged {
+            get {
+                return this.IsMortgagedField;
+            }
+            set {
+                if ((this.IsMortgagedField.Equals(value) != true)) {
+                    this.IsMortgagedField = value;
+                    this.RaisePropertyChanged("IsMortgaged");
                 }
             }
         }
@@ -905,7 +950,7 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UIGameClientTourist.Service.Property.Property_Situation Situation {
+        public UIGameClientTourist.Service.Property.PropertySituation Situation {
             get {
                 return this.SituationField;
             }
@@ -931,7 +976,7 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UIGameClientTourist.Service.Property.Type_Property Type {
+        public UIGameClientTourist.Service.Property.TypeProperty Type {
             get {
                 return this.TypeField;
             }
@@ -943,9 +988,18 @@ namespace UIGameClientTourist.Service {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Property.Property_Situation", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
-        public enum Property_Situation : int {
+        [System.Runtime.Serialization.DataContractAttribute(Name="Property.PropertySituation", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
+        public enum PropertySituation : int {
             
             [System.Runtime.Serialization.EnumMemberAttribute()]
             Free = 0,
@@ -961,8 +1015,8 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="Property.Type_Property", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
-        public enum Type_Property : int {
+        [System.Runtime.Serialization.DataContractAttribute(Name="Property.TypeProperty", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
+        public enum TypeProperty : int {
             
             [System.Runtime.Serialization.EnumMemberAttribute()]
             Jail = 0,
@@ -977,19 +1031,18 @@ namespace UIGameClientTourist.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Square", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Card", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(UIGameClientTourist.Service.Property))]
-    public partial class Square : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Card : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PositionField;
+        private int ActionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int position1Field;
+        private int RandomCashField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1002,27 +1055,27 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Position {
+        public int Action {
             get {
-                return this.PositionField;
+                return this.ActionField;
             }
             set {
-                if ((this.PositionField.Equals(value) != true)) {
-                    this.PositionField = value;
-                    this.RaisePropertyChanged("Position");
+                if ((this.ActionField.Equals(value) != true)) {
+                    this.ActionField = value;
+                    this.RaisePropertyChanged("Action");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Name="position")]
-        public int position1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RandomCash {
             get {
-                return this.position1Field;
+                return this.RandomCashField;
             }
             set {
-                if ((this.position1Field.Equals(value) != true)) {
-                    this.position1Field = value;
-                    this.RaisePropertyChanged("position1");
+                if ((this.RandomCashField.Equals(value) != true)) {
+                    this.RandomCashField = value;
+                    this.RaisePropertyChanged("RandomCash");
                 }
             }
         }
@@ -1659,10 +1712,10 @@ namespace UIGameClientTourist.Service {
         System.Threading.Tasks.Task UpdatePlayerServiceAsync(int idPlayer, int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PurchaseProperty")]
-        void PurchaseProperty(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player player, int idGame);
+        void PurchaseProperty(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PurchaseProperty")]
-        System.Threading.Tasks.Task PurchasePropertyAsync(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player player, int idGame);
+        System.Threading.Tasks.Task PurchasePropertyAsync(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/StartAuction")]
         void StartAuction(int idGame, UIGameClientTourist.Service.Property property);
@@ -1689,16 +1742,34 @@ namespace UIGameClientTourist.Service {
         System.Threading.Tasks.Task UpdateQueuAsync(int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GetActionCard")]
-        void GetActionCard(int idGame);
+        void GetActionCard(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GetActionCard")]
-        System.Threading.Tasks.Task GetActionCardAsync(int idGame);
+        System.Threading.Tasks.Task GetActionCardAsync(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/MovePlayer")]
-        void MovePlayer(int idGame, int spaces);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/JailPlayer")]
+        void JailPlayer(int idGame, int idPlayer);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/MovePlayer")]
-        System.Threading.Tasks.Task MovePlayerAsync(int idGame, int spaces);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/JailPlayer")]
+        System.Threading.Tasks.Task JailPlayerAsync(int idGame, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/RealizePropertyMortgage")]
+        void RealizePropertyMortgage(int idGame, UIGameClientTourist.Service.Property property, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/RealizePropertyMortgage")]
+        System.Threading.Tasks.Task RealizePropertyMortgageAsync(int idGame, UIGameClientTourist.Service.Property property, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/DeclareLosingPlayer")]
+        void DeclareLosingPlayer(UIGameClientTourist.Service.Player loserPlayer, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/DeclareLosingPlayer")]
+        System.Threading.Tasks.Task DeclareLosingPlayerAsync(UIGameClientTourist.Service.Player loserPlayer, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PayPropertyMortgage")]
+        void PayPropertyMortgage(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PayPropertyMortgage")]
+        System.Threading.Tasks.Task PayPropertyMortgageAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1734,11 +1805,20 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/GoToJail", ReplyAction="http://tempuri.org/IGameLogicManager/GoToJailResponse")]
         void GoToJail();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/PayTaxes", ReplyAction="http://tempuri.org/IGameLogicManager/PayTaxesResponse")]
-        void PayTaxes(int taxes);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEvent", ReplyAction="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEventResponse")]
+        void NotifyPlayerOfEvent(string message);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/GetPay", ReplyAction="http://tempuri.org/IGameLogicManager/GetPayResponse")]
-        void GetPay(int money);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpgradePlayerMoney", ReplyAction="http://tempuri.org/IGameLogicManager/UpgradePlayerMoneyResponse")]
+        void UpgradePlayerMoney(long money);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/RemoveGamePiece", ReplyAction="http://tempuri.org/IGameLogicManager/RemoveGamePieceResponse")]
+        void RemoveGamePiece(UIGameClientTourist.Service.Player player);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/EndGame", ReplyAction="http://tempuri.org/IGameLogicManager/EndGameResponse")]
+        void EndGame(int idWinner);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus", ReplyAction="http://tempuri.org/IGameLogicManager/UpdatePropertyStatusResponse")]
+        void UpdatePropertyStatus(UIGameClientTourist.Service.Property property);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1785,12 +1865,12 @@ namespace UIGameClientTourist.Service {
             return base.Channel.UpdatePlayerServiceAsync(idPlayer, idGame);
         }
         
-        public void PurchaseProperty(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player player, int idGame) {
-            base.Channel.PurchaseProperty(property, player, idGame);
+        public void PurchaseProperty(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame) {
+            base.Channel.PurchaseProperty(property, buyer, idGame);
         }
         
-        public System.Threading.Tasks.Task PurchasePropertyAsync(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player player, int idGame) {
-            return base.Channel.PurchasePropertyAsync(property, player, idGame);
+        public System.Threading.Tasks.Task PurchasePropertyAsync(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame) {
+            return base.Channel.PurchasePropertyAsync(property, buyer, idGame);
         }
         
         public void StartAuction(int idGame, UIGameClientTourist.Service.Property property) {
@@ -1825,20 +1905,44 @@ namespace UIGameClientTourist.Service {
             return base.Channel.UpdateQueuAsync(idGame);
         }
         
-        public void GetActionCard(int idGame) {
-            base.Channel.GetActionCard(idGame);
+        public void GetActionCard(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card) {
+            base.Channel.GetActionCard(idGame, player, card);
         }
         
-        public System.Threading.Tasks.Task GetActionCardAsync(int idGame) {
-            return base.Channel.GetActionCardAsync(idGame);
+        public System.Threading.Tasks.Task GetActionCardAsync(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card) {
+            return base.Channel.GetActionCardAsync(idGame, player, card);
         }
         
-        public void MovePlayer(int idGame, int spaces) {
-            base.Channel.MovePlayer(idGame, spaces);
+        public void JailPlayer(int idGame, int idPlayer) {
+            base.Channel.JailPlayer(idGame, idPlayer);
         }
         
-        public System.Threading.Tasks.Task MovePlayerAsync(int idGame, int spaces) {
-            return base.Channel.MovePlayerAsync(idGame, spaces);
+        public System.Threading.Tasks.Task JailPlayerAsync(int idGame, int idPlayer) {
+            return base.Channel.JailPlayerAsync(idGame, idPlayer);
+        }
+        
+        public void RealizePropertyMortgage(int idGame, UIGameClientTourist.Service.Property property, int idPlayer) {
+            base.Channel.RealizePropertyMortgage(idGame, property, idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task RealizePropertyMortgageAsync(int idGame, UIGameClientTourist.Service.Property property, int idPlayer) {
+            return base.Channel.RealizePropertyMortgageAsync(idGame, property, idPlayer);
+        }
+        
+        public void DeclareLosingPlayer(UIGameClientTourist.Service.Player loserPlayer, int idGame) {
+            base.Channel.DeclareLosingPlayer(loserPlayer, idGame);
+        }
+        
+        public System.Threading.Tasks.Task DeclareLosingPlayerAsync(UIGameClientTourist.Service.Player loserPlayer, int idGame) {
+            return base.Channel.DeclareLosingPlayerAsync(loserPlayer, idGame);
+        }
+        
+        public void PayPropertyMortgage(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty) {
+            base.Channel.PayPropertyMortgage(game, idPlayer, mortgagedProperty);
+        }
+        
+        public System.Threading.Tasks.Task PayPropertyMortgageAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty) {
+            return base.Channel.PayPropertyMortgageAsync(game, idPlayer, mortgagedProperty);
         }
     }
     

@@ -1,0 +1,37 @@
+﻿D:\Proyectos .NET\UIGameClientTourist\GameLogic\MusicService.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\Configuration.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\Friends.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\Game.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\JoinGame.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\Lobby.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\MainMenuGame.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\RegisterPlayers.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\XAMLViews\UserProfile.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\App.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\GameLogic\Bid.cs
+D:\Proyectos .NET\UIGameClientTourist\GameLogic\ImageManager.cs
+D:\Proyectos .NET\UIGameClientTourist\GameLogic\Player.cs
+D:\Proyectos .NET\UIGameClientTourist\GameLogic\Property.cs
+D:\Proyectos .NET\UIGameClientTourist\MainWindow.xaml.cs
+D:\Proyectos .NET\UIGameClientTourist\Properties\AssemblyInfo.cs
+D:\Proyectos .NET\UIGameClientTourist\GameResources\Music\utomp3.com-One-Piece-OST-Overtaken-EPIC-VERSION-Drums-of-Liberation_320kbps.wav
+D:\Proyectos .NET\UIGameClientTourist\Properties\Resources.es-MX.resx
+D:\Proyectos .NET\UIGameClientTourist\Properties\Resources.en-US.resx
+D:\Proyectos .NET\UIGameClientTourist\Properties\Resources.resx
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item1.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item2.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item3.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item4.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item5.xsd
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\PlayerManager.wsdl
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\UIGameClientTourist.Service.FriendList.datasource
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\UIGameClientTourist.Service.FriendRequestData.datasource
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\UIGameClientTourist.Service.Game.datasource
+D:\Proyectos .NET\UIGameClientTourist\packages.config
+D:\Proyectos .NET\UIGameClientTourist\Properties\Settings.settings
+D:\Proyectos .NET\UIGameClientTourist\App.config
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\item.disco
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\configuration91.svcinfo
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\configuration.svcinfo
+D:\Proyectos .NET\UIGameClientTourist\Connected Services\Service\Reference.svcmap

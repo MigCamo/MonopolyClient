@@ -1,18 +1,5 @@
-﻿using NAudio.Gui;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Channels;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using UIGameClientTourist.GameLogic;
 
 namespace UIGameClientTourist.XAMLViews
@@ -64,18 +51,18 @@ namespace UIGameClientTourist.XAMLViews
             menuWindow.Show();
         }
 
-        private void volumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void VolumeSliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             double volumeValue = volumeSlider.Value;
             MusicService.Instance.SetVolume(volumeValue);
         }
 
-        private void rbutPlayMusic_Checked_1(object sender, RoutedEventArgs e)
+        private void ButPlayMusic(object sender, RoutedEventArgs e)
         {
             MusicService.Instance.PlayMusic();
         }
 
-        private void rbutPauseMusic_Checked(object sender, RoutedEventArgs e)
+        private void ButPauseMusic(object sender, RoutedEventArgs e)
         {
             MusicService.Instance.StopMusic();
 

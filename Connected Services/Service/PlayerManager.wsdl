@@ -280,8 +280,17 @@
   <wsdl:message name="IGameLogicManager_GetActionCard_InputMessage">
     <wsdl:part name="parameters" element="tns:GetActionCard" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_MovePlayer_InputMessage">
-    <wsdl:part name="parameters" element="tns:MovePlayer" />
+  <wsdl:message name="IGameLogicManager_JailPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:JailPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_RealizePropertyMortgage_InputMessage">
+    <wsdl:part name="parameters" element="tns:RealizePropertyMortgage" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_DeclareLosingPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeclareLosingPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_PayPropertyMortgage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PayPropertyMortgage" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_PlayDie_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayDie" />
@@ -343,17 +352,35 @@
   <wsdl:message name="IGameLogicManager_GoToJail_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GoToJailResponse" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_PayTaxes_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PayTaxes" />
+  <wsdl:message name="IGameLogicManager_NotifyPlayerOfEvent_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerOfEvent" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_PayTaxes_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PayTaxesResponse" />
+  <wsdl:message name="IGameLogicManager_NotifyPlayerOfEvent_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerOfEventResponse" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_GetPay_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:GetPay" />
+  <wsdl:message name="IGameLogicManager_UpgradePlayerMoney_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpgradePlayerMoney" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_GetPay_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:GetPayResponse" />
+  <wsdl:message name="IGameLogicManager_UpgradePlayerMoney_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpgradePlayerMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_RemoveGamePiece_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGamePiece" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_RemoveGamePiece_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGamePieceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_EndGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EndGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_EndGame_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EndGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_UpdatePropertyStatus_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePropertyStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_UpdatePropertyStatus_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePropertyStatusResponse" />
   </wsdl:message>
   <wsdl:message name="IFriendList_GetFriendRequests_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendRequests" />
@@ -544,8 +571,17 @@
     <wsdl:operation name="GetActionCard">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GetActionCard" message="tns:IGameLogicManager_GetActionCard_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="MovePlayer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/MovePlayer" message="tns:IGameLogicManager_MovePlayer_InputMessage" />
+    <wsdl:operation name="JailPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/JailPlayer" message="tns:IGameLogicManager_JailPlayer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizePropertyMortgage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/RealizePropertyMortgage" message="tns:IGameLogicManager_RealizePropertyMortgage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeclareLosingPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/DeclareLosingPlayer" message="tns:IGameLogicManager_DeclareLosingPlayer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PayPropertyMortgage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PayPropertyMortgage" message="tns:IGameLogicManager_PayPropertyMortgage_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PlayDie">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PlayDie" message="tns:IGameLogicManager_PlayDie_OutputCallbackMessage" />
@@ -587,13 +623,25 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJail" message="tns:IGameLogicManager_GoToJail_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJailResponse" message="tns:IGameLogicManager_GoToJail_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PayTaxes">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PayTaxes" message="tns:IGameLogicManager_PayTaxes_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PayTaxesResponse" message="tns:IGameLogicManager_PayTaxes_InputCallbackMessage" />
+    <wsdl:operation name="NotifyPlayerOfEvent">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEvent" message="tns:IGameLogicManager_NotifyPlayerOfEvent_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEventResponse" message="tns:IGameLogicManager_NotifyPlayerOfEvent_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPay">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GetPay" message="tns:IGameLogicManager_GetPay_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GetPayResponse" message="tns:IGameLogicManager_GetPay_InputCallbackMessage" />
+    <wsdl:operation name="UpgradePlayerMoney">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/UpgradePlayerMoney" message="tns:IGameLogicManager_UpgradePlayerMoney_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpgradePlayerMoneyResponse" message="tns:IGameLogicManager_UpgradePlayerMoney_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGamePiece">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/RemoveGamePiece" message="tns:IGameLogicManager_RemoveGamePiece_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/RemoveGamePieceResponse" message="tns:IGameLogicManager_RemoveGamePiece_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/EndGame" message="tns:IGameLogicManager_EndGame_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/EndGameResponse" message="tns:IGameLogicManager_EndGame_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePropertyStatus">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus" message="tns:IGameLogicManager_UpdatePropertyStatus_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatusResponse" message="tns:IGameLogicManager_UpdatePropertyStatus_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IFriendList">
@@ -962,8 +1010,26 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="MovePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/MovePlayer" style="document" />
+    <wsdl:operation name="JailPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/JailPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RealizePropertyMortgage">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/RealizePropertyMortgage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DeclareLosingPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/DeclareLosingPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PayPropertyMortgage">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/PayPropertyMortgage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1058,8 +1124,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PayTaxes">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/PayTaxes" style="document" />
+    <wsdl:operation name="NotifyPlayerOfEvent">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEvent" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1067,8 +1133,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPay">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GetPay" style="document" />
+    <wsdl:operation name="UpgradePlayerMoney">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpgradePlayerMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGamePiece">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/RemoveGamePiece" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/EndGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePropertyStatus">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
