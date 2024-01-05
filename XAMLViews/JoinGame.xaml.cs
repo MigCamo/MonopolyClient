@@ -1,19 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using UIGameClientTourist.GameLogic;
-using UIGameClientTourist.Service;
 
 namespace UIGameClientTourist.XAMLViews
 {
@@ -70,18 +56,18 @@ namespace UIGameClientTourist.XAMLViews
             {
                 MessageBox.Show(Properties.Resources.ItemNotFoundAlert_Label);
                 result = false;
-            } 
+            }
             else if (managerClient.IsGameOngoing(codeGame) != 0)
             {
                 MessageBox.Show(Properties.Resources.AlreadyStartedAlert_Label);
                 result = false;
-            } 
+            }
             else if (managerClient.IsGameFull(codeGame) != 0)
             {
                 MessageBox.Show(Properties.Resources.FullLineItemAlert_Label);
                 result = false;
             }
-            
+
             return result;
         }
 
@@ -95,9 +81,9 @@ namespace UIGameClientTourist.XAMLViews
             }
             else
             {
-                lobby = new Lobby(codeGame, IDPlayer); 
+                lobby = new Lobby(codeGame, IDPlayer);
             }
-           
+
             this.Close();
             lobby.Show();
         }

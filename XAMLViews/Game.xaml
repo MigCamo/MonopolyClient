@@ -53,19 +53,19 @@
         </Label>
         <Label x:Name="lblPlayerTurn" Content="TheKingsLayer" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="1179,99,0,0" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="22" Height="37" Width="277" Foreground="#FF7F6924"/>
         <Rectangle HorizontalAlignment="Left" Height="103" Margin="1191,162,0,0" VerticalAlignment="Top" Width="256" Fill="#FFE2E2E2" RadiusX="15" RadiusY="15" Stroke="#FF7F6924" />
-        <Button x:Name="butRollingDice" Content="{x:Static p:Resources.Roll_Button}" HorizontalAlignment="Left" Margin="1325,276,0,0" VerticalAlignment="Top" Height="44" Width="108" FontSize="16" FontWeight="Bold" BorderBrush="White" Click="PlayMyTurn" Foreground="White" Visibility="Visible">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7F6924"/>
-                    <GradientStop Color="#FFE69E17" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="ButEndTurn" Content="{x:Static p:Resources.Roll_Button}" HorizontalAlignment="Left" Margin="1325,276,0,0" VerticalAlignment="Top" Height="44" Width="120" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="White" Visibility="Collapsed" Click="EndTurn">
+        <Button x:Name="butEndTurn" Content="{x:Static p:Resources.Roll_Button}" HorizontalAlignment="Left" Margin="1325,276,0,0" VerticalAlignment="Top" Height="44" Width="120" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="White" Visibility="Collapsed" Click="EndTurn">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
                     <GradientStop Color="#FFF12C2C" Offset="0.635"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="butRollingDice" Content="{x:Static p:Resources.Roll_Button}" HorizontalAlignment="Left" Margin="1325,276,0,0" VerticalAlignment="Top" Height="44" Width="119" FontSize="16" FontWeight="Bold" BorderBrush="White" Click="PlayMyTurn" Foreground="White" Visibility="Visible" IsEnabled="False">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7F6924"/>
+                    <GradientStop Color="#FFE69E17" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
@@ -83,7 +83,7 @@
         </Canvas>
         <Image x:Name="imgDieOne" HorizontalAlignment="Left" Height="50" Margin="1205,273,0,0" VerticalAlignment="Top" Width="49" Source="..\GameResources\Pictures\Side_6.png"/>
         <Image x:Name="imgDieSecond" HorizontalAlignment="Left" Height="50" Margin="1263,273,0,0" VerticalAlignment="Top" Width="49" Source="..\GameResources\Pictures\Side_6.png"/>
-        <WrapPanel x:Name="wpMyPropietiers" Margin="1179,391,10,111" Grid.RowSpan="2"/>
+        <WrapPanel x:Name="wpMyPropietiers" Margin="1179,391,10,205"/>
 
         <Grid x:Name="grdPauseMenu" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Rectangle HorizontalAlignment="Center" Height="521" Margin="0,131,0,0" Stroke="Black" VerticalAlignment="Top" Width="690" Fill="#FF12273C" RenderTransformOrigin="0.618,0.576" RadiusX="23" RadiusY="23" />
@@ -96,22 +96,28 @@
 
         <Grid x:Name="grdPropertyPurchase" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Rectangle HorizontalAlignment="Left" Height="549" Margin="237,188,0,0" VerticalAlignment="Top" Width="1179" Fill="#FF12273C" RadiusX="15" RadiusY="15" Stroke="#FF927C0F" StrokeThickness="4" />
+
             <Grid x:Name="grdPrisonSquare" Visibility="Collapsed">
-                <Rectangle HorizontalAlignment="Left" Height="536" Margin="289,78,0,0" VerticalAlignment="Top" Width="362" Fill="#FF901F1F" StrokeThickness="2.9"/>
-                <Label Content="{x:Static p:Resources.PrisionOrCarcel_Label}" HorizontalAlignment="Left" Margin="289,288,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF1ECEC" FontSize="36" Width="362"/>
+                <Image x:Name="imgPrison" HorizontalAlignment="Left" Height="409" Margin="322,250,0,0" VerticalAlignment="Top" Width="468" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\PropertyImage\_4c04cc13-5e89-48c3-8698-f44d1ac3b1c2.jpg" Stretch="UniformToFill"/>
+                <Label Content="{x:Static p:Resources.PrisionOrCarcel_Label}" HorizontalAlignment="Left" Margin="922,337,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF1ECEC" FontSize="36" Width="362" FontFamily="Arial Black"/>
+                <Label Content="Haz caido en prisión, pierdes un turno" HorizontalAlignment="Left" Margin="922,396,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF1ECEC" FontSize="18" Width="362"/>
             </Grid>
+
             <Grid x:Name="grdEventSquare" Visibility="Collapsed">
-                <Rectangle HorizontalAlignment="Left" Height="536" Margin="289,78,0,0" VerticalAlignment="Top" Width="362" Fill="#FF1BD7D0" StrokeThickness="2.9"/>
-                <Label Content="{x:Static p:Resources.EventCard_Label}" HorizontalAlignment="Left" Margin="343,288,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC" FontSize="36"/>
+                <Label Content="{x:Static p:Resources.EventCard_Label}" HorizontalAlignment="Left" Margin="922,337,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF1ECEC" FontSize="36" Width="362" FontFamily="Arial Black"/>
+                <Image x:Name="imgEventCard" HorizontalAlignment="Left" Height="477" Margin="352,223,0,0" VerticalAlignment="Top" Width="377" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\PropertyImage\R.jpg"/>
+                <Label Content="Haz caido en prisión, pierdes un turno" HorizontalAlignment="Left" Margin="922,396,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF1ECEC" FontSize="18" Width="362"/>
             </Grid>
-            <Grid x:Name="grdPropertySquare" Visibility="Collapsed"
-                  >
+
+            <Button x:Name="butCloseEvento" Content="{x:Static p:Resources.Close_Button}" HorizontalAlignment="Left" Margin="989,532,0,0" VerticalAlignment="Top" Height="44" Width="228" Click="CloseEventCard" Visibility="Collapsed"/>
+
+            <Grid x:Name="grdPropertySquare" Visibility="Collapsed">
                 <Rectangle HorizontalAlignment="Left" Height="536" Margin="289,78,0,0" VerticalAlignment="Top" Width="362" Fill="White" StrokeThickness="2.9"/>
                 <Rectangle x:Name="rectPropertyColor" HorizontalAlignment="Left" Height="58" Margin="289,78,0,0" VerticalAlignment="Top" Width="362" Fill="#FFE3E044"/>
                 <Image x:Name="imgPropertyPictureBox" HorizontalAlignment="Left" Height="202" Margin="301,163,0,0" VerticalAlignment="Top" Width="338" Source="..\GameResources\Pictures\PropertyImage\_6710050d-e305-4400-850b-80f255213e75.jpg" Stretch="Fill"/>
                 <Label x:Name="lblPropertyTitle" Content="Mansion hungara " HorizontalAlignment="Left" Margin="289,101,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Width="362"/>
                 <Label Content="{x:Static p:Resources.Rent_Label}" HorizontalAlignment="Left" Margin="289,371,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="16" FontWeight="Bold" Width="362"/>
-                <Label Content="{x:Static p:Resources.NoHouses_Label}" HorizontalAlignment="Left" Margin="345,403,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.NoHouses_Label}" HorizontalAlignment="Left" Margin="339,403,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -119,7 +125,7 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
-                <Label Content="{x:Static p:Resources.With1House}" HorizontalAlignment="Left" Margin="345,430,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.With1House}" HorizontalAlignment="Left" Margin="319,430,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -127,7 +133,7 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
-                <Label Content="{x:Static p:Resources.With2Houses}" HorizontalAlignment="Left" Margin="345,460,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.With2Houses}" HorizontalAlignment="Left" Margin="315,460,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -135,7 +141,7 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
-                <Label Content="{x:Static p:Resources.With3Houses}" HorizontalAlignment="Left" Margin="468,403,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.With3Houses}" HorizontalAlignment="Left" Margin="470,403,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -143,7 +149,7 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
-                <Label Content="{x:Static p:Resources.With4Houses}" HorizontalAlignment="Left" Margin="468,430,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.With4Houses}" HorizontalAlignment="Left" Margin="470,430,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -151,7 +157,7 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
-                <Label Content="{x:Static p:Resources.WithBuilding}" HorizontalAlignment="Left" Margin="468,460,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
+                <Label Content="{x:Static p:Resources.WithBuilding}" HorizontalAlignment="Left" Margin="470,460,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="16">
                     <Label.OpacityMask>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -159,36 +165,61 @@
                         </LinearGradientBrush>
                     </Label.OpacityMask>
                 </Label>
+                <Label x:Name="lblCostRentWithoutHouses" Content="£ 28" HorizontalAlignment="Left" Margin="419,403,0,0" VerticalAlignment="Top" Height="27" FontFamily="Berlin Sans FB" FontSize="16"/>
+                <Label x:Name="lblCostRentWithAHouse" Content="£ 150" HorizontalAlignment="Left" Margin="417,430,0,0" VerticalAlignment="Top" Height="27" FontFamily="Berlin Sans FB" FontSize="16"/>
+                <Label x:Name="lblCostRentWithTwoHouses" Content="£ 450" HorizontalAlignment="Left" Margin="416,461,0,0" VerticalAlignment="Top" Height="27" RenderTransformOrigin="0.579,0.54" FontFamily="Berlin Sans FB" FontSize="16"/>
+                <Label x:Name="lblCostRentWithThreeHouses" Content="£ 1200" HorizontalAlignment="Left" Margin="570,403,0,0" VerticalAlignment="Top" Height="27" FontFamily="Berlin Sans FB" FontSize="16"/>
+                <Label x:Name="lblCostRentWithFourHouses" Content="£ 1000" HorizontalAlignment="Left" Margin="570,430,0,0" VerticalAlignment="Top" Height="27" FontFamily="Berlin Sans FB" FontSize="16"/>
+                <Label x:Name="lblCostRentWithHotel" Content="£ 1400" HorizontalAlignment="Left" Margin="571,460,0,0" VerticalAlignment="Top" Height="27" FontFamily="Berlin Sans FB" FontSize="16"/>
                 <Label Content="{x:Static p:Resources.CostRent_Label}" HorizontalAlignment="Left" Margin="289,510,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="16" Height="28" FontWeight="Bold" Width="362"/>
-                <Label Content="M 201921.00" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="289,541,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="16" Height="28" FontWeight="Bold" Width="362"/>
+                <Label x:Name="lblCostProperty" Content="M 201921.00" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="289,541,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="16" Height="28" FontWeight="Bold" Width="362"/>
                 <Label Content="- Mansion Hungara -" HorizontalAlignment="Left" Margin="692,217,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="22" FontWeight="Bold" Width="710"/>
-                <Label Content="{x:Static p:Resources.PurchaseDescription_Label}" HorizontalAlignment="Left" Margin="692,279,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="14" FontStretch="ExtraCondensed"/>
-                <Rectangle HorizontalAlignment="Left" Height="3" Margin="289,147,0,0" Stroke="#FF726B05" StrokeThickness="8" VerticalAlignment="Top" Width="362"/>
+                <Label Content="{x:Static p:Resources.PurchaseDescription_Label}" HorizontalAlignment="Left" Margin="692,263,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="14" FontStretch="ExtraCondensed"/>
+                <Rectangle HorizontalAlignment="Left" Height="3" Margin="289,140,0,0" Stroke="#FF726B05" StrokeThickness="8" VerticalAlignment="Top" Width="362"/>
                 <Label Content="{x:Static p:Resources.PropertyTitle}" HorizontalAlignment="Left" Margin="289,85,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontFamily="Baskerville Old Face" FontSize="13" Width="362"/>
+                <Label Content="{x:Static p:Resources.PurchaseDescription_Label}" HorizontalAlignment="Left" Margin="692,292,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF726B05" RenderTransformOrigin="-0.477,0.706" FontFamily="Berlin Sans FB" FontSize="14" FontStretch="ExtraCondensed"/>
             </Grid>
 
             <Grid x:Name="grdMenu" Visibility="Collapsed">
                 <Label Content="{x:Static p:Resources.BuyProperty_Label}" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="798,387,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="22" FontWeight="Bold" Width="481"/>
-                <Button x:Name="btnBuy" Content="{x:Static p:Resources.AcceptPurchase_Button}" HorizontalAlignment="Left" Margin="798,472,0,0" VerticalAlignment="Top" Height="43" Width="201" Click="ShowPropertyPurchaseContract"/>
-                <Button x:Name="btnDecline" Content="{x:Static p:Resources.RejectPurchase_Label}" HorizontalAlignment="Left" Margin="1058,472,0,0" VerticalAlignment="Top" Height="43" Width="221" Click="DeclineToPurchaseProperty"/>
+                <Button x:Name="btnBuy" Content="{x:Static p:Resources.AcceptPurchase_Button}" HorizontalAlignment="Left" Margin="785,472,0,0" VerticalAlignment="Top" Height="43" Width="214" Click="ShowPropertyPurchaseContract"/>
+                <Button x:Name="btnDecline" Content="{x:Static p:Resources.RejectPurchase_Label}" HorizontalAlignment="Left" Margin="1058,472,0,0" VerticalAlignment="Top" Height="43" Width="231" Click="DeclineToPurchaseProperty"/>
             </Grid>
+
             <Grid x:Name="grdAddHouse" Visibility="Collapsed">
-                <Label Content="{x:Static p:Resources.AddHouse}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="800,341,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold"/>
-                <Image HorizontalAlignment="Left" Height="100" Margin="816,384,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\monopoly_casas.png"/>
-                <Label Content="{x:Static p:Resources.NumberHouses}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="734,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold"/>
-                <Label Content="{x:Static p:Resources.Add_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="800,526,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="118"/>
-                <ComboBox x:Name="cboNumerHouse" HorizontalAlignment="Left" Margin="790,567,0,0" VerticalAlignment="Top" Width="145" Height="28"/>
+                <Label Content="{x:Static p:Resources.AddHouse}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="811,341,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="100" Margin="827,384,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\monopoly_casas.png"/>
+                <Label Content="Actualmente tiene: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="736,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="197"/>
+                <Label x:Name="lblNumberHouses" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="927,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="30"/>
+                <Label Content="casas" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="957,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="68"/>
+                <Label Content="{x:Static p:Resources.Add_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="811,526,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="118"/>
+                <ComboBox x:Name="cboNumerHouse" HorizontalAlignment="Left" Margin="801,567,0,0" VerticalAlignment="Top" Width="145" Height="28" IsEnabled="False"/>
+            </Grid>
+
+            <Grid x:Name="grdPropertyPurchaseButtonGroup" Visibility="Collapsed">
                 <Label Content="{x:Static p:Resources.TotalCost}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1004,643,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF8D8C7D" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="24" Height="44" FontWeight="Bold"/>
-                <Button x:Name="butBuyProperty" Content="{x:Static p:Resources.Buy_Button}" HorizontalAlignment="Left" Margin="790,646,0,0" VerticalAlignment="Top" Height="43" Width="182" Click="BuyProperty"/>
+                <Button x:Name="butBuyProperty" Content="{x:Static p:Resources.Buy_Button}" HorizontalAlignment="Left" Margin="819,646,0,0" VerticalAlignment="Top" Height="43" Width="153" Click="BuyProperty" Visibility="Visible" FontSize="16"/>
+                <Button x:Name="butCancelPurchase" Content="{x:Static p:Resources.Cancel_Button}" HorizontalAlignment="Left" Margin="391,644,0,0" VerticalAlignment="Top" Height="43" Width="153" Click="CancelPurchase" FontSize="16"/>
             </Grid>
+
+            <Grid x:Name="grdPropertyModificationButtonGroup" Visibility="Collapsed">
+                <Button x:Name="butMortgageProperty" Content="Hipotecar" HorizontalAlignment="Left" Margin="391,644,0,0" VerticalAlignment="Top" Height="43" Width="153" Click="MortgageProperty" FontSize="16" Visibility="Collapsed"/>
+                <Button x:Name="butAddHomesAndHotels" Content="Agregar" HorizontalAlignment="Center" Margin="0,644,0,0" VerticalAlignment="Top" Height="43" Width="123" FontSize="16" Click="AddHomesAndHotels"/>
+                <Button x:Name="butCancelAddHomesAndHotels" Content="Cancelar" HorizontalAlignment="Left" Margin="852,645,0,0" VerticalAlignment="Top" Height="42" Width="124" FontSize="16" Click="CancelAddHomesAndHotels"/>
+                <Label Content="{x:Static p:Resources.TotalCost}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1004,643,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF8D8C7D" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="24" Height="44" FontWeight="Bold"/>
+                <Button x:Name="butPayMortgage" Content="Pagar Hipoteca" HorizontalAlignment="Left" Margin="391,644,0,0" VerticalAlignment="Top" Height="43" Width="153" FontSize="16" Visibility="Collapsed" Click="PayMortgage"/>
+            </Grid>
+
+            <Label x:Name="DefinitivePropertyCost" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1291,643,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="#FF8D8C7D" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="24" Height="44" FontWeight="Bold"/>
+
             <Grid x:Name="grdAddHotel" Visibility="Collapsed">
-                <Label Content="{x:Static p:Resources.NumberBuilding}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1097,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="210"/>
-                <Label Content="{x:Static p:Resources.AddBuilding_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="1117,341,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold"/>
-                <Image HorizontalAlignment="Left" Height="100" Margin="1147,379,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\monopoly_hoteles.png"/>
-                <Label Content="{x:Static p:Resources.Add_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1129,526,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="145"/>
-                <ComboBox x:Name="cboHotel" HorizontalAlignment="Left" Margin="1129,567,0,0" VerticalAlignment="Top" Width="149" Height="28" SelectionChanged="AddHotelToProperty"/>
+                <Label Content="{x:Static p:Resources.NumberBuilding}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1076,483,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="230"/>
+                <Label Content="{x:Static p:Resources.AddBuilding_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="1103,341,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="100" Margin="1133,379,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\monopoly_hoteles.png"/>
+                <Label Content="{x:Static p:Resources.Add_Label}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1115,526,0,0" VerticalAlignment="Top" Background="Transparent" Foreground="White" RenderTransformOrigin="-0.477,0.706" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Bold" Width="155"/>
+                <ComboBox x:Name="cboHotel" HorizontalAlignment="Left" Margin="1115,567,0,0" VerticalAlignment="Top" Width="149" Height="28" SelectionChanged="AddHotelToProperty" IsEnabled="False"/>
             </Grid>
-            <Button x:Name="butCloseEvento" Content="{x:Static p:Resources.Close_Button}" HorizontalAlignment="Left" Margin="901,544,0,0" VerticalAlignment="Top" Height="44" Width="228" Click="butCloseEvento_Click" Visibility="Collapsed"/>
+
             <Grid x:Name="BidWindow" Margin="592,236,153,244" Visibility="Collapsed">
                 <Label x:Name="LblBid" Content="{}" Margin="701,135,36,321" Visibility="Collapsed" RenderTransformOrigin="0.49,-0.187" Foreground="#FFF4F4F4"/>
                 <TextBox x:Name="txtBid" BorderBrush="White" FontSize="18" Visibility="Collapsed" Margin="663,167,14,301"></TextBox>
@@ -200,6 +231,23 @@
                     <WrapPanel x:Name="Bids"  Orientation="Vertical"/>
                 </ScrollViewer>
             </Grid>
+            <Grid x:Name="grdRent" Margin="278,210,151,275" Visibility="Collapsed">
+                <Image HorizontalAlignment="Center" Height="445" VerticalAlignment="Top" Width="846" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\6-pasos-para-asegurar-el-exito-de-la-transformacion-digital-en-Recursos-Humanos.png" Margin="0,22,0,0"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="grdWinnerMural" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" Height="578" Margin="339,118,0,0" Stroke="Black" VerticalAlignment="Top" Width="868">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF9946E6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image Margin="408,158,407,335" Stretch="UniformToFill" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\Sin título.png"/>
+            <Label Content="Felicidades" HorizontalAlignment="Left" Margin="695,353,0,0" VerticalAlignment="Top" Foreground="#FFF6E2E2" FontFamily="Arial Rounded MT Bold" FontSize="28"/>
+            <Label Content="Ganaste" HorizontalAlignment="Left" Margin="637,400,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="60" RenderTransformOrigin="0.707,0.921" Foreground="#FFFCEFEF"/>
+            <Button Content="Aceptar" HorizontalAlignment="Left" Margin="711,636,0,0" VerticalAlignment="Top" Height="42" Width="135" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Window>

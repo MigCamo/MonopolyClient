@@ -204,8 +204,20 @@
   <data name="eMail-txt" xml:space="preserve">
     <value>yusgus@gmail.com</value>
   </data>
+  <data name="EventAdvancePosition-Label" xml:space="preserve">
+    <value>¡Afortunado!, Es tu día de suerte, y recibirás un aventón; avanza 4 lugares con gracia.</value>
+  </data>
+  <data name="EventBackwardPosition-Label" xml:space="preserve">
+    <value>¡Precaución!, Los salvajes te han localizado, y debes escapar rápidamente; retrocede 3 lugares para evadir el peligro.</value>
+  </data>
   <data name="EventCard-Label" xml:space="preserve">
     <value>Tarjeta Evento</value>
+  </data>
+  <data name="EventGetTaxes-Label" xml:space="preserve">
+    <value>¡Enhorabuena!, Eres el consentido de los dioses y te han obsequiado generosamente con 300 millones de berries.</value>
+  </data>
+  <data name="EventPayTaxes-Label" xml:space="preserve">
+    <value>¡Tramposo!, Aunque hayas evadido impuestos, ni Al Capone se libra de Hacienda; tendrás que desembolsar 200 millones de berries.</value>
   </data>
   <data name="Exit-Button" xml:space="preserve">
     <value>Salir</value>
@@ -230,6 +242,9 @@
   </data>
   <data name="GameNoFound-Label" xml:space="preserve">
     <value>Partida no encontrada, verifique su codigo por favor.</value>
+  </data>
+  <data name="GoToJailEvent-Label" xml:space="preserve">
+    <value>¡Vaya!, Los guardias celestiales te han capturado; ahora, deberás cumplir condena en la cárcel</value>
   </data>
   <data name="GuestGame-Button" xml:space="preserve">
     <value>Jugar como invitado</value>
@@ -327,6 +342,9 @@
   <data name="Pause-Label" xml:space="preserve">
     <value>Pausa</value>
   </data>
+  <data name="PayPartnerEvent-Label" xml:space="preserve">
+    <value>¡Feliz Día de la Amistad!, Haz honor a la ocasión pagándole 200 berris al jugador anterior.</value>
+  </data>
   <data name="Play-Button" xml:space="preserve">
     <value>Jugar Partida</value>
   </data>
@@ -375,6 +393,12 @@
   <data name="Rent-Label" xml:space="preserve">
     <value>Renta</value>
   </data>
+  <data name="RentCollection-Label" xml:space="preserve">
+    <value>¡Buena jugada! Otro jugador ha caído en tu propiedad. Ahora, disfruta de tus ganancias:</value>
+  </data>
+  <data name="RentPayment-Label" xml:space="preserve">
+    <value>Has aterrizado en una propiedad ya adquirida. La suerte no está de tu lado esta vez; debes pagar</value>
+  </data>
   <data name="RepitPassword-txt" xml:space="preserve">
     <value>myiss32782ERSd10210</value>
   </data>
@@ -407,9 +431,6 @@
   </data>
   <data name="Status-Label" xml:space="preserve">
     <value>Resultado de la partida</value>
-  </data>
-  <data name="String" xml:space="preserve">
-    <value />
   </data>
   <data name="SuccessConfirmationAlert-Label" xml:space="preserve">
     <value>Exito</value>

@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using UIGameClientTourist.GameLogic;
 using UIGameClientTourist.Service;
 
 namespace UIGameClientTourist.XAMLViews
@@ -86,7 +76,6 @@ namespace UIGameClientTourist.XAMLViews
 
         private void SendFriendRequest(object sender, RoutedEventArgs e)
         {
-            ResourceHandler resource = new ResourceHandler();
             switch (SesionService.MakeFriendRequest(idPlayer, TxtFriend.Text))
             {
                 case 0:
@@ -142,13 +131,15 @@ namespace UIGameClientTourist.XAMLViews
                     Margin = new Thickness(300, 10, 0, 0),
                 };
 
-                butAccept.Click += (sender, e) => {
+                butAccept.Click += (sender, e) =>
+                {
                     SesionService.AcceptFriendRequest(request.IDRequest);
                     AddRequest(IdPlayer);
                     ShowFriends(IdPlayer);
                 };
 
-                butReject.Click += (sender, e) => {
+                butReject.Click += (sender, e) =>
+                {
                     SesionService.RejectFriendRequest(request.IDRequest);
                     AddRequest(IdPlayer);
                     ShowFriends(IdPlayer);

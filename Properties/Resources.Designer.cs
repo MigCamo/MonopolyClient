@@ -772,15 +772,6 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Si un jugador posee TODAS las Propiedades de un solo color , el precio del alquiler se DUPLICA en las propiedades&amp;#xD;&amp;#xA;SIN EDIFICAR de ese grupo.
-        /// </summary>
-        public static string PurchaseDescription_Label {
-            get {
-                return ResourceManager.GetString("PurchaseDescription-Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Confirmar Contraseña.
         /// </summary>
         public static string RecoverPassword_Label {
@@ -930,15 +921,6 @@ namespace UIGameClientTourist.Properties {
         public static string Status_Label {
             get {
                 return ResourceManager.GetString("Status-Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        public static string String {
-            get {
-                return ResourceManager.GetString("String", resourceCulture);
             }
         }
         

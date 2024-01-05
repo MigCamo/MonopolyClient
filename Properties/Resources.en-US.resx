@@ -231,6 +231,9 @@
   <data name="GameNoFound-Label" xml:space="preserve">
     <value>Game not found, verify your code please.</value>
   </data>
+  <data name="GoToJailEvent-Label" xml:space="preserve">
+    <value>Wow, the heavenly guards have captured you; Now, you will have to serve time in jail</value>
+  </data>
   <data name="GuestGame-Button" xml:space="preserve">
     <value>Play as a guest</value>
   </data>
@@ -327,6 +330,9 @@
   <data name="Pause-Label" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="PayPartnerEvent-Label" xml:space="preserve">
+    <value>Happy Friendship Day! Honor the occasion by paying 200 berris to the previous player.</value>
+  </data>
   <data name="Play-Button" xml:space="preserve">
     <value>Play Game</value>
   </data>
@@ -407,9 +413,6 @@
   </data>
   <data name="Status-Label" xml:space="preserve">
     <value>Result of the game</value>
-  </data>
-  <data name="String" xml:space="preserve">
-    <value />
   </data>
   <data name="SuccessConfirmationAlert-Label" xml:space="preserve">
     <value>Successful</value>
