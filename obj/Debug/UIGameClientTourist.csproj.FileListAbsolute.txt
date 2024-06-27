@@ -19,6 +19,31 @@ D:\Proyectos .NET\CalcularMultasLibro\UIGameClientTourist\obj\Debug\es-MX\UIGame
 D:\Proyectos .NET\CalcularMultasLibro\UIGameClientTourist\obj\Debug\en-US\UIGameClientTourist.resources.dll
 D:\Proyectos .NET\CalcularMultasLibro\UIGameClientTourist\obj\Debug\UIGameClientTourist.exe
 D:\Proyectos .NET\CalcularMultasLibro\UIGameClientTourist\obj\Debug\UIGameClientTourist.pdb
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe.config
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\UIGameClientTourist.pdb
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\es-MX\UIGameClientTourist.resources.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\en-US\UIGameClientTourist.resources.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Asio.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Core.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Midi.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Wasapi.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.WinForms.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.WinMM.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\System.Security.AccessControl.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.dll
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Asio.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Core.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Midi.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.Wasapi.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.WinForms.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\NAudio.WinMM.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\System.Security.AccessControl.xml
+D:\Proyectos .NET\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.xml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.AssemblyReference.cache
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\MainWindow.g.cs
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.g.cs
@@ -36,10 +61,262 @@ D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompil
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\MainWindow.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\Friends.baml
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\Game.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.baml
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.baml
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.g.resources
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.resources
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.es-MX.resources
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.en-US.resources
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.GenerateResource.cache
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CoreCompileInputs.cache
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\es-MX\UIGameClientTourist.resources.dll
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\en-US\UIGameClientTourist.resources.dll
+D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CopyComplete
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.exe
 D:\Proyectos .NET\UIGameClientTourist\obj\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\UIGameClientTourist.exe.config
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Asio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Core.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Midi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Wasapi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.WinForms.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.WinMM.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Asio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Core.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Midi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.Wasapi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.WinForms.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\NAudio.WinMM.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.csproj.AssemblyReference.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\MainWindow.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Configuration.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Friends.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Game.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\JoinGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Lobby.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\MainMenuGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\RegisterPlayers.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\UserProfile.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\App.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist_Content.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist_MarkupCompile.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist_MarkupCompile.lref
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\MainWindow.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Configuration.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Friends.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Game.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\JoinGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\Lobby.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\MainMenuGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\RegisterPlayers.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\XAMLViews\UserProfile.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.g.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.Properties.Resources.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.Properties.Resources.es-MX.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.Properties.Resources.en-US.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.csproj.GenerateResource.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.csproj.CoreCompileInputs.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.csproj.CopyComplete
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist-Main\obj\Debug\UIGameClientTourist.pdb
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe.config
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\UIGameClientTourist.pdb
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\es-MX\UIGameClientTourist.resources.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\en-US\UIGameClientTourist.resources.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\log4net.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Asio.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Core.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Midi.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Wasapi.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.WinForms.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.WinMM.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\System.Security.AccessControl.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\log4net.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Asio.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Core.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Midi.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.Wasapi.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.WinForms.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\NAudio.WinMM.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\System.Security.AccessControl.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.xml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.AssemblyReference.cache
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\MainWindow.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Friends.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Game.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\App.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist_Content.g.cs
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.cache
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.lref
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\MainWindow.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Friends.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Game.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.baml
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.g.resources
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.resources
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.es-MX.resources
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.en-US.resources
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.GenerateResource.cache
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CoreCompileInputs.cache
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\es-MX\UIGameClientTourist.resources.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\en-US\UIGameClientTourist.resources.dll
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CopyComplete
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.exe
+D:\yusgu\Documents\UV\Quinto Semestre\Tecnologias\Cliente\Con poca suerte el final\UIGameClientTourist\obj\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe.config
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\log4net.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Asio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Core.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Midi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Wasapi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.WinForms.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.WinMM.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\log4net.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Asio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Core.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Midi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.Wasapi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.WinForms.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\NAudio.WinMM.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.AssemblyReference.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\MainWindow.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Friends.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Game.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\App.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist_Content.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.lref
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\MainWindow.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Friends.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Game.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.g.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.es-MX.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.en-US.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.GenerateResource.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CoreCompileInputs.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CopyComplete
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\UIGameClientTourist\obj\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.AssemblyReference.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\MainWindow.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Friends.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Game.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\App.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist_Content.g.cs
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist_MarkupCompile.lref
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe.config
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\UIGameClientTourist.pdb
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\log4net.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Asio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Core.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Midi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Wasapi.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.WinForms.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.WinMM.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\log4net.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Asio.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Core.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Midi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.Wasapi.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.WinForms.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\NAudio.WinMM.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\MainWindow.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Configuration.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Friends.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Game.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\JoinGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\Lobby.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\MainMenuGame.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\RegisterPlayers.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\XAMLViews\UserProfile.baml
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.g.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.es-MX.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.Properties.Resources.en-US.resources
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.GenerateResource.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.csproj.CoreCompileInputs.cache
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\es-MX\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\en-US\UIGameClientTourist.resources.dll
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameCl.61FE02F8.Up2Date
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.exe
+C:\Users\Migue\Downloads\UIGameClientTourist\obj\Debug\UIGameClientTourist.pdb

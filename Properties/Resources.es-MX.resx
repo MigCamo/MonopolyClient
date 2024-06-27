@@ -129,8 +129,14 @@
   <data name="AddHouse" xml:space="preserve">
     <value>Agregar Casa</value>
   </data>
+  <data name="AddHouse-Label" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
   <data name="AlertConfirmationSendFriendRequest-Label" xml:space="preserve">
     <value>Se ha enviado correctamente la solicitud de amistad</value>
+  </data>
+  <data name="AlertError-Label" xml:space="preserve">
+    <value>Lo lamentamos, hubo un problema con los servidores. Inténtelo más tarde</value>
   </data>
   <data name="AlertExistingRequest-Label" xml:space="preserve">
     <value>Ya se ha enviado previamente una solicitud de amistad a este usuario</value>
@@ -140,6 +146,12 @@
   </data>
   <data name="AlertInvalidCode-Label" xml:space="preserve">
     <value>Por favor, ingrese un código de partida válido</value>
+  </data>
+  <data name="AlertMaximumNumberHomesProperty-Label" xml:space="preserve">
+    <value>El número máximo de construcción de casas por propiedad es de 4.</value>
+  </data>
+  <data name="AlertPartAlreadySelected-Label" xml:space="preserve">
+    <value>Lo lamento pero ya alguien te ganó esa pieza</value>
   </data>
   <data name="AlreadyExistingAmigoAlert-Label" xml:space="preserve">
     <value>La solicitud de amistad no se pudo enviar. El jugador al cual le mandaste una solicitud, ya es tu amigo</value>
@@ -156,6 +168,12 @@
   <data name="Buy-Button" xml:space="preserve">
     <value>Comprar</value>
   </data>
+  <data name="BuyingHotel-Label" xml:space="preserve">
+    <value>La agregación de hoteles se ha registrado exitosamente.</value>
+  </data>
+  <data name="BuyingHouses-Label" xml:space="preserve">
+    <value>La compra de casas se ha realizado exitosamente</value>
+  </data>
   <data name="BuyPropertie-Label" xml:space="preserve">
     <value>¿Desea comprar esta propiedad?</value>
   </data>
@@ -165,11 +183,20 @@
   <data name="Cancel-Button" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Modificar Contraseña</value>
+  </data>
   <data name="ChosePlayer-Label" xml:space="preserve">
     <value>Escoger pieza</value>
   </data>
   <data name="Close-Button" xml:space="preserve">
     <value>Cerrar</value>
+  </data>
+  <data name="ComBoxSelectionAlert-Label" xml:space="preserve">
+    <value>Por favor, selecciona un número de casas</value>
+  </data>
+  <data name="Congratulations-Label" xml:space="preserve">
+    <value>Felicidades</value>
   </data>
   <data name="Continue-Button" xml:space="preserve">
     <value>Reanudar partida</value>
@@ -185,6 +212,12 @@
   </data>
   <data name="CreateGame-Button" xml:space="preserve">
     <value>Crear Partida</value>
+  </data>
+  <data name="CurrentlyHas-Label" xml:space="preserve">
+    <value>Actualmente tiene:</value>
+  </data>
+  <data name="CurrentPassword-Label" xml:space="preserve">
+    <value>Contraseña Actual</value>
   </data>
   <data name="Date-Label" xml:space="preserve">
     <value>Fecha</value>
@@ -219,6 +252,12 @@
   <data name="EventPayTaxes-Label" xml:space="preserve">
     <value>¡Tramposo!, Aunque hayas evadido impuestos, ni Al Capone se libra de Hacienda; tendrás que desembolsar 200 millones de berries.</value>
   </data>
+  <data name="ExistingCopyToClipboardAlert-Label" xml:space="preserve">
+    <value>Contenido copiado al portapapeles</value>
+  </data>
+  <data name="ExistingUserAlert-Label" xml:space="preserve">
+    <value>El jugador que intentas registrar ya se encuentra previamente en la base de datos</value>
+  </data>
   <data name="Exit-Button" xml:space="preserve">
     <value>Salir</value>
   </data>
@@ -243,6 +282,9 @@
   <data name="GameNoFound-Label" xml:space="preserve">
     <value>Partida no encontrada, verifique su codigo por favor.</value>
   </data>
+  <data name="GamesPlayed-Label" xml:space="preserve">
+    <value>Partidas Jugadas</value>
+  </data>
   <data name="GoToJailEvent-Label" xml:space="preserve">
     <value>¡Vaya!, Los guardias celestiales te han capturado; ahora, deberás cumplir condena en la cárcel</value>
   </data>
@@ -252,11 +294,41 @@
   <data name="GuestLogin-Label" xml:space="preserve">
     <value>Prueba antes de registrarte</value>
   </data>
+  <data name="Houses-Label" xml:space="preserve">
+    <value>casas</value>
+  </data>
   <data name="ID-label" xml:space="preserve">
     <value>ID</value>
   </data>
+  <data name="IncorrectVerificationCodeAlert-Label" xml:space="preserve">
+    <value>Código de validación incorrecto, intente nuevamente</value>
+  </data>
+  <data name="InsufficientBalanceAlert-Label" xml:space="preserve">
+    <value>lo lamento, tu saldo actualmente es insuficiente</value>
+  </data>
+  <data name="InvalidCampsAlert-Label" xml:space="preserve">
+    <value>Campos inválidos, complete todos los campos correctamente: </value>
+  </data>
   <data name="InvalideGameCode-Label" xml:space="preserve">
     <value>Codigo invalido,  verifique su codigo por favor.</value>
+  </data>
+  <data name="InvalidEmailAlert-Label" xml:space="preserve">
+    <value>Correo electrónico inválido. Asegúrate de ingresar una dirección de correo electrónico válida.</value>
+  </data>
+  <data name="InvalidPasswordAlert-Label" xml:space="preserve">
+    <value>Contraseña inválida. La contraseña no debe estar vacía y debe tener entre 9 y 15 caracteres.</value>
+  </data>
+  <data name="InvalidPasswordAndFieldsAlert-Label" xml:space="preserve">
+    <value>Campos vacíos o contraseñas no válidas, verifique de nuevo gracias</value>
+  </data>
+  <data name="InvalidPasswordConfirmationAlert-Label" xml:space="preserve">
+    <value>Confirmación de contraseña inválida. Asegúrate de que coincida con la contraseña y cumpla con los requisitos.</value>
+  </data>
+  <data name="InvalidUserNameAlert-Label" xml:space="preserve">
+    <value>Nombre de usuario inválido. Solo se permiten letras y números, sin caracteres especiales.</value>
+  </data>
+  <data name="InvalidVerificationCodeAlert-Label" xml:space="preserve">
+    <value>Código de confirmación inválido. El código de verificación no debe estar vacío y debe contener solo números.</value>
   </data>
   <data name="Invite-Button" xml:space="preserve">
     <value>Invitar</value>
@@ -294,14 +366,23 @@
   <data name="Logout-Button" xml:space="preserve">
     <value>Cerrar Sessión</value>
   </data>
+  <data name="LostConnectionAlertLabel-Label" xml:space="preserve">
+    <value>Lamentamos informarte que la conexión con el servidor se ha perdido. Por favor, inténtalo nuevamente más tarde. Disculpa las molestias.</value>
+  </data>
   <data name="Money-Label" xml:space="preserve">
     <value>Dinero</value>
+  </data>
+  <data name="Mortgage-Label" xml:space="preserve">
+    <value>Hipotecar</value>
   </data>
   <data name="Music-Label" xml:space="preserve">
     <value>Volumen</value>
   </data>
   <data name="MusicTitle-Label" xml:space="preserve">
     <value>Musica: </value>
+  </data>
+  <data name="MyProfile-Label" xml:space="preserve">
+    <value>Mi Perfil</value>
   </data>
   <data name="MyProperties-Label" xml:space="preserve">
     <value>Mis Propiedades</value>
@@ -312,6 +393,9 @@
   <data name="Name-txt" xml:space="preserve">
     <value>KingsLayer123</value>
   </data>
+  <data name="NewPassword-Label" xml:space="preserve">
+    <value>Nueva Contraseña</value>
+  </data>
   <data name="NickName-Label" xml:space="preserve">
     <value>Nombre usuario</value>
   </data>
@@ -320,6 +404,9 @@
   </data>
   <data name="No-Button" xml:space="preserve">
     <value>No</value>
+  </data>
+  <data name="NoFunds-Label" xml:space="preserve">
+    <value>No dispones de los fondos suficientes para adquirir esta propiedad en este momento.</value>
   </data>
   <data name="NoHouses-Label" xml:space="preserve">
     <value>Sin casas: </value>
@@ -339,8 +426,17 @@
   <data name="Password-txt" xml:space="preserve">
     <value>myiss32782ERSd10210</value>
   </data>
+  <data name="PasswordChangeSuccessful-Label" xml:space="preserve">
+    <value>Se ha modificado correctamente la contraseña</value>
+  </data>
+  <data name="PasswordNotMatched-Label" xml:space="preserve">
+    <value>La contraseña actual ingresada no coincide con la contraseña registrada</value>
+  </data>
   <data name="Pause-Label" xml:space="preserve">
     <value>Pausa</value>
+  </data>
+  <data name="PayMortgage-Label" xml:space="preserve">
+    <value>Pagar Hipoteca</value>
   </data>
   <data name="PayPartnerEvent-Label" xml:space="preserve">
     <value>¡Feliz Día de la Amistad!, Haz honor a la ocasión pagándole 200 berris al jugador anterior.</value>
@@ -363,8 +459,14 @@
   <data name="PrisionOrCarcel-Label" xml:space="preserve">
     <value>Prisión o Carcel</value>
   </data>
+  <data name="PrisonAlert-Label" xml:space="preserve">
+    <value>Haz caido en prisión, pierdes un turno</value>
+  </data>
   <data name="Profile-Button" xml:space="preserve">
     <value>Perfil</value>
+  </data>
+  <data name="PropertyStatus-Label" xml:space="preserve">
+    <value>Propiedad Hipotecada</value>
   </data>
   <data name="PropertyTitle" xml:space="preserve">
     <value>Titulo de la Propiedad</value>
@@ -417,6 +519,9 @@
   <data name="SendEMail-Button" xml:space="preserve">
     <value>Enviar Correo</value>
   </data>
+  <data name="SendMessage-Button" xml:space="preserve">
+    <value>Enviar mensaje</value>
+  </data>
   <data name="SendRequest-Button" xml:space="preserve">
     <value>Enviar Solicitud</value>
   </data>
@@ -432,8 +537,20 @@
   <data name="Status-Label" xml:space="preserve">
     <value>Resultado de la partida</value>
   </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
   <data name="SuccessConfirmationAlert-Label" xml:space="preserve">
     <value>Exito</value>
+  </data>
+  <data name="SuccessfulMortgageRegistrationAlert-Label" xml:space="preserve">
+    <value>Se registro correctamente la hipoteca de la propiedad</value>
+  </data>
+  <data name="SuccessfulPaymentAlert-Label" xml:space="preserve">
+    <value>Se registro correctamente el pago de la hipoteca de la propiedad</value>
+  </data>
+  <data name="SuccessfulUserRegistrationAlert-Label" xml:space="preserve">
+    <value>Se registró correctamente el jugador, ya puedes iniciar sesión.</value>
   </data>
   <data name="TitleNameGameName-Label" xml:space="preserve">
     <value>Turista Lugares Fantasticos</value>
@@ -450,6 +567,9 @@
   <data name="UnexistingPlayer-Label" xml:space="preserve">
     <value>Usuario no encontrado</value>
   </data>
+  <data name="UserRegistrationErrorAlert-Label" xml:space="preserve">
+    <value>Lo lamento hubo un problema con su registro, inténtalo más tarde</value>
+  </data>
   <data name="Verify-Button" xml:space="preserve">
     <value>Enviar Mensaje</value>
   </data>
@@ -462,8 +582,14 @@
   <data name="verifyPassword-Label" xml:space="preserve">
     <value>Verificar contraseña</value>
   </data>
+  <data name="Victories-Label" xml:space="preserve">
+    <value>Victorias</value>
+  </data>
   <data name="Wait-Label" xml:space="preserve">
     <value>Espere por favor…...</value>
+  </data>
+  <data name="Win-Label" xml:space="preserve">
+    <value>Ganaste</value>
   </data>
   <data name="Winrate-Label" xml:space="preserve">
     <value>Porcentaje de victorias</value>

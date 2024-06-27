@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Media;
 using UIGameClientTourist.XAMLViews;
@@ -26,16 +27,24 @@ namespace UIGameClientTourist
 
                     using (var playerClient = new Service.PlayerClient())
                     {
-                        var newPlayer = new Service.PlayerSet { Nickname = userName, Password = password };
+                        var newPlayer = new Service.PlayerSet { Nickname = userName, Password = password, Games = 0, Wins = 0};
                         int playerID = playerClient.PlayerSearch(newPlayer);
-                        if (playerID != 0)
+                        if (playerID > 0)
                         {
                             GoToMenuFromLogin(playerID);
                         }
-                        else
+                        else if(playerID == 0)
                         {
                             InvalidCampsAlert();
                             MessageBox.Show("Credenciales incorrectas. Inténtelo de nuevo.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else if(playerID == -1)
+                        {
+                            MessageBox.Show("Lo lamento hubo un problema con la conexion a la base de datos , vuelva mas tarde", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya hay un usuario utilizando esta cuenta", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                     }
                 }
@@ -83,7 +92,8 @@ namespace UIGameClientTourist
 
         private void GoToJoinGameFromLogin(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
+            int seed = Environment.TickCount;
+            Random random = new Random(seed);
             JoinGame mainMenuGameWindow = new JoinGame(random.Next(1, 1000000000), true);
             this.Close();
             mainMenuGameWindow.Show();

@@ -9,15 +9,15 @@ namespace UIGameClientTourist.XAMLViews
     /// </summary>
     public partial class Configuration : Window
     {
-        private int idPlayer;
+        private readonly int _currentPlayerID;
         public Configuration(int idPlayer)
         {
             InitializeComponent();
-            this.idPlayer = idPlayer;
-            fullcomboBox();
+            this._currentPlayerID = idPlayer;
+            FillComboBoxLanguage();
         }
 
-        private void fullcomboBox()
+        private void FillComboBoxLanguage()
         {
             cboxLanguages.Items.Add(Properties.Resources.LanguageSpanish_Label);
             cboxLanguages.Items.Add(Properties.Resources.LanguageEnglish_Label);
@@ -38,15 +38,15 @@ namespace UIGameClientTourist.XAMLViews
                     App.SetAppCulture("en-US");
                 }
 
-                Configuration configurationWindow = new Configuration(idPlayer);
+                Configuration configurationWindow = new Configuration(_currentPlayerID);
                 this.Close();
                 configurationWindow.Show();
             }
         }
 
-        private void NavigateToMainMenuGame(object sender, RoutedEventArgs e)
+        private void ButtonClickNavigateToMainMenuGame(object sender, RoutedEventArgs e)
         {
-            MainMenuGame menuWindow = new MainMenuGame(idPlayer);
+            MainMenuGame menuWindow = new MainMenuGame(_currentPlayerID);
             this.Close();
             menuWindow.Show();
         }
@@ -57,12 +57,12 @@ namespace UIGameClientTourist.XAMLViews
             MusicService.Instance.SetVolume(volumeValue);
         }
 
-        private void ButPlayMusic(object sender, RoutedEventArgs e)
+        private void ButtonClickPlayMusic(object sender, RoutedEventArgs e)
         {
             MusicService.Instance.PlayMusic();
         }
 
-        private void ButPauseMusic(object sender, RoutedEventArgs e)
+        private void ButtonClickPauseMusic(object sender, RoutedEventArgs e)
         {
             MusicService.Instance.StopMusic();
 

@@ -37,9 +37,9 @@
             <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="502,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
             <Label x:Name="lblEnterCode" Content = "{x:Static p:Resources.VerifyCode_label}" HorizontalAlignment="Left" Margin="502,307,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.56,0.025" FontFamily="Sitka Text Semibold"/>
             <TextBox x:Name="txtConfirmCode" HorizontalAlignment="Left" Margin="502,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" FontSize="18" Height="40"/>
-            <Button x:Name="butSendMessage" Content = "{x:Static p:Resources.SendEMail_Button}" HorizontalAlignment="Left" Margin="680,238,0,0" VerticalAlignment="Top" Height="36" Width="162" FontSize="16" Background="#FF57E934" FontWeight="Bold"/>
-            <Button x:Name="butRegister" Content = "{x:Static p:Resources.Register_Button}" HorizontalAlignment="Left" Margin="600,426,0,0" VerticalAlignment="Top" Height="36" Width="161" RenderTransformOrigin="0.818,-0.049" FontSize="16" FontWeight="Bold" Background="#FFA0BFF1" Click="RegisterPlayer"/>
-            <Image Name="imgBackButton" HorizontalAlignment="Left" Height="55" Margin="79,33,0,0" VerticalAlignment="Top" Width="55" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="GoToLoginFromRegisterPlayers" />
+            <Button x:Name="butSendMessage" Content = "{x:Static p:Resources.SendEMail_Button}" HorizontalAlignment="Left" Margin="680,238,0,0" VerticalAlignment="Top" Height="36" Width="162" FontSize="16" Background="#FF57E934" FontWeight="Bold" Click="ButtonClickSendConfirmationEmail"/>
+            <Button x:Name="butRegister" Content = "{x:Static p:Resources.Register_Button}" HorizontalAlignment="Left" Margin="600,426,0,0" VerticalAlignment="Top" Height="36" Width="161" RenderTransformOrigin="0.818,-0.049" FontSize="16" FontWeight="Bold" Background="#FFA0BFF1" Click="ButtonClickRegisterPlayer"/>
+            <Image Name="imgBackButton" HorizontalAlignment="Left" Height="55" Margin="79,33,0,0" VerticalAlignment="Top" Width="55" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="ButtonClickGoToLoginFromRegisterPlayers" />
         </Grid>
     </Grid>
 </Window>

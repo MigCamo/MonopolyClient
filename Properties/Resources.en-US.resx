@@ -129,8 +129,14 @@
   <data name="AddHouse" xml:space="preserve">
     <value>Add House</value>
   </data>
+  <data name="AddHouse-Label" xml:space="preserve">
+    <value>add</value>
+  </data>
   <data name="AlertConfirmationSendFriendRequest-Label" xml:space="preserve">
     <value>Friend request has been successfully sent</value>
+  </data>
+  <data name="AlertError-Label" xml:space="preserve">
+    <value>We're sorry, there was a problem with the servers. Try again later</value>
   </data>
   <data name="AlertExistingRequest-Label" xml:space="preserve">
     <value>A friend request has already been sent to this user.</value>
@@ -140,6 +146,12 @@
   </data>
   <data name="AlertInvalidCode-Label" xml:space="preserve">
     <value>Please enter a valid departure code</value>
+  </data>
+  <data name="AlertMaximumNumberHomesProperty-Label" xml:space="preserve">
+    <value>The maximum number of house construction per property is 4.</value>
+  </data>
+  <data name="AlertPartAlreadySelected-Label" xml:space="preserve">
+    <value>I'm sorry but someone already won that piece from you.</value>
   </data>
   <data name="AlreadyExistingAmigoAlert-Label" xml:space="preserve">
     <value>The friend request could not be sent. The player to whom you sent a friend request is already your friend.</value>
@@ -156,6 +168,12 @@
   <data name="Buy-Button" xml:space="preserve">
     <value>Buy</value>
   </data>
+  <data name="BuyingHotel-Label" xml:space="preserve">
+    <value>The hotel aggregation has been successfully registered.</value>
+  </data>
+  <data name="BuyingHouses-Label" xml:space="preserve">
+    <value>The purchase of houses has been carried out successfully</value>
+  </data>
   <data name="BuyPropertie-Label" xml:space="preserve">
     <value>Would you like to buy this property?</value>
   </data>
@@ -165,11 +183,20 @@
   <data name="Cancel-Button" xml:space="preserve">
     <value>cancel</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
   <data name="ChosePlayer-Label" xml:space="preserve">
     <value>Choose piece</value>
   </data>
   <data name="Close-Button" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="ComBoxSelectionAlert-Label" xml:space="preserve">
+    <value>Please select a number of houses</value>
+  </data>
+  <data name="Congratulations-Label" xml:space="preserve">
+    <value>Congratulations</value>
   </data>
   <data name="Continue-Button" xml:space="preserve">
     <value>Restart game</value>
@@ -185,6 +212,12 @@
   </data>
   <data name="CreateGame-Button" xml:space="preserve">
     <value>Create Game</value>
+  </data>
+  <data name="CurrentlyHas-Label" xml:space="preserve">
+    <value>Currently has:</value>
+  </data>
+  <data name="CurrentPassword-Label" xml:space="preserve">
+    <value>Current Password</value>
   </data>
   <data name="Date-Label" xml:space="preserve">
     <value>Date</value>
@@ -204,8 +237,26 @@
   <data name="eMail-txt" xml:space="preserve">
     <value>yusgus@gmail.com</value>
   </data>
+  <data name="EventAdvancePosition-Label" xml:space="preserve">
+    <value>Lucky you! It's your lucky day, and you'll get a ride; advance 4 places with grace.</value>
+  </data>
+  <data name="EventBackwardPosition-Label" xml:space="preserve">
+    <value>Caution! The savages have located you, and you must escape quickly; Go back 3 places to avoid danger.</value>
+  </data>
   <data name="EventCard-Label" xml:space="preserve">
     <value>Event Card</value>
+  </data>
+  <data name="EventGetTaxes-Label" xml:space="preserve">
+    <value>Congratulations! You are the darling of the gods and they have generously gifted you with 300 million berries.</value>
+  </data>
+  <data name="EventPayTaxes-Label" xml:space="preserve">
+    <value>Cheat! Even if you have evaded taxes, not even Al Capone is free from the Treasury; You will have to pay 200 million berries.</value>
+  </data>
+  <data name="ExistingCopyToClipboardAlert-Label" xml:space="preserve">
+    <value>Content copied to clipboard</value>
+  </data>
+  <data name="ExistingUserAlert-Label" xml:space="preserve">
+    <value>The player you are trying to register is already in the database</value>
   </data>
   <data name="Exit-Button" xml:space="preserve">
     <value>Exit</value>
@@ -231,6 +282,9 @@
   <data name="GameNoFound-Label" xml:space="preserve">
     <value>Game not found, verify your code please.</value>
   </data>
+  <data name="GamesPlayed-Label" xml:space="preserve">
+    <value>Games Played</value>
+  </data>
   <data name="GoToJailEvent-Label" xml:space="preserve">
     <value>Wow, the heavenly guards have captured you; Now, you will have to serve time in jail</value>
   </data>
@@ -240,11 +294,41 @@
   <data name="GuestLogin-Label" xml:space="preserve">
     <value>Try before registering</value>
   </data>
+  <data name="Houses-Label" xml:space="preserve">
+    <value>houses</value>
+  </data>
   <data name="ID-label" xml:space="preserve">
     <value>ID</value>
   </data>
+  <data name="IncorrectVerificationCodeAlert-Label" xml:space="preserve">
+    <value>Wrong validation code, try again</value>
+  </data>
+  <data name="InsufficientBalanceAlert-Label" xml:space="preserve">
+    <value>I'm sorry, your balance is currently insufficient</value>
+  </data>
+  <data name="InvalidCampsAlert-Label" xml:space="preserve">
+    <value>Invalid fields, please complete all fields correctly:</value>
+  </data>
   <data name="InvalideGameCode-Label" xml:space="preserve">
     <value>Invalid code, please verify your code.</value>
+  </data>
+  <data name="InvalidEmailAlert-Label" xml:space="preserve">
+    <value>Invalid email. Make sure you enter a valid email address.</value>
+  </data>
+  <data name="InvalidPasswordAlert-Label" xml:space="preserve">
+    <value>Invalid password. The password must not be empty and must be between 9 and 15 characters.</value>
+  </data>
+  <data name="InvalidPasswordAndFieldsAlert-Label" xml:space="preserve">
+    <value>Empty fields or invalid passwords, please check again thanks</value>
+  </data>
+  <data name="InvalidPasswordConfirmationAlert-Label" xml:space="preserve">
+    <value>Invalid password confirmation. Make sure it matches your password and meets the requirements.</value>
+  </data>
+  <data name="InvalidUserNameAlert-Label" xml:space="preserve">
+    <value>Invalid username. Only letters and numbers are allowed, no special characters.</value>
+  </data>
+  <data name="InvalidVerificationCodeAlert-Label" xml:space="preserve">
+    <value>Invalid confirmation code. The verification code must not be empty and must contain only numbers.</value>
   </data>
   <data name="Invite-Button" xml:space="preserve">
     <value>Invite</value>
@@ -253,7 +337,7 @@
     <value>Game code</value>
   </data>
   <data name="ItemNotFoundAlert-Label" xml:space="preserve">
-    <value>Partida no encontrada. Verifique que el código sea correcto o que la partida exista.</value>
+    <value>Game item not found. Verify that the code is correct or that the game exists.</value>
   </data>
   <data name="JoinGame-Button" xml:space="preserve">
     <value>Join Game</value>
@@ -282,14 +366,23 @@
   <data name="Logout-Button" xml:space="preserve">
     <value>Log Out</value>
   </data>
+  <data name="LostConnectionAlertLabel-Label" xml:space="preserve">
+    <value>We regret to inform you that the connection to the server has been lost. Please try again later. Sorry for the inconvenience.</value>
+  </data>
   <data name="Money-Label" xml:space="preserve">
     <value>Money</value>
+  </data>
+  <data name="Mortgage-Label" xml:space="preserve">
+    <value>Mortgage</value>
   </data>
   <data name="Music-Label" xml:space="preserve">
     <value>Volume</value>
   </data>
   <data name="MusicTitle-Label" xml:space="preserve">
     <value>Music: </value>
+  </data>
+  <data name="MyProfile-Label" xml:space="preserve">
+    <value>My Profile</value>
   </data>
   <data name="MyProperties-Label" xml:space="preserve">
     <value>My Properties</value>
@@ -300,6 +393,9 @@
   <data name="Name-txt" xml:space="preserve">
     <value>KingsLayer123</value>
   </data>
+  <data name="NewPassword-Label" xml:space="preserve">
+    <value>New Password</value>
+  </data>
   <data name="NickName-Label" xml:space="preserve">
     <value>UserName</value>
   </data>
@@ -308,6 +404,9 @@
   </data>
   <data name="No-Button" xml:space="preserve">
     <value>No</value>
+  </data>
+  <data name="NoFunds-Label" xml:space="preserve">
+    <value>You do not have sufficient funds to purchase this property at this time.</value>
   </data>
   <data name="NoHouses-Label" xml:space="preserve">
     <value>No houses: </value>
@@ -327,8 +426,17 @@
   <data name="Password-txt" xml:space="preserve">
     <value>myiss32782ERSd10210</value>
   </data>
+  <data name="PasswordChangeSuccessful-Label" xml:space="preserve">
+    <value>Password has been successfully changed</value>
+  </data>
+  <data name="PasswordNotMatched-Label" xml:space="preserve">
+    <value>The current password entered does not match the registered password</value>
+  </data>
   <data name="Pause-Label" xml:space="preserve">
     <value>Pause</value>
+  </data>
+  <data name="PayMortgage-Label" xml:space="preserve">
+    <value>Pay Mortgage</value>
   </data>
   <data name="PayPartnerEvent-Label" xml:space="preserve">
     <value>Happy Friendship Day! Honor the occasion by paying 200 berris to the previous player.</value>
@@ -351,8 +459,14 @@
   <data name="PrisionOrCarcel-Label" xml:space="preserve">
     <value>Prison or Jail</value>
   </data>
+  <data name="PrisonAlert-Label" xml:space="preserve">
+    <value>You have been imprisoned, you lose a turn.</value>
+  </data>
   <data name="Profile-Button" xml:space="preserve">
     <value>Profile</value>
+  </data>
+  <data name="PropertyStatus-Label" xml:space="preserve">
+    <value>Mortgaged Property</value>
   </data>
   <data name="PropertyTitle" xml:space="preserve">
     <value>Title to the Property</value>
@@ -381,6 +495,12 @@
   <data name="Rent-Label" xml:space="preserve">
     <value>Rent</value>
   </data>
+  <data name="RentCollection-Label" xml:space="preserve">
+    <value>Good play! Another player has landed on your property. Now, enjoy your profits:</value>
+  </data>
+  <data name="RentPayment-Label" xml:space="preserve">
+    <value>You have landed on an already acquired property. Luck is not on your side this time; you must pay</value>
+  </data>
   <data name="RepitPassword-txt" xml:space="preserve">
     <value>myiss32782ERSd10210</value>
   </data>
@@ -399,6 +519,9 @@
   <data name="SendEMail-Button" xml:space="preserve">
     <value>Send Mail</value>
   </data>
+  <data name="SendMessage-Button" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
   <data name="SendRequest-Button" xml:space="preserve">
     <value>Send Request</value>
   </data>
@@ -414,8 +537,20 @@
   <data name="Status-Label" xml:space="preserve">
     <value>Result of the game</value>
   </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
   <data name="SuccessConfirmationAlert-Label" xml:space="preserve">
     <value>Successful</value>
+  </data>
+  <data name="SuccessfulMortgageRegistrationAlert-Label" xml:space="preserve">
+    <value>The property mortgage was correctly registered</value>
+  </data>
+  <data name="SuccessfulPaymentAlert-Label" xml:space="preserve">
+    <value>The payment of the property mortgage was correctly recorded</value>
+  </data>
+  <data name="SuccessfulUserRegistrationAlert-Label" xml:space="preserve">
+    <value>The player has successfully registered, you can now log in.</value>
   </data>
   <data name="TitleNameGameName-Label" xml:space="preserve">
     <value>Tourist Fantastic Places</value>
@@ -432,6 +567,9 @@
   <data name="UnexistingPlayer-Label" xml:space="preserve">
     <value>User not found</value>
   </data>
+  <data name="UserRegistrationErrorAlert-Label" xml:space="preserve">
+    <value>I'm sorry there was a problem with your registration, please try again later</value>
+  </data>
   <data name="Verify-Button" xml:space="preserve">
     <value>Send Message</value>
   </data>
@@ -444,8 +582,14 @@
   <data name="verifyPassword-Label" xml:space="preserve">
     <value>Verify password</value>
   </data>
+  <data name="Victories-Label" xml:space="preserve">
+    <value>Victories</value>
+  </data>
   <data name="Wait-Label" xml:space="preserve">
     <value>Please wait......</value>
+  </data>
+  <data name="Win-Label" xml:space="preserve">
+    <value>You win</value>
   </data>
   <data name="Winrate-Label" xml:space="preserve">
     <value>Winning percentage</value>

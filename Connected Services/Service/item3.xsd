@@ -20,14 +20,18 @@
   <xs:element name="ArrayOfPlayer" nillable="true" type="tns:ArrayOfPlayer" />
   <xs:complexType name="Player">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Games" type="xs:int" />
+      <xs:element minOccurs="0" name="GamesWin" type="xs:int" />
+      <xs:element minOccurs="0" name="Guest" type="xs:boolean" />
       <xs:element minOccurs="0" name="IdPlayer" type="xs:int" />
       <xs:element minOccurs="0" name="Jail" type="xs:boolean" />
       <xs:element minOccurs="0" name="Loser" type="xs:boolean" />
       <xs:element minOccurs="0" name="Money" type="xs:long" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Piece" nillable="true" type="tns:Piece" />
       <xs:element minOccurs="0" name="Position" type="xs:int" />
-      <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Piece" />
-      <xs:element minOccurs="0" name="properties" nillable="true" type="tns:ArrayOfProperty" />
+      <xs:element minOccurs="0" name="VotesToExpel" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Player" nillable="true" type="tns:Player" />
@@ -39,24 +43,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Piece" nillable="true" type="tns:Piece" />
-  <xs:complexType name="ArrayOfProperty">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty" />
+  <xs:simpleType name="Game.GameSituation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByStart" />
+      <xs:enumeration value="Ongoing" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Game.GameSituation" nillable="true" type="tns:Game.GameSituation" />
   <xs:complexType name="Property">
     <xs:sequence>
       <xs:element minOccurs="0" name="BuyingCost" type="xs:long" />
       <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DefinitiveCost" type="xs:long" />
       <xs:element minOccurs="0" name="ImageSource" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsMortgaged" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NumberHouses" type="xs:int" />
       <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:Player" />
-      <xs:element minOccurs="0" name="PosicitionX" type="xs:int" />
-      <xs:element minOccurs="0" name="PosicitionY" type="xs:int" />
+      <xs:element minOccurs="0" name="PositionX" type="xs:int" />
+      <xs:element minOccurs="0" name="PositionY" type="xs:int" />
       <xs:element minOccurs="0" name="Situation" type="tns:Property.PropertySituation" />
       <xs:element minOccurs="0" name="Taxes" type="xs:long" />
       <xs:element minOccurs="0" name="Type" type="tns:Property.TypeProperty" />
@@ -80,19 +85,11 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Property.TypeProperty" nillable="true" type="tns:Property.TypeProperty" />
-  <xs:simpleType name="Game.GameSituation">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ByStart" />
-      <xs:enumeration value="Ongoing" />
-      <xs:enumeration value="Finished" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Game.GameSituation" nillable="true" type="tns:Game.GameSituation" />
-  <xs:complexType name="Card">
+  <xs:complexType name="Wildcard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Action" type="xs:int" />
       <xs:element minOccurs="0" name="RandomCash" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:element name="Wildcard" nillable="true" type="tns:Wildcard" />
 </xs:schema>

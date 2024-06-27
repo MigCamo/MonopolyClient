@@ -1,5 +1,9 @@
-﻿using System;
+﻿using log4net;
+using System;
+using System.ServiceModel;
 using System.Windows;
+using System.Windows.Input;
+using UIGameClientTourist.Service;
 
 namespace UIGameClientTourist.XAMLViews
 {
@@ -8,25 +12,20 @@ namespace UIGameClientTourist.XAMLViews
     /// </summary>
     public partial class JoinGame : Window
     {
-        private readonly int IDPlayer;
-        private readonly Service.PlayAsGuestManagerClient managerClient;
-        private readonly bool IsInvited = false;
-        public JoinGame(int IdPlayer)
+        private readonly int _iDPlayer;
+        private readonly PlayAsGuestManagerClient _managerClient;
+        private static readonly ILog _ilog = LogManager.GetLogger(typeof(JoinGame));
+        private readonly bool _isInvited = false;
+
+        public JoinGame(int idPlayer, bool isInvited)
         {
-            this.IDPlayer = IdPlayer;
+            this._iDPlayer = idPlayer;
+            this._isInvited = isInvited;
             InitializeComponent();
-            this.managerClient = new Service.PlayAsGuestManagerClient();
+            this._managerClient = new PlayAsGuestManagerClient();
         }
 
-        public JoinGame(int IdPlayer, bool isInvited)
-        {
-            this.IDPlayer = IdPlayer;
-            this.IsInvited = isInvited;
-            InitializeComponent();
-            this.managerClient = new Service.PlayAsGuestManagerClient();
-        }
-
-        private void SearchGame(object sender, RoutedEventArgs e)
+        private void ButtonClickSearchGame(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -42,30 +41,44 @@ namespace UIGameClientTourist.XAMLViews
                     MessageBox.Show(Properties.Resources.AlertInvalidCode_Label);
                 }
             }
-            catch (Exception ex)
+            catch (TimeoutException exception)
             {
-                Console.WriteLine("Error en SearchGame: " + ex.Message);
+                HandleException(exception);
             }
         }
 
         private bool ValidateGame(int codeGame)
         {
             bool result = true;
+            const int gameNotFound = 0;
+            const int gameOngoing = 0;
+            const int gameFull = 0;
 
-            if (managerClient.SearchGameByCode(codeGame) != 0)
+            try
             {
-                MessageBox.Show(Properties.Resources.ItemNotFoundAlert_Label);
-                result = false;
+                if (_managerClient.SearchGameByCode(codeGame) != gameNotFound)
+                {
+                    MessageBox.Show(Properties.Resources.ItemNotFoundAlert_Label);
+                    result = false;
+                }
+                else if (_managerClient.IsGameOngoing(codeGame) != gameOngoing)
+                {
+                    MessageBox.Show(Properties.Resources.AlreadyStartedAlert_Label);
+                    result = false;
+                }
+                else if (_managerClient.IsGameFull(codeGame) != gameFull)
+                {
+                    MessageBox.Show(Properties.Resources.FullLineItemAlert_Label);
+                    result = false;
+                }
             }
-            else if (managerClient.IsGameOngoing(codeGame) != 0)
+            catch (TimeoutException exception)
             {
-                MessageBox.Show(Properties.Resources.AlreadyStartedAlert_Label);
-                result = false;
+                HandleException(exception);
             }
-            else if (managerClient.IsGameFull(codeGame) != 0)
+            catch(EndpointNotFoundException exception)
             {
-                MessageBox.Show(Properties.Resources.FullLineItemAlert_Label);
-                result = false;
+                HandleException(exception);
             }
 
             return result;
@@ -75,17 +88,50 @@ namespace UIGameClientTourist.XAMLViews
         {
             Lobby lobby;
 
-            if (IsInvited)
+            if (_isInvited)
             {
-                lobby = new Lobby(codeGame, IDPlayer, true);
+                lobby = new Lobby(codeGame, _iDPlayer, true);
             }
             else
             {
-                lobby = new Lobby(codeGame, IDPlayer);
+                lobby = new Lobby(codeGame, _iDPlayer, false);
             }
 
             this.Close();
             lobby.Show();
+        }
+
+        private void ExitJoinGameWindow(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Window window;
+
+                if (_isInvited)
+                {
+                    window = new MainWindow();
+                }
+                else
+                {
+                    window = new MainMenuGame(_iDPlayer);
+                }
+
+                this.Close();
+                window.Show();
+
+                e.Handled = true;
+            }
+        }
+
+        private void AlertMessage()
+        {
+            MessageBox.Show(Properties.Resources.LostConnectionAlertLabel_Label, Properties.Resources.SuccessConfirmationAlert_Label, MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void HandleException(Exception exception)
+        {
+            _ilog.Error(exception.ToString());
+            AlertMessage();
         }
     }
 }

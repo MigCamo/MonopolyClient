@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:UIGameClientTourist.XAMLViews"
         mc:Ignorable="d"
         xmlns:p = "clr-namespace:UIGameClientTourist.Properties"
-        Title="MainMenuGame" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="MainMenuGame" WindowState="Maximized" WindowStartupLocation="CenterScreen" >
     <Grid>
-        <Image x:Name="imgBackground" Height="1082" VerticalAlignment="Top" Source="..\GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" HorizontalAlignment="Center" Width="1595"/>
-        <Border>
-            <Grid x:Name="grdDynamicButtons" MouseLeftButtonDown="OpenSlidingMenu">
-                <Button x:Name="butProfile" Content="Mi Perfil" Margin="1170,3,0,0" Click="GoToUserProfileFromMainMenuGame" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363" />
-                <Button x:Name="butLogOut" Content="{x:Static p:Resources.Logout_Button}" Margin="1170,3,0,0" Click="LogOut" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="483*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="imgBackground" Height="1082" VerticalAlignment="Top" Source="..\GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" HorizontalAlignment="Center" Width="1595" Grid.RowSpan="2"/>
+        <Border Grid.RowSpan="2">
+            <Grid x:Name="grdDynamicButtons" MouseLeftButtonDown="MouseClickOpenSlidingMenu">
+                <Button x:Name="butProfile" Content="{x:Static p:Resources.MyProfile_Label}" Margin="1170,3,0,0" Click="ButtonClickGoToUserProfileFromMainMenuGame" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363" />
+                <Button x:Name="butLogOut" Content="{x:Static p:Resources.Logout_Button}" Margin="1170,3,0,0" Click="ButtonClickLogOut" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="363"/>
                 <Rectangle x:Name="rectBackgroundButtons" HorizontalAlignment="Left" Height="63" Margin="1169,4,0,0" Stroke="Black" VerticalAlignment="Top" Width="364"  Fill="#FF097CAB"/>
-                <Image x:Name="imgProfile" HorizontalAlignment="Left" Height="52" Margin="1190,9,0,0" VerticalAlignment="Top" Width="61" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\UserProfiles\descarga (1).jpg"/>
+                <Image x:Name="imgProfile" HorizontalAlignment="Left" Height="52" Margin="1190,9,0,0" VerticalAlignment="Top" Width="61" Source="..\GameResources\Pictures\_2a10b9f6-19c3-45c1-b35d-65691d37d8ff-removebg-preview.png" Stretch="Fill"/>
                 <Label x:Name="lblPlayerName" Content="KingsLayer" HorizontalAlignment="Left" Margin="1248,11,0,0" VerticalAlignment="Top" Foreground="#FFFCFCFC" FontSize="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Harlow Solid Italic" Width="241"/>
             </Grid>
         </Border>
 
-        <Grid x:Name ="grdMainMenu" Visibility="Visible">
+        <Grid x:Name ="grdMainMenu" Visibility="Visible" Grid.RowSpan="2">
 
-            <Border x:Name="brdCardPlayGame" MouseLeftButtonDown="GoToGamesFromMainMenu">
+            <Border x:Name="brdCardPlayGame" MouseLeftButtonDown="MouseClickGoToGamesFromMainMenu">
                 <Grid>
                     <Rectangle HorizontalAlignment="Left" Height="461" Stroke="#FF12273C" VerticalAlignment="Top" Width="336" Fill="#FFF4F4F4" Margin="604,155,0,0" StrokeThickness="9"/>
                     <Rectangle HorizontalAlignment="Left" Height="56" Margin="626,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="293" Fill="#FFB79C34"/>
@@ -39,7 +43,7 @@
                 </Grid>
             </Border>
 
-            <Border x:Name="brdCardFriends" MouseLeftButtonDown="GoToFriendsFromMainMenuGame">
+            <Border x:Name="brdCardFriends" MouseLeftButtonDown="MouseClickGoToFriendsFromMainMenuGame">
                 <Grid>
                     <Rectangle HorizontalAlignment="Left" Height="461" Stroke="#FF12273C" VerticalAlignment="Top" Width="336" Fill="#FFF4F4F4" Margin="135,200,0,0" RenderTransformOrigin="0.5,0.5" StrokeThickness="9">
                         <Rectangle.RenderTransform>
@@ -94,8 +98,8 @@
                 </Grid>
             </Border>
 
-            <Border x:Name="brdCardConfiguration" MouseLeftButtonDown="GoToConfigurationFromMainMenuGame">
-                <Grid>
+            <Border x:Name="brdCardConfiguration" MouseLeftButtonDown="MouseClickGoToConfigurationFromMainMenuGame" Margin="0,0,0,70">
+                <Grid Height="999" VerticalAlignment="Top">
                     <Rectangle HorizontalAlignment="Left" Height="461" Stroke="#FF12273C" VerticalAlignment="Top" Width="336" Fill="#FFF4F4F4" Margin="1080,197,0,0" RenderTransformOrigin="0.5,0.5" StrokeThickness="8">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
@@ -151,8 +155,8 @@
             </Border>
         </Grid>
 
-        <Grid x:Name ="grdGames" Visibility="Collapsed">
-            <Border x:Name="brdCardJoinGame" MouseLeftButtonDown="GoToJoinGameFromMainMenuGame">
+        <Grid x:Name ="grdGames" Visibility="Collapsed" Grid.RowSpan="2">
+            <Border x:Name="brdCardJoinGame" MouseLeftButtonDown="MouseClickGoToJoinGameFromMainMenuGame">
                 <Grid>
                     <Rectangle HorizontalAlignment="Left" Height="461" Stroke="Black" VerticalAlignment="Top" Width="336" Fill="#FFF4F4F4" Margin="315,180,0,0" RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>
@@ -206,7 +210,7 @@
                     </Label>
                 </Grid>
             </Border>
-            <Border x:Name="brdCardCreateGame" MouseLeftButtonDown="GoToLobbyFromMainMenuGame">
+            <Border x:Name="brdCardCreateGame" MouseLeftButtonDown="MouseClickGoToLobbyFromMainMenuGame">
                 <Grid>
                     <Rectangle HorizontalAlignment="Left" Height="461" Stroke="Black" VerticalAlignment="Top" Width="336" Fill="#FFF4F4F4" Margin="881,175,0,0" RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>
@@ -251,5 +255,12 @@
                 </Grid>
             </Border>
         </Grid>
+
+        <Image HorizontalAlignment="Left" Height="82" Margin="48,28,0,0" VerticalAlignment="Top" Width="84" Source="..\GameResources\Pictures\_e44b6f15-5502-4ee8-b9d4-5770ae811ec5-removebg-preview.png" Stretch="Fill" RenderTransformOrigin="0.623,0.416"/>
+        <Label x:Name="lblConnectedPlayers" Content="0" HorizontalAlignment="Left" Margin="110,25,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Arial Black" Width="22" Background="{x:Null}" Height="28" RenderTransformOrigin="0.89,-0.417"/>
+        <Image HorizontalAlignment="Left" Height="82" Margin="173,28,0,0" VerticalAlignment="Top" Width="84" Source="\GameResources\Pictures\PropertyImage\_aa2738f3-0724-4f07-8c18-10232c7b961a-removebg-preview.png" Stretch="Fill" RenderTransformOrigin="0.623,0.416"/>
+        
+        <Label x:Name="lblRequests" Content="0" HorizontalAlignment="Left" Margin="234,28,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Arial Black" Width="41" Background="{x:Null}" Height="30" RenderTransformOrigin="0.89,-0.417"/>
+
     </Grid>
 </Window>

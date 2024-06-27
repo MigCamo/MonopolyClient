@@ -97,11 +97,29 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Agregar.
+        /// </summary>
+        public static string AddHouse_Label {
+            get {
+                return ResourceManager.GetString("AddHouse-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Se ha enviado correctamente la solicitud de amistad.
         /// </summary>
         public static string AlertConfirmationSendFriendRequest_Label {
             get {
                 return ResourceManager.GetString("AlertConfirmationSendFriendRequest-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lo lamentamos, hubo un problema con los servidores. Inténtelo más tarde.
+        /// </summary>
+        public static string AlertError_Label {
+            get {
+                return ResourceManager.GetString("AlertError-Label", resourceCulture);
             }
         }
         
@@ -129,6 +147,24 @@ namespace UIGameClientTourist.Properties {
         public static string AlertInvalidCode_Label {
             get {
                 return ResourceManager.GetString("AlertInvalidCode-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El número máximo de construcción de casas por propiedad es de 4..
+        /// </summary>
+        public static string AlertMaximumNumberHomesProperty_Label {
+            get {
+                return ResourceManager.GetString("AlertMaximumNumberHomesProperty-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lo lamento pero ya alguien te ganó esa pieza.
+        /// </summary>
+        public static string AlertPartAlreadySelected_Label {
+            get {
+                return ResourceManager.GetString("AlertPartAlreadySelected-Label", resourceCulture);
             }
         }
         
@@ -178,6 +214,24 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La agregación de hoteles se ha registrado exitosamente..
+        /// </summary>
+        public static string BuyingHotel_Label {
+            get {
+                return ResourceManager.GetString("BuyingHotel-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La compra de casas se ha realizado exitosamente.
+        /// </summary>
+        public static string BuyingHouses_Label {
+            get {
+                return ResourceManager.GetString("BuyingHouses-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Desea comprar esta propiedad?.
         /// </summary>
         public static string BuyPropertie_Label {
@@ -205,6 +259,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Modificar Contraseña.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Escoger pieza.
         /// </summary>
         public static string ChosePlayer_Label {
@@ -219,6 +282,24 @@ namespace UIGameClientTourist.Properties {
         public static string Close_Button {
             get {
                 return ResourceManager.GetString("Close-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, selecciona un número de casas.
+        /// </summary>
+        public static string ComBoxSelectionAlert_Label {
+            get {
+                return ResourceManager.GetString("ComBoxSelectionAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Felicidades.
+        /// </summary>
+        public static string Congratulations_Label {
+            get {
+                return ResourceManager.GetString("Congratulations-Label", resourceCulture);
             }
         }
         
@@ -264,6 +345,24 @@ namespace UIGameClientTourist.Properties {
         public static string CreateGame_Button {
             get {
                 return ResourceManager.GetString("CreateGame-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualmente tiene:.
+        /// </summary>
+        public static string CurrentlyHas_Label {
+            get {
+                return ResourceManager.GetString("CurrentlyHas-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña Actual.
+        /// </summary>
+        public static string CurrentPassword_Label {
+            get {
+                return ResourceManager.GetString("CurrentPassword-Label", resourceCulture);
             }
         }
         
@@ -322,11 +421,65 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¡Afortunado!, Es tu día de suerte, y recibirás un aventón; avanza 4 lugares con gracia..
+        /// </summary>
+        public static string EventAdvancePosition_Label {
+            get {
+                return ResourceManager.GetString("EventAdvancePosition-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Precaución!, Los salvajes te han localizado, y debes escapar rápidamente; retrocede 3 lugares para evadir el peligro..
+        /// </summary>
+        public static string EventBackwardPosition_Label {
+            get {
+                return ResourceManager.GetString("EventBackwardPosition-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Tarjeta Evento.
         /// </summary>
         public static string EventCard_Label {
             get {
                 return ResourceManager.GetString("EventCard-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Enhorabuena!, Eres el consentido de los dioses y te han obsequiado generosamente con 300 millones de berries..
+        /// </summary>
+        public static string EventGetTaxes_Label {
+            get {
+                return ResourceManager.GetString("EventGetTaxes-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Tramposo!, Aunque hayas evadido impuestos, ni Al Capone se libra de Hacienda; tendrás que desembolsar 200 millones de berries..
+        /// </summary>
+        public static string EventPayTaxes_Label {
+            get {
+                return ResourceManager.GetString("EventPayTaxes-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contenido copiado al portapapeles.
+        /// </summary>
+        public static string ExistingCopyToClipboardAlert_Label {
+            get {
+                return ResourceManager.GetString("ExistingCopyToClipboardAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El jugador que intentas registrar ya se encuentra previamente en la base de datos.
+        /// </summary>
+        public static string ExistingUserAlert_Label {
+            get {
+                return ResourceManager.GetString("ExistingUserAlert-Label", resourceCulture);
             }
         }
         
@@ -403,6 +556,24 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Partidas Jugadas.
+        /// </summary>
+        public static string GamesPlayed_Label {
+            get {
+                return ResourceManager.GetString("GamesPlayed-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Vaya!, Los guardias celestiales te han capturado; ahora, deberás cumplir condena en la cárcel.
+        /// </summary>
+        public static string GoToJailEvent_Label {
+            get {
+                return ResourceManager.GetString("GoToJailEvent-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Jugar como invitado.
         /// </summary>
         public static string GuestGame_Button {
@@ -421,6 +592,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a casas.
+        /// </summary>
+        public static string Houses_Label {
+            get {
+                return ResourceManager.GetString("Houses-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ID.
         /// </summary>
         public static string ID_label {
@@ -430,11 +610,92 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Código de validación incorrecto, intente nuevamente.
+        /// </summary>
+        public static string IncorrectVerificationCodeAlert_Label {
+            get {
+                return ResourceManager.GetString("IncorrectVerificationCodeAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a lo lamento, tu saldo actualmente es insuficiente.
+        /// </summary>
+        public static string InsufficientBalanceAlert_Label {
+            get {
+                return ResourceManager.GetString("InsufficientBalanceAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Campos inválidos, complete todos los campos correctamente:.
+        /// </summary>
+        public static string InvalidCampsAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidCampsAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Codigo invalido,  verifique su codigo por favor..
         /// </summary>
         public static string InvalideGameCode_Label {
             get {
                 return ResourceManager.GetString("InvalideGameCode-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Correo electrónico inválido. Asegúrate de ingresar una dirección de correo electrónico válida..
+        /// </summary>
+        public static string InvalidEmailAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidEmailAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña inválida. La contraseña no debe estar vacía y debe tener entre 9 y 15 caracteres..
+        /// </summary>
+        public static string InvalidPasswordAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidPasswordAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Campos vacíos o contraseñas no válidas, verifique de nuevo gracias.
+        /// </summary>
+        public static string InvalidPasswordAndFieldsAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidPasswordAndFieldsAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmación de contraseña inválida. Asegúrate de que coincida con la contraseña y cumpla con los requisitos..
+        /// </summary>
+        public static string InvalidPasswordConfirmationAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidPasswordConfirmationAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario inválido. Solo se permiten letras y números, sin caracteres especiales..
+        /// </summary>
+        public static string InvalidUserNameAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidUserNameAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de confirmación inválido. El código de verificación no debe estar vacío y debe contener solo números..
+        /// </summary>
+        public static string InvalidVerificationCodeAlert_Label {
+            get {
+                return ResourceManager.GetString("InvalidVerificationCodeAlert-Label", resourceCulture);
             }
         }
         
@@ -547,11 +808,29 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lamentamos informarte que la conexión con el servidor se ha perdido. Por favor, inténtalo nuevamente más tarde. Disculpa las molestias..
+        /// </summary>
+        public static string LostConnectionAlertLabel_Label {
+            get {
+                return ResourceManager.GetString("LostConnectionAlertLabel-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Dinero.
         /// </summary>
         public static string Money_Label {
             get {
                 return ResourceManager.GetString("Money-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hipotecar.
+        /// </summary>
+        public static string Mortgage_Label {
+            get {
+                return ResourceManager.GetString("Mortgage-Label", resourceCulture);
             }
         }
         
@@ -570,6 +849,15 @@ namespace UIGameClientTourist.Properties {
         public static string MusicTitle_Label {
             get {
                 return ResourceManager.GetString("MusicTitle-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mi perfil.
+        /// </summary>
+        public static string MyProfile_Label {
+            get {
+                return ResourceManager.GetString("MyProfile-Label", resourceCulture);
             }
         }
         
@@ -601,6 +889,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nueva Contraseña.
+        /// </summary>
+        public static string NewPassword_Label {
+            get {
+                return ResourceManager.GetString("NewPassword-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre usuario.
         /// </summary>
         public static string NickName_Label {
@@ -624,6 +921,15 @@ namespace UIGameClientTourist.Properties {
         public static string No_Button {
             get {
                 return ResourceManager.GetString("No-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No dispones de los fondos suficientes para adquirir esta propiedad en este momento..
+        /// </summary>
+        public static string NoFunds_Label {
+            get {
+                return ResourceManager.GetString("NoFunds-Label", resourceCulture);
             }
         }
         
@@ -682,11 +988,47 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Se ha modificado correctamente la contraseña.
+        /// </summary>
+        public static string PasswordChangeSuccessful_Label {
+            get {
+                return ResourceManager.GetString("PasswordChangeSuccessful-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña actual ingresada no coincide con la contraseña registrada.
+        /// </summary>
+        public static string PasswordNotMatched_Label {
+            get {
+                return ResourceManager.GetString("PasswordNotMatched-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Pausa.
         /// </summary>
         public static string Pause_Label {
             get {
                 return ResourceManager.GetString("Pause-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pagar Hipoteca.
+        /// </summary>
+        public static string PayMortgage_Label {
+            get {
+                return ResourceManager.GetString("PayMortgage-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Feliz Día de la Amistad!, Haz honor a la ocasión pagándole 200 berris al jugador anterior..
+        /// </summary>
+        public static string PayPartnerEvent_Label {
+            get {
+                return ResourceManager.GetString("PayPartnerEvent-Label", resourceCulture);
             }
         }
         
@@ -745,11 +1087,29 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Haz caido en prisión, pierdes un turno.
+        /// </summary>
+        public static string PrisonAlert_Label {
+            get {
+                return ResourceManager.GetString("PrisonAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Perfil.
         /// </summary>
         public static string Profile_Button {
             get {
                 return ResourceManager.GetString("Profile-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Propiedad Hipotecada.
+        /// </summary>
+        public static string PropertyStatus_Label {
+            get {
+                return ResourceManager.GetString("PropertyStatus-Label", resourceCulture);
             }
         }
         
@@ -768,6 +1128,15 @@ namespace UIGameClientTourist.Properties {
         public static string Pull_Button {
             get {
                 return ResourceManager.GetString("Pull-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Si un jugador posee TODAS las Propiedades de un solo color , el precio del alquiler se DUPLICA en las propiedades A;SIN EDIFICAR de ese grupo.
+        /// </summary>
+        public static string PurchaseDescription_Label {
+            get {
+                return ResourceManager.GetString("PurchaseDescription-Label", resourceCulture);
             }
         }
         
@@ -826,6 +1195,24 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¡Buena jugada! Otro jugador ha caído en tu propiedad. Ahora, disfruta de tus ganancias:.
+        /// </summary>
+        public static string RentCollection_Label {
+            get {
+                return ResourceManager.GetString("RentCollection-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has aterrizado en una propiedad ya adquirida. La suerte no está de tu lado esta vez; debes pagar.
+        /// </summary>
+        public static string RentPayment_Label {
+            get {
+                return ResourceManager.GetString("RentPayment-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a myiss32782ERSd10210.
         /// </summary>
         public static string RepitPassword_txt {
@@ -880,6 +1267,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enviar mensaje.
+        /// </summary>
+        public static string SendMessage_Button {
+            get {
+                return ResourceManager.GetString("SendMessage-Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enviar Solicitud.
         /// </summary>
         public static string SendRequest_Button {
@@ -925,11 +1321,47 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        public static string String {
+            get {
+                return ResourceManager.GetString("String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Exito.
         /// </summary>
         public static string SuccessConfirmationAlert_Label {
             get {
                 return ResourceManager.GetString("SuccessConfirmationAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se registro correctamente la hipoteca de la propiedad.
+        /// </summary>
+        public static string SuccessfulMortgageRegistrationAlert_Label {
+            get {
+                return ResourceManager.GetString("SuccessfulMortgageRegistrationAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se registro correctamente el pago de la hipoteca de la propiedad.
+        /// </summary>
+        public static string SuccessfulPaymentAlert_Label {
+            get {
+                return ResourceManager.GetString("SuccessfulPaymentAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se registró correctamente el jugador, ya puedes iniciar sesión..
+        /// </summary>
+        public static string SuccessfulUserRegistrationAlert_Label {
+            get {
+                return ResourceManager.GetString("SuccessfulUserRegistrationAlert-Label", resourceCulture);
             }
         }
         
@@ -979,6 +1411,15 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lo lamento hubo un problema con su registro, inténtalo más tarde.
+        /// </summary>
+        public static string UserRegistrationErrorAlert_Label {
+            get {
+                return ResourceManager.GetString("UserRegistrationErrorAlert-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enviar Mensaje.
         /// </summary>
         public static string Verify_Button {
@@ -992,7 +1433,7 @@ namespace UIGameClientTourist.Properties {
         /// </summary>
         public static string VerifyCode_label {
             get {
-                return ResourceManager.GetString("VerifyCode-label", resourceCulture);
+                return ResourceManager.GetString("_verifyCode-label", resourceCulture);
             }
         }
         
@@ -1001,7 +1442,7 @@ namespace UIGameClientTourist.Properties {
         /// </summary>
         public static string VerifyCode_txt {
             get {
-                return ResourceManager.GetString("VerifyCode-txt", resourceCulture);
+                return ResourceManager.GetString("_verifyCode-txt", resourceCulture);
             }
         }
         
@@ -1015,11 +1456,29 @@ namespace UIGameClientTourist.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Victorias.
+        /// </summary>
+        public static string Victories_Label {
+            get {
+                return ResourceManager.GetString("Victories-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Espere por favor…....
         /// </summary>
         public static string Wait_Label {
             get {
                 return ResourceManager.GetString("Wait-Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganaste.
+        /// </summary>
+        public static string Win_Label {
+            get {
+                return ResourceManager.GetString("Win-Label", resourceCulture);
             }
         }
         

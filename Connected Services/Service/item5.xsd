@@ -22,8 +22,11 @@
   <xs:complexType name="FriendList">
     <xs:sequence>
       <xs:element minOccurs="0" name="FriendName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Games" type="xs:int" />
+      <xs:element minOccurs="0" name="GamesWins" type="xs:int" />
       <xs:element minOccurs="0" name="IdFriend" type="xs:int" />
       <xs:element minOccurs="0" name="IsOnline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WinRate" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FriendList" nillable="true" type="tns:FriendList" />

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Security;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using UIGameClientTourist.GameLogic;
 using UIGameClientTourist.Service;
+using static UIGameClientTourist.XAMLViews.Friends;
 using Property = UIGameClientTourist.Service.Property;
 using WinImage = System.Windows.Controls.Image;
 
@@ -23,36 +27,69 @@ namespace UIGameClientTourist.XAMLViews
     /// </summary>
     public partial class Game : Window, IGameLogicManagerCallback
     {
-        private readonly Service.Player player;
-        private Service.Game game;
-        private Service.GameLogicManagerClient managerClient;
-        public readonly static WinImage[] pieces = new WinImage[4];
-        private List<Service.Property> Myproperties;
-        private Bid LastBid = new Bid();
+        private static readonly ILog _ilog = LogManager.GetLogger(typeof(Game));
+        private readonly Service.Player _currentPlayer;
+        private readonly Service.Game _currentGame;
+        private readonly GameLogicManagerClient _managerClient;
+        public readonly static WinImage[] _boardPieces = new WinImage[4];
+        private List<Property> _listPropertiesPurchased;
 
         public Game(Service.Game game, Service.Player player)
         {
             InstanceContext context = new InstanceContext(this);
-            managerClient = new Service.GameLogicManagerClient(context);
-            managerClient.UpdatePlayerService(player.IdPlayer, game.IdGame);
-            this.player = player;
-            this.game = game;
             InitializeComponent();
-            InitializeUsers();
             InitializeBoardPieces();
             InitializeComboBoxes();
+
+            try
+            {
+                _managerClient = new GameLogicManagerClient(context);
+                _managerClient.UpdatePlayerService(player.IdPlayer, game.IdGame);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+
+            this._currentPlayer = player;
+            this._currentGame = game;
+
+            InitializeUsers();
+            
+            if (this._currentPlayer.IdPlayer == game.Players.First().IdPlayer)
+            {
+                this.butRollingDice.IsEnabled = true;
+            }
+
         }
 
         private void InitializeUsers()
         {
-            imgPlayerPiece.Source = ImageManager.GetSourceImage(player.Token.ImagenSource);
-            lblPlayerTurn.Content = game.Players.Peek().Name;
+            imgPlayerPiece.Source = ImageManager.GetSourceImage(_currentPlayer.Piece.ImagenSource);
+            lblPlayerTurn.Content = _currentGame.Players.Peek().Name;
             lblPlayerTurn.HorizontalContentAlignment = HorizontalAlignment.Center;
             lblPlayerTurn.VerticalContentAlignment = VerticalAlignment.Center;
-            Service.PlayerClient playerClient = new Service.PlayerClient();
-            lblUserName.Content = playerClient.GetMyPlayersName(player.IdPlayer, game.IdGame);
-            lblPlayerMoney.Content = $" M {player.Money}.00 ";
-            Myproperties = new List<Service.Property>();
+            PlayerClient playerClient = new PlayerClient();
+
+            try
+            {
+                lblUserName.Content = playerClient.GetMyPlayersName(_currentPlayer.IdPlayer, _currentGame.IdGame);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+
+            lblPlayerMoney.Content = $" M {_currentPlayer.Money}.00 ";
+            _listPropertiesPurchased = new List<Property>();
         }
 
         private void InitializeComboBoxes()
@@ -67,10 +104,10 @@ namespace UIGameClientTourist.XAMLViews
 
         private void InitializeBoardPieces()
         {
-            pieces[0] = imgPiece1;
-            pieces[1] = imgPiece2;
-            pieces[2] = imgPiece3;
-            pieces[3] = imgPiece4;
+            _boardPieces[0] = imgPiece1;
+            _boardPieces[1] = imgPiece2;
+            _boardPieces[2] = imgPiece3;
+            _boardPieces[3] = imgPiece4;
         }
 
         private void PauseGame(object sender, KeyEventArgs e)
@@ -78,26 +115,53 @@ namespace UIGameClientTourist.XAMLViews
             if (e.Key == Key.Escape)
             {
                 grdPauseMenu.Visibility = Visibility.Visible;
-                butRollingDice.Visibility = Visibility.Collapsed;
-                butEndTurn.Visibility = Visibility.Collapsed;
-                wpMyPropietiers.IsEnabled = false;
                 e.Handled = true;
             }
         }
 
-        private void RestartGame(object sender, RoutedEventArgs e)
+        private void ButtonClickRestartGame(object sender, RoutedEventArgs e)
         {
             grdPauseMenu.Visibility = Visibility.Collapsed;
-            butEndTurn.Visibility = Visibility.Visible;
-            butRollingDice.Visibility = Visibility.Visible;
-            wpMyPropietiers.IsEnabled = true;
         }
 
-        private void GoToMenuFromGame(object sender, RoutedEventArgs e)
+        private void ButtonClickGoToMenuFromGame(object sender, RoutedEventArgs e)
         {
-            MainMenuGame mainMenuGameWindow = new MainMenuGame(player.IdPlayer);
+            
+            try
+            {
+                _managerClient.DeclareLosingPlayer(_currentPlayer, _currentGame.IdGame);
+
+                if (_currentPlayer.Guest)
+                {
+                    ExitToGame();
+                }
+                else
+                {
+                    BackToMenu();
+                }
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+        }
+
+        public void ExitToGame()
+        {
+            Window window = new MainWindow();
+            window.Show();
             this.Close();
-            mainMenuGameWindow.Show();
+        }
+
+        public void BackToMenu()
+        {
+            MainMenuGame menu = new MainMenuGame(_currentPlayer.IdPlayer);
+            menu.Show();
+            this.Close();
         }
 
         private void AnimationMovePlayerCardX(WinImage piece, int updateXPosition)
@@ -118,13 +182,30 @@ namespace UIGameClientTourist.XAMLViews
             piece.BeginAnimation(Canvas.TopProperty, animationMoveOverY);
         }
 
-        private void PlayMyTurn(object sender, RoutedEventArgs e)
+        private void ButtonClickPlayTurn(object sender, RoutedEventArgs e)
         {
-            managerClient.PlayTurn(this.game);
+            try
+            {
+                _managerClient.PlayTurn(this._currentGame);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+                butRollingDice.IsEnabled = false;
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+        }
+
+        public void ShowButtonsForEnd()
+        {
             butRollingDice.Visibility = Visibility.Collapsed;
             butEndTurn.Visibility = Visibility.Visible;
         }
-        private void AccommodatePart(WinImage piece, Service.Player player, Service.Property property)
+
+        private void AccommodatePart(WinImage piece, Service.Player player, Property property)
         {
             int initialXPiece = 26;
             int initialYPiece = 34;
@@ -132,23 +213,23 @@ namespace UIGameClientTourist.XAMLViews
 
             if (PiecesInSameSquare == 2)
             {
-                AnimationMovePlayerCardX(piece, initialXPiece + property.PosicitionX);
+                AnimationMovePlayerCardX(piece, initialXPiece + property.PositionX);
             }
             if (PiecesInSameSquare == 3)
             {
-                AnimationMovePlayerCardY(piece, initialYPiece + property.PosicitionY);
+                AnimationMovePlayerCardY(piece, initialYPiece + property.PositionY);
             }
             if (PiecesInSameSquare == 4)
             {
-                AnimationMovePlayerCardY(piece, initialYPiece + property.PosicitionY);
-                AnimationMovePlayerCardX(piece, initialXPiece + property.PosicitionX);
+                AnimationMovePlayerCardY(piece, initialYPiece + property.PositionY);
+                AnimationMovePlayerCardX(piece, initialXPiece + property.PositionX);
             }
         }
 
         private int CheckPieceCountInSquare(Service.Player player)
         {
             int cont = 0;
-            foreach (var playerAux in game.Players)
+            foreach (var playerAux in _currentGame.Players)
             {
                 if (player.Position == playerAux.Position) cont++;
             }
@@ -164,6 +245,7 @@ namespace UIGameClientTourist.XAMLViews
         {
             imgPropertyPictureBox.Source = ImageManager.GetSourceImage(property.ImageSource);
             lblPropertyTitle.Content = property.Name;
+            lblPropertySubtitle.Content = $"-  {property.Name}  -";
             rectPropertyColor.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(property.Color));
             lblCostRentWithoutHouses.Content = $"£ {(int)Math.Round(property.BuyingCost * 0.15)}";
             lblCostRentWithAHouse.Content = $"£ {(int)Math.Round(property.BuyingCost * 0.45)}";
@@ -176,15 +258,28 @@ namespace UIGameClientTourist.XAMLViews
 
         private void UpdateTurnVisual()
         {
-            lblPlayerTurn.Content = game.Players.Peek().Name;
+            lblPlayerTurn.Content = _currentGame.Players.Peek().Name;
         }
-
-        private void EndTurn(object sender, RoutedEventArgs e)
+        private void ButtonClickEndTurn(object sender, RoutedEventArgs e)
         {
             butRollingDice.Visibility = Visibility.Visible;
             butEndTurn.Visibility = Visibility.Collapsed;
             butRollingDice.IsEnabled = false;
-            managerClient.UpdateQueu(game.IdGame);
+
+            try
+            {
+                _managerClient.UpdateQueu(_currentGame.IdGame);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+                AlertMessage();
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+
         }
 
         void IGameLogicManagerCallback.PlayDie(int firstDieValue, int SecondDieValue)
@@ -203,31 +298,31 @@ namespace UIGameClientTourist.XAMLViews
             }
             if (player.Position < 10)
             {
-                AnimationMovePlayerCardY(pieces[player.Token.PartNumber], property.PosicitionY);
-                AnimationMovePlayerCardX(pieces[player.Token.PartNumber], property.PosicitionX);
-                AccommodatePart(pieces[player.Token.PartNumber], player, property);
+                AnimationMovePlayerCardY(_boardPieces[player.Piece.PartNumber], property.PositionY);
+                AnimationMovePlayerCardX(_boardPieces[player.Piece.PartNumber], property.PositionX);
+                AccommodatePart(_boardPieces[player.Piece.PartNumber], player, property);
             }
             else if (player.Position > 9 && player.Position < 20)
             {
-                AnimationMovePlayerCardX(pieces[player.Token.PartNumber], 15);
-                AnimationMovePlayerCardY(pieces[player.Token.PartNumber], property.PosicitionY);
-                AccommodatePart(pieces[player.Token.PartNumber], player, property);
+                AnimationMovePlayerCardX(_boardPieces[player.Piece.PartNumber], 15);
+                AnimationMovePlayerCardY(_boardPieces[player.Piece.PartNumber], property.PositionY);
+                AccommodatePart(_boardPieces[player.Piece.PartNumber], player, property);
             }
             else if (player.Position > 19 && player.Position < 30)
             {
-                AnimationMovePlayerCardY(pieces[player.Token.PartNumber], -50);
-                AnimationMovePlayerCardX(pieces[player.Token.PartNumber], property.PosicitionX);
-                AccommodatePart(pieces[player.Token.PartNumber], player, property);
+                AnimationMovePlayerCardY(_boardPieces[player.Piece.PartNumber], -50);
+                AnimationMovePlayerCardX(_boardPieces[player.Piece.PartNumber], property.PositionX);
+                AccommodatePart(_boardPieces[player.Piece.PartNumber], player, property);
             }
             else if (player.Position > 29 && player.Position < 40)
             {
-                AnimationMovePlayerCardX(pieces[player.Token.PartNumber], 664);
-                AnimationMovePlayerCardY(pieces[player.Token.PartNumber], property.PosicitionY);
-                AccommodatePart(pieces[player.Token.PartNumber], player, property);
+                AnimationMovePlayerCardX(_boardPieces[player.Piece.PartNumber], 664);
+                AnimationMovePlayerCardY(_boardPieces[player.Piece.PartNumber], property.PositionY);
+                AccommodatePart(_boardPieces[player.Piece.PartNumber], player, property);
             }
         }
 
-        private Property SelectedProperty;
+        private Property _selectedProperty;
 
         public void ShowMyProperties()
         {
@@ -241,7 +336,7 @@ namespace UIGameClientTourist.XAMLViews
 
             StackPanel stackPanelContainer = new StackPanel();
 
-            foreach (var property in Myproperties)
+            foreach (var property in _listPropertiesPurchased)
             {
                 Grid grdContainer = new Grid
                 {
@@ -283,11 +378,11 @@ namespace UIGameClientTourist.XAMLViews
                 };
                 grdContainer.Children.Add(lblCost);
 
-                if (property.IsMortgaged == true)
+                if (property.IsMortgaged)
                 {
                     Label lblIsMortgaged = new Label
                     {
-                        Content = "Propiedad Enbargada",
+                        Content = Properties.Resources.PropertyStatus_Label,
                         Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0)),
                         FontWeight = FontWeights.Bold,
                         Margin = new Thickness(58, 25, 0, 0),
@@ -305,7 +400,7 @@ namespace UIGameClientTourist.XAMLViews
                 };
 
                 grdContainer.Children.Add(imgProperty);
-                grdContainer.PreviewMouseLeftButtonDown += (sender, e) => ViewDetailsOfMyProperty(sender, e, property);
+                grdContainer.PreviewMouseLeftButtonDown += (sender, e) => MouseClickViewDetailsOfMyProperty(sender, e, property);
                 stackPanelContainer.Children.Add(grdContainer);
             }
 
@@ -314,10 +409,11 @@ namespace UIGameClientTourist.XAMLViews
         }
 
 
-        private void ViewDetailsOfMyProperty(object sender, MouseButtonEventArgs e, Property property)
+        private void MouseClickViewDetailsOfMyProperty(object sender, MouseButtonEventArgs e, Property property)
         {
             ShowProperty(property);
             grdPropertyModificationButtonGroup.Visibility = Visibility.Visible;
+            DefinitivePropertyCost.Content = 0;
             wpMyPropietiers.IsEnabled = false;
 
             if (EnableHouseControls(property))
@@ -326,7 +422,7 @@ namespace UIGameClientTourist.XAMLViews
             }
 
             ShowMortgageControls(property);
-            SelectedProperty = property;
+            _selectedProperty = property;
         }
 
         private bool EnableHouseControls(Property property)
@@ -337,6 +433,7 @@ namespace UIGameClientTourist.XAMLViews
             {
                 cboNumerHouse.IsEnabled = true;
                 enableHouseControls = property.NumberHouses == 4;
+                cboNumerHouse.SelectionChanged += (senderAux, eAux) => UpdatePriceOnHouseSelection(senderAux, eAux, property);
             }
 
             return enableHouseControls;
@@ -346,6 +443,7 @@ namespace UIGameClientTourist.XAMLViews
         {
             if (property.NumberHouses == 4)
             {
+                cboNumerHouse.IsEnabled = false;
                 cboHotel.IsEnabled = true;
             }
         }
@@ -362,7 +460,6 @@ namespace UIGameClientTourist.XAMLViews
             }
         }
 
-
         void ShowProperty(Property property)
         {
             grdAddHotel.Visibility = Visibility.Visible;
@@ -373,85 +470,59 @@ namespace UIGameClientTourist.XAMLViews
             UpdatePropertyCard(property);
         }
 
-        private void BuyProperty(object sender, RoutedEventArgs e)
+        private void ButtonClickBuyProperty(object sender, RoutedEventArgs e)
         {
-            var lastProperty = Myproperties.LastOrDefault();
+            var lastProperty = _listPropertiesPurchased.LastOrDefault();
 
-            if (CanAffordProperty(lastProperty))
+            if (lastProperty != null && _currentPlayer.Money - lastProperty.BuyingCost >= 0)
             {
-                HandlePropertyPurchase(ref lastProperty);
-                managerClient.PurchaseProperty(lastProperty, player, game.IdGame);
-                player.Money -= lastProperty.DefinitiveCost;
+                lastProperty.Situation = Property.PropertySituation.Bought;
+                lastProperty.Taxes = CalculateRentalCost(0, lastProperty.BuyingCost);
+
+                try
+                {
+                    _managerClient.PurchaseProperty(lastProperty, _currentPlayer, _currentGame.IdGame);
+                }
+                catch (TimeoutException exception)
+                {
+                    HandleException(exception);
+                }
+                catch (EndpointNotFoundException exception)
+                {
+                    HandleException(exception);
+                }
+
                 ShowMyProperties();
+
                 ClosePropertyManagementPanel();
+
+                if (VerifyCompletePropertySet(lastProperty.Color))
+                {
+                    DuplicatePropertyRent(lastProperty.Color);
+                }
             }
             else
             {
-                MessageBox.Show("No te alcanza", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Properties.Resources.NoFunds_Label, "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
-        private bool CanAffordProperty(Property property)
-        {
-            int numHouses = ((int?)cboNumerHouse.SelectedItem) ?? 0;
-            return player.Money - (property.BuyingCost + (numHouses * GetHouseCostByColor(property.Color))) >= 0;
-        }
-
-
-        private void HandlePropertyPurchase(ref Property property)
-        {
-            if (cboHotel.SelectedItem != null && cboHotel.SelectedItem.ToString() == "Si")
-            {
-                HandleHotelPurchase(ref property);
-            }
-            else if (cboNumerHouse.SelectedItem != null)
-            {
-                HandleHousePurchase(ref property, (int)cboNumerHouse.SelectedItem);
-            }
-            else
-            {
-                HandleStandardPropertyPurchase(property);
-            }
-        }
-
-        private void HandleHotelPurchase(ref Property property)
-        {
-            property.Situation = Property.PropertySituation.Hotel;
-            property.Taxes = (long)(property.BuyingCost * 4.00);
-            property.DefinitiveCost += GetHotelCostByColor(property.Color);
-        }
-
-        private void HandleHousePurchase(ref Property property, int numberOfHouses)
-        {
-            property.NumberHouses = numberOfHouses;
-            property.Situation = Property.PropertySituation.House;
-            property.Taxes = CalculateRentalCost(numberOfHouses, property.BuyingCost, property.Color);
-            property.DefinitiveCost += numberOfHouses * GetHouseCostByColor(property.Color);
-        }
-
-        private void HandleStandardPropertyPurchase(Property property)
-        {
-            property.Situation = Property.PropertySituation.Bought;
-        }
-
-        private long CalculateRentalCost(int numberOfHouses, long costOfProperty, string propertyColor)
+        private long CalculateRentalCost(int numberOfHouses, long costOfProperty)
         {
             long rentalCost = 0;
 
             switch (numberOfHouses)
             {
                 case 0:
-                    rentalCost = VerifyCompletePropertySet(propertyColor)
-                        ? (long)Math.Round(0.15 * costOfProperty * 2)
-                        : (long)Math.Round(0.15 * costOfProperty); break;
+                    rentalCost = (long)Math.Round(0.15 * costOfProperty); break;
                 case 1:
-                    rentalCost = (long)(0.0875 * costOfProperty); break;
+                    rentalCost = (long)Math.Round(0.45 * costOfProperty); break;
                 case 2:
-                    rentalCost = (long)(1.35 * costOfProperty); break;
+                    rentalCost = (long)Math.Round(1.35 * costOfProperty); break;
                 case 3:
-                    rentalCost = (long)(2.25 * costOfProperty); break;
+                    rentalCost = (long)Math.Round(2.25 * costOfProperty); break;
                 case 4:
-                    rentalCost = (long)(3.15 * costOfProperty); break;
+                    rentalCost = (long)Math.Round(3.15 * costOfProperty); break;
             }
 
             return rentalCost;
@@ -519,20 +590,22 @@ namespace UIGameClientTourist.XAMLViews
             DefinitivePropertyCost.Content = " ";
         }
 
-        private void ShowPropertyPurchaseContract(object sender, RoutedEventArgs e)
+        private void ButtonClickShowPropertyPurchaseContract(object sender, RoutedEventArgs e)
         {
             grdMenu.Visibility = Visibility.Collapsed;
             grdAddHouse.Visibility = Visibility.Visible;
             grdAddHotel.Visibility = Visibility.Visible;
             grdPropertyPurchaseButtonGroup.Visibility = Visibility.Visible;
-            wpMyPropietiers.IsEnabled = false;
+            DefinitivePropertyCost.Content = _listPropertiesPurchased[_listPropertiesPurchased.Count - 1].BuyingCost;
+        }
 
-            DefinitivePropertyCost.Content = Myproperties[Myproperties.Count - 1].DefinitiveCost;
-
-            if (VerifyCompletePropertySet(Myproperties[Myproperties.Count - 1].Color))
+        private void UpdatePriceOnHouseSelection(object sender, SelectionChangedEventArgs e, Property property)
+        {
+            if(cboNumerHouse.SelectedValue != null)
             {
-                cboNumerHouse.IsEnabled = true;
-            }
+                int numberOfHouses = (int)cboNumerHouse.SelectedValue;
+                DefinitivePropertyCost.Content = numberOfHouses * GetHouseCostByColor(property.Color);
+            } 
         }
 
         private bool VerifyCompletePropertySet(string color)
@@ -540,7 +613,7 @@ namespace UIGameClientTourist.XAMLViews
             bool result = false;
             int numberProperties = 0;
 
-            foreach (var property in Myproperties)
+            foreach (var property in _listPropertiesPurchased)
             {
                 if (property.Color == color)
                 {
@@ -556,19 +629,48 @@ namespace UIGameClientTourist.XAMLViews
             return result;
         }
 
-        private void DeclineToPurchaseProperty(object sender, RoutedEventArgs e)
+        private void DuplicatePropertyRent(string color)
         {
-            Myproperties.Remove(Myproperties[Myproperties.Count - 1]);
+            foreach(var property in _listPropertiesPurchased)
+            {
+                if (property.Color.Equals(color) && property.NumberHouses == 0)
+                {
+                    property.Taxes *= 2;
+
+                    try
+                    {
+                        _managerClient.ModifyProperty(property, _currentGame.IdGame);
+                    }
+                    catch (TimeoutException exception)
+                    {
+                        _ilog.Error(exception.ToString());
+                        AlertMessage();
+                    }
+                    catch (EndpointNotFoundException exception)
+                    {
+                        _ilog.Error(exception.ToString());
+                        AlertMessage();
+                    }
+                    catch (CommunicationException exception)
+                    {
+                        _ilog.Error(exception.ToString());
+                        AlertMessage();
+                    }
+                }
+            }
+        }
+
+        private void ButtonClickDeclineToPurchaseProperty(object sender, RoutedEventArgs e)
+        {
+            _listPropertiesPurchased.Remove(_listPropertiesPurchased[_listPropertiesPurchased.Count - 1]);
             ClosePropertyManagementPanel();
         }
 
-        private void AddHotelToProperty(object sender, SelectionChangedEventArgs e)
+        private void UpdatePropertyWithHotelSelection(object sender, SelectionChangedEventArgs e)
         {
             if (cboHotel.SelectedItem != null && cboHotel.SelectedItem.ToString() == "Si")
             {
-                cboNumerHouse.IsEnabled = false;
                 cboNumerHouse.SelectedItem = null;
-                butBuyProperty.Visibility = Visibility.Visible;
             }
         }
 
@@ -594,27 +696,82 @@ namespace UIGameClientTourist.XAMLViews
         {
             grdPrisonSquare.Visibility = Visibility.Visible;
             butCloseEvento.Visibility = Visibility.Visible;
-            managerClient.JailPlayer(game.IdGame, player.IdPlayer);
+            try
+            {
+                _managerClient.JailPlayer(_currentGame.IdGame, _currentPlayer.IdPlayer);
+            }
+            catch (TimeoutException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
+            catch (CommunicationException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
         }
 
-        private void ShowEventSquare()
+        private async Task ShowEventSquare()
         {
+            Wildcard wildcard = GetEvent();
+            txtEventDescription.Text = GetMessage(wildcard.Action);
+            grdPropertyPurchase.Visibility =Visibility.Visible;
             grdEventSquare.Visibility = Visibility.Visible;
-            butCloseEvento.Visibility = Visibility.Visible;
-            //managerClient.GetActionCard(game.IdGame);
+
+            await Task.Delay(4000);
+
+            grdPropertyPurchase.Visibility = Visibility.Collapsed;
+            grdEventSquare.Visibility = Visibility.Collapsed;
+            butCloseEvento.Visibility = Visibility.Collapsed;
+
+            try
+            {
+                _managerClient.GetActionCard(_currentGame.IdGame, _currentPlayer.IdPlayer, wildcard);
+            }
+            catch (TimeoutException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
+            catch (CommunicationException exception)
+            {
+                _ilog.Error(exception.ToString());
+                AlertMessage();
+            }
+        }
+
+        private Wildcard GetEvent()
+        {
+            Wildcard wildcard = new Wildcard();
+
+            int seed = Environment.TickCount;
+            Random random = new Random(seed);
+            wildcard.Action = random.Next(2, 7);
+
+            return wildcard;
         }
 
         private void ShowPropertySquare(Property property)
         {
             grdMenu.Visibility = Visibility.Visible;
             grdPropertySquare.Visibility = Visibility.Visible;
-            wpMyPropietiers.IsEnabled = false;
             lblNumberHouses.Content = property.NumberHouses;
             UpdatePropertyCard(property);
-            Myproperties.Add(property);
+            _listPropertiesPurchased.Add(property);
         }
 
-        private void CloseEventCard(object sender, RoutedEventArgs e)
+        private void ButtonClickCloseEventCard(object sender, RoutedEventArgs e)
         {
             grdPropertyPurchase.Visibility = Visibility.Collapsed;
             grdPrisonSquare.Visibility = Visibility.Collapsed;
@@ -622,105 +779,17 @@ namespace UIGameClientTourist.XAMLViews
             butCloseEvento.Visibility = Visibility.Collapsed;
         }
 
-        public void OpenAuctionWindow(Property property)
-        {
-            btnBuy.Visibility = Visibility.Collapsed;
-            btnDecline.Visibility = Visibility.Collapsed;
-            grdPropertyPurchase.Visibility = Visibility.Visible;
-            grdPropertySquare.Visibility = Visibility.Visible;
-            BidWindow.Visibility = Visibility.Visible;
-            LblBid.Visibility = Visibility.Collapsed;
-            txtBid.Visibility = Visibility.Collapsed;
-            btnBid.Visibility = Visibility.Collapsed;
-            btnEndBid.Visibility = Visibility.Collapsed;
-
-            if (game.Players.Peek().IdPlayer == player.IdPlayer)
-            {
-                btnEndBid.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                LblBid.Visibility = Visibility.Visible;
-                txtBid.Visibility = Visibility.Visible;
-                btnBid.Visibility = Visibility.Visible;
-            }
-
-            UpdatePropertyCard(property);
-        }
-
-        private void EndBid(object sender, RoutedEventArgs e)
-        {
-            managerClient.StopAuction(this.game.IdGame, this.LastBid.IdPlayer, this.LastBid.BidMoney, this.Myproperties[this.Myproperties.Count - 1]);
-        }
-
-        private void MakeBid(object sender, RoutedEventArgs e)
-        {
-            btnBid.IsEnabled = false;
-            int Bid = int.Parse(txtBid.Text);
-            if (Bid > LastBid.BidMoney && Bid <= player.Money)
-            {
-                managerClient.MakeBid(game.IdGame, player.IdPlayer, Bid);
-                _ = ColdDownBid();
-            }
-        }
-
-        public void UpdateBids(int IdPlayer, int Bid)
-        {
-            Label LblBidObject = new Label();
-            LblBidObject.Content = $" M {Bid}.00 ";
-            Bids.Children.Insert(0, LblBidObject);
-            this.LastBid.BidMoney = Bid;
-
-            if (game.Players.Peek().IdPlayer == player.IdPlayer)
-            {
-                this.LastBid.IdPlayer = IdPlayer;
-            }
-        }
-
-        async Task ColdDownBid()
-        {
-            await Task.Delay(5000);
-            await Console.Out.WriteLineAsync("Pasaron 3 segundos");
-            btnBid.IsEnabled = true;
-        }
-
-        public void EndAuction(Service.Property property, int winner, int winnerBid)
-        {
-            grdPropertyPurchase.Visibility = Visibility.Collapsed;
-            grdPropertySquare.Visibility = Visibility.Collapsed;
-            this.BidWindow.Visibility = Visibility.Collapsed;
-            if (game.Players.Peek().IdPlayer == player.IdPlayer)
-            {
-                this.Myproperties.RemoveAt(this.Myproperties.Count - 1);
-            }
-            else if (player.IdPlayer == winner)
-            {
-                this.Myproperties.Add(property);
-                this.Myproperties[Myproperties.Count - 1].BuyingCost = winnerBid;
-                this.player.Money -= winnerBid;
-                managerClient.PurchaseProperty(Myproperties[Myproperties.Count - 1], player, game.IdGame);
-                lblPlayerMoney.Content = $" M {player.Money}.00 ";
-                ShowMyProperties();
-            }
-        }
-
         public void UpdateTurns(Queue<Service.Player> turns)
         {
-            game.Players = turns;
+            _currentGame.Players = turns;
             UpdateTurnVisual();
-            if (game.Players.Peek().IdPlayer == player.IdPlayer)
+            if (turns.Peek().IdPlayer == _currentPlayer.IdPlayer)
             {
-                if (!player.Jail)
-                {
-                    this.butRollingDice.IsEnabled = true;
-                }
-                else
-                {
-                    player.Jail = false;
-                    managerClient.UpdateQueu(game.IdGame);
-                }
+                this.butRollingDice.IsEnabled = true;
             }
         }
+
+        private readonly Dictionary<int, bool> expelledPlayers = new Dictionary<int, bool>();
 
         public void LoadFriends(Queue<Service.Player> friends)
         {
@@ -799,34 +868,64 @@ namespace UIGameClientTourist.XAMLViews
                 {
                     Height = 50,
                     Width = 50,
-                    Source = ImageManager.GetSourceImage(friend.Token.ImagenSource),
+                    Source = ImageManager.GetSourceImage(friend.Piece.ImagenSource),
                     Stretch = Stretch.Fill,
                     Margin = new Thickness(-145, 20, 0, 20),
                 };
 
                 grdContainer.Children.Add(imgProperty);
+
+                if (_currentPlayer.IdPlayer != friend.IdPlayer && !friend.Loser && !expelledPlayers.ContainsKey(friend.IdPlayer))
+                {
+                    Button butShowName = new Button
+                    {
+                        Content = "Expulsar",
+                        Height = 23,
+                        Width = 50,
+                        Margin = new Thickness(90, 70, 0, 0),
+                    };
+
+                    butShowName.Click += (sender, e) =>
+                    {
+                        butShowName.Visibility = Visibility.Collapsed;
+
+                        try
+                        {
+                            _managerClient.ExpelPlayer(friend.IdPlayer, _currentGame.IdGame);
+                        }
+                        catch (TimeoutException exception) 
+                        {
+                            HandleException(exception);
+                        }
+                        catch (EndpointNotFoundException exception) 
+                        { 
+                            HandleException(exception);
+                        }
+
+                        expelledPlayers[friend.IdPlayer] = true;
+                    };
+
+                    grdContainer.Children.Add(butShowName);
+                }
+
                 stackPanelContainer.Children.Add(grdContainer);
 
-                if (friend.IdPlayer == player.IdPlayer)
+                if (friend.IdPlayer == _currentPlayer.IdPlayer)
                 {
-                    lblPlayerMoney.Content = $" M {friend.Money}.00 ";
+                    UpgradePlayerMoney(friend.Money);
                 }
+
             }
 
             scrollViewer.Content = stackPanelContainer;
             PlayersInGame.Children.Add(scrollViewer);
         }
 
-        public void ShowEvent(int action)
-        {
-            Console.WriteLine(action);
-        }
-
         public void NotifyPlayerOfEvent(int messageNumber)
         {
             grdPropertyPurchase.Visibility = Visibility.Visible;
             grdRent.Visibility = Visibility.Visible;
-
+            
             DispatcherTimer timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(3)
@@ -844,51 +943,59 @@ namespace UIGameClientTourist.XAMLViews
         public void UpgradePlayerMoney(long money)
         {
             lblPlayerMoney.Content = $" M {money}.00 ";
-            player.Money = money;
+            _currentPlayer.Money = money;
         }
 
-        private void CancelPurchase(object sender, RoutedEventArgs e)
+        private void ButtonClickCancelPurchase(object sender, RoutedEventArgs e)
         {
             grdAddHouse.Visibility = Visibility.Collapsed;
             grdAddHotel.Visibility = Visibility.Collapsed;
             grdPropertyPurchaseButtonGroup.Visibility = Visibility.Collapsed;
             DefinitivePropertyCost.Content = " ";
             DefinitivePropertyCost.Visibility = Visibility.Collapsed;
-            wpMyPropietiers.IsEnabled = true;
             grdMenu.Visibility = Visibility.Visible;
         }
 
-        private void MortgageProperty(object sender, RoutedEventArgs e)
+        private void ButtonClickMortgageProperty(object sender, RoutedEventArgs e)
         {
-            managerClient.RealizePropertyMortgage(game.IdGame, SelectedProperty, player.IdPlayer);
-            SelectedProperty.IsMortgaged = true;
+            try
+            {
+                _managerClient.RealizePropertyMortgage(_currentGame.IdGame, _selectedProperty, _currentPlayer.IdPlayer);
+            }
+            catch (TimeoutException exception) 
+            {
+                HandleException(exception);
+            }
+
+            _selectedProperty.IsMortgaged = true;
             butPayMortgage.Visibility = Visibility.Visible;
             butMortgageProperty.Visibility = Visibility.Collapsed;
+            ShowMessageBox(Properties.Resources.SuccessfulMortgageRegistrationAlert_Label);
             ShowMyProperties();
         }
 
+
         public void RemoveGamePiece(Service.Player player)
         {
-            pieces[player.Token.PartNumber].Visibility = Visibility.Collapsed;
+            _boardPieces[player.Piece.PartNumber].Visibility = Visibility.Collapsed;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonClickCloseGame(object sender, RoutedEventArgs e)
         {
             grdWinnerMural.Visibility = Visibility.Collapsed;
+            BackToMenu();
         }
 
         public void EndGame(int idWinner)
         {
-            butRollingDice.IsEnabled = false;
-            butEndTurn.IsEnabled = false;
-
-            if (player.IdPlayer == idWinner)
+            DisableButtons();
+            if (_currentPlayer.IdPlayer == idWinner)
             {
                 grdWinnerMural.Visibility = Visibility.Visible;
             }
         }
 
-        private void CancelAddHomesAndHotels(object sender, RoutedEventArgs e)
+        private void ButtonClickCancelAddHomesAndHotels(object sender, RoutedEventArgs e)
         {
             CloseAddHomesAndHotels();
         }
@@ -902,46 +1009,137 @@ namespace UIGameClientTourist.XAMLViews
             grdPropertyModificationButtonGroup.Visibility = Visibility.Collapsed;
             butMortgageProperty.Visibility = Visibility.Collapsed;
             butPayMortgage.Visibility = Visibility.Collapsed;
+            DefinitivePropertyCost.Content = " ";
+            wpMyPropietiers.IsEnabled = true;
+            RestoreComboBoxes();
+        }
+
+        private void RestoreComboBoxes()
+        {
             cboHotel.SelectedItem = null;
             cboNumerHouse.SelectedItem = null;
             cboHotel.IsEnabled = false;
             cboNumerHouse.IsEnabled = false;
-            DefinitivePropertyCost.Content = " ";
-            wpMyPropietiers.IsEnabled = true;
         }
 
-        private void AddHomesAndHotels(object sender, RoutedEventArgs e)
+        private void ButtonClickAddHomesAndHotels(object sender, RoutedEventArgs e)
         {
             if (cboNumerHouse.SelectedItem != null)
             {
-                int numberHouse = int.Parse(cboNumerHouse.SelectedItem.ToString());
-                if (numberHouse + SelectedProperty.NumberHouses <= 4)
-                {
+                TryToAddHouses();
+            }
+            else if (cboHotel.SelectedItem != null && cboHotel.SelectedItem.ToString() == "Si")
+            {
+                TryToAddHotel();
+            }
+            else
+            {
+                ShowMessageBox(Properties.Resources.ComBoxSelectionAlert_Label);
+            }
+        }
 
+        private void TryToAddHouses()
+        {
+            int numberHouse = int.Parse(cboNumerHouse.SelectedItem.ToString());
+            long costTotal = numberHouse * GetHouseCostByColor(_selectedProperty.Color);
+
+            if (_currentPlayer.Money - costTotal >= 0)
+            {
+                if (numberHouse + _selectedProperty.NumberHouses < 4)
+                {
+                    UpdatePropertyForHouses(numberHouse);
+                    ShowMessageBox(Properties.Resources.BuyingHouses_Label);
+                    CloseAddHomesAndHotels();
                 }
                 else
                 {
-                    MessageBox.Show("El numero maximo de construcción de casas por propiedades es de 4 casas", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ShowMessageBox(Properties.Resources.AlertMaximumNumberHomesProperty_Label);
                 }
             }
             else
             {
-                MessageBox.Show("Selecciona un numero de casas por favor ", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                ShowMessageBox(Properties.Resources.InsufficientBalanceAlert_Label);
             }
         }
 
-        private void PayMortgage(object sender, RoutedEventArgs e)
+        private void UpdatePropertyForHouses(int numberHouse)
+        {
+            _selectedProperty.Situation = Property.PropertySituation.House;
+            _selectedProperty.NumberHouses += numberHouse;
+            _selectedProperty.Taxes = CalculateRentalCost(_selectedProperty.NumberHouses, _selectedProperty.BuyingCost);
+            try
+            {
+                _managerClient.ModifyProperty(_selectedProperty, _currentGame.IdGame);
+                _managerClient.PayConstruction(_currentPlayer.IdPlayer, numberHouse * GetHouseCostByColor(_selectedProperty.Color), _currentGame.IdGame);
+            }
+            catch (TimeoutException exception) 
+            {
+                HandleException(exception);
+            }
+        }
+
+        private void TryToAddHotel()
+        {
+            long costTotal = GetHotelCostByColor(_selectedProperty.Color);
+
+            if (_currentPlayer.Money - costTotal >= 0)
+            {
+                UpdatePropertyForHotel(costTotal);
+                ShowMessageBox(Properties.Resources.BuyingHotel_Label);
+                CloseAddHomesAndHotels();
+            }
+            else
+            {
+                ShowMessageBox(Properties.Resources.InsufficientBalanceAlert_Label);
+            }
+        }
+
+        private void UpdatePropertyForHotel(long costTotal)
+        {
+            _selectedProperty.Situation = Property.PropertySituation.Hotel;
+            _selectedProperty.Taxes = (long)(_selectedProperty.BuyingCost * 4.00);
+            _selectedProperty.NumberHouses = 0;
+
+            try
+            {
+                _managerClient.ModifyProperty(_selectedProperty, _currentGame.IdGame);
+                _managerClient.PayConstruction(_currentPlayer.IdPlayer, costTotal, _currentGame.IdGame);
+            }
+            catch (TimeoutException exception) 
+            {
+                HandleException(exception);
+            }
+
+        }
+
+        private void ShowMessageBox(string message)
+        {
+            MessageBox.Show(message, Properties.Resources.SuccessConfirmationAlert_Label, MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void ButtonClickPayMortgage(object sender, RoutedEventArgs e)
         {
             butMortgageProperty.Visibility = Visibility.Visible;
             butPayMortgage.Visibility = Visibility.Collapsed;
-            SelectedProperty.IsMortgaged = false;
-            managerClient.PayPropertyMortgage(game, player.IdPlayer, SelectedProperty);
+            _selectedProperty.IsMortgaged = false;
+
+            try
+            {
+                _managerClient.PayPropertyMortgage(_currentGame, _currentPlayer.IdPlayer, _selectedProperty);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+
             ShowMyProperties();
+            ShowMessageBox(Properties.Resources.SuccessfulPaymentAlert_Label);
+            CloseAddHomesAndHotels();
         }
 
         public void UpdatePropertyStatus(Property property)
         {
-            foreach (var propertyAux in Myproperties)
+            foreach (var propertyAux in _listPropertiesPurchased)
             {
                 if (propertyAux.Name == property.Name)
                 {
@@ -953,41 +1151,73 @@ namespace UIGameClientTourist.XAMLViews
             ShowMyProperties();
         }
 
-        private string GetMessege(int messageNumber)
+        public enum MessageCode
         {
+            RentPayment,
+            RentCollection,
+            GoToJailEvent,
+            PayPartnerEvent,
+            EventPayTaxes,
+            EventGetTaxes,
+            EventAdvancePosition,
+            EventBackwardPosition
+        }
+
+        private string GetMessage(int messageCode)
+        {
+            MessageCode requestResult = (MessageCode)messageCode;
+
             string message = "";
 
-            switch (messageNumber)
+            switch (requestResult)
             {
-                case 0:
-                    message = ""; break;
-                case 1:
-                    message = ""; break;
-                case 2:
-                    message = ""; break;
-                case 3:
-                    message = ""; break;
-                case 4:
-                    message = ""; break;
-                case 5:
-                    message = ""; break;
-                case 6:
-                    message = ""; break;
-                case 7:
-                    message = ""; break;
-                case 8:
-                    message = ""; break;
+                case MessageCode.RentPayment:
+                    message = Properties.Resources.RentPayment_Label;
+                    break;
+                case MessageCode.RentCollection:
+                    message = Properties.Resources.RentCollection_Label;
+                    break;
+                case MessageCode.GoToJailEvent:
+                    message = Properties.Resources.GoToJailEvent_Label;
+                    break;
+                case MessageCode.PayPartnerEvent:
+                    message = Properties.Resources.PayPartnerEvent_Label;
+                    break;
+                case MessageCode.EventPayTaxes:
+                    message = Properties.Resources.EventPayTaxes_Label;
+                    break;
+                case MessageCode.EventGetTaxes:
+                    message = Properties.Resources.EventGetTaxes_Label;
+                    break;
+                case MessageCode.EventAdvancePosition:
+                    message = Properties.Resources.EventAdvancePosition_Label;
+                    break;
+                case MessageCode.EventBackwardPosition:
+                    message = Properties.Resources.EventBackwardPosition_Label;
+                    break;
             }
 
             return message;
         }
 
-        public void GoToJail()
+        private void DisableButtons()
         {
-            throw new NotImplementedException();
+            butRollingDice.IsEnabled = false;
+            butEndTurn.IsEnabled = false;
         }
 
-        public void NotifyPlayerOfEvent(string message)
+        private void AlertMessage()
+        {
+            MessageBox.Show(Properties.Resources.LostConnectionAlertLabel_Label, Properties.Resources.SuccessConfirmationAlert_Label, MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void HandleException(Exception exception)
+        {
+            _ilog.Error(exception.ToString());
+            AlertMessage();
+        }
+
+        public void MovePlayerPieceOnBoard(Service.Player player, Property property, Service.Game game)
         {
             throw new NotImplementedException();
         }

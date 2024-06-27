@@ -17,57 +17,57 @@
             <Label x:Name="lblFriendsList" Content="{x:Static p:Resources.FriendsList_Label}" HorizontalAlignment="Left" Margin="771,52,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFF4F4F4" FontSize="39" FontWeight="Bold" Width="646"/>
             <Label x:Name="lblPlayer" Content="{x:Static p:Resources.Player_Label}" HorizontalAlignment="Left" Margin="169,38,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFF4F4F4" FontSize="48" FontWeight="Bold" Width="519"/>
             <Rectangle x:Name="rectBackgroundStartingCode" HorizontalAlignment="Left" Height="82" Margin="749,672,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" RenderTransformOrigin="-0.256,0.11" Fill="#FF6E3AD2"/>
-            <Border x:Name="brdClockPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdClockPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece1" HorizontalAlignment="Left" Height="114" Margin="220,274,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E"/>
                     <Image x:Name="imgPiece1" HorizontalAlignment="Left" Height="90" Margin="244,286,0,0" VerticalAlignment="Top" Width="85" Source="..\GameResources\Pictures\brdClockPiece.png"/>
                 </Grid>
             </Border>
-            <Border x:Name="brdDuckPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdDuckPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece2" HorizontalAlignment="Left" Height="117" Margin="368,271,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E"/>
                     <Image x:Name="imgPiece2" HorizontalAlignment="Left" Height="86" Margin="395,291,0,0" VerticalAlignment="Top" Width="68" Source="..\GameResources\Pictures\brdDuckPiece.png"/>
                 </Grid>
             </Border>
-            <Border x:Name="brdCarPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdCarPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece3" HorizontalAlignment="Left" Height="118" Margin="516,270,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E"/>
                     <Image x:Name="imgPiece3" HorizontalAlignment="Left" Height="55" Margin="529,303,0,0" VerticalAlignment="Top" Width="96" Source="..\GameResources\Pictures\brdCarPiece.png"/>
                 </Grid>
             </Border>
-            <Border x:Name="brdPlayDiscPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdPlayDiscPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece4" HorizontalAlignment="Left" Height="117" Margin="220,405,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E" RenderTransformOrigin="0.51,1.37"/>
                     <Image x:Name="imgPiece4" HorizontalAlignment="Left" Height="89" Margin="247,419,0,0" VerticalAlignment="Top" Width="71" Source="..\GameResources\Pictures\brdPlayDiscPiece.png"/>
                 </Grid>
             </Border>
-            <Border x:Name="brdMPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdMPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece5" HorizontalAlignment="Left" Height="117" Margin="365,405,0,0" VerticalAlignment="Top" Width="128" Fill="#FF061A2E"/>
                     <Image x:Name="imgPiece5" HorizontalAlignment="Left" Height="70" Margin="384,428,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\brdMPiece.png"/>
                 </Grid>
             </Border>
-            <Border x:Name="brdTVPiece" MouseLeftButtonDown="PieceSelected">
+            <Border x:Name="brdTVPiece" MouseLeftButtonDown="MouseClickPieceSelected">
                 <Grid>
                     <Ellipse x:Name="ellPiece6" HorizontalAlignment="Left" Height="122" Margin="515,402,0,0" VerticalAlignment="Top" Width="124" Fill="#FF061A2E"/>
                     <Image x:Name="imgPiece6" HorizontalAlignment="Left" Height="72" Margin="536,428,0,0" VerticalAlignment="Top" Width="82" Source="..\GameResources\Pictures\brdTVPiece.png" RenderTransformOrigin="0.634,0.495"/>
                 </Grid>
             </Border>
             <Label x:Name="lblSelectPiece" Content="{x:Static p:Resources.ChosePlayer_Label}" HorizontalAlignment="Left" Margin="169,170,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="30" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" Width="519"/>
-            <Button x:Name="butGoToLobbyWindow" Content="{x:Static p:Resources.ContinueChoice_button}" HorizontalAlignment="Left" Margin="290,617,0,0" VerticalAlignment="Top" Height="62" Width="272" Background="#FFDB9F1D" Foreground="White" FontSize="24" BorderThickness="3"  FontWeight="Bold" BorderBrush="#FF8C640D" Click="NavigateToLobbyWindow"/>
+            <Button x:Name="butGoToLobbyWindow" Content="{x:Static p:Resources.ContinueChoice_button}" HorizontalAlignment="Left" Margin="290,617,0,0" VerticalAlignment="Top" Height="62" Width="272" Background="#FFDB9F1D" Foreground="White" FontSize="24" BorderThickness="3"  FontWeight="Bold" BorderBrush="#FF8C640D" Click="ButtonClickNavigateToLobbyWindow" Visibility="Collapsed"/>
             <Label x:Name ="lblshowCodeGame" Content="" Margin="1074,688,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="30" BorderThickness="3"  FontWeight="Bold" Width="278" RenderTransformOrigin="0.041,0.507" />
             <Label x:Name="lblCodeGame" Content="{x:Static p:Resources.GameCode_Label}" HorizontalAlignment="Left" Margin="763,688,0,0" VerticalAlignment="Top" Foreground="#FFF4F4F4" FontSize="30" FontWeight="Bold"/>
             <Rectangle HorizontalAlignment="Left" Height="34" Margin="49,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="40" Fill="White"/>
-            <Image x:Name="imgBackButton" HorizontalAlignment="Left" Height="78" Margin="28,39,0,0" VerticalAlignment="Top" Width="84" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="GoMainMenuGameWindow" />
+            <Image x:Name="imgBackButton" HorizontalAlignment="Left" Height="78" Margin="28,39,0,0" VerticalAlignment="Top" Width="84" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="ButtonClickMainMenu" />
             <ScrollViewer Margin="771,138,178,195" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <WrapPanel x:Name ="wpFriends" Orientation="Vertical"/>
             </ScrollViewer>
-            <Image x:Name="imgCopy" Margin="0,0,178,104" Stretch="Fill" Source="\GameResources\Pictures\copia.png" MouseLeftButtonDown="btnCopiarAlPortapapeles_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="51"/>
+            <Image x:Name="imgCopy" Margin="0,0,178,104" Stretch="Fill" Source="\GameResources\Pictures\copia.png" MouseLeftButtonDown="MouseClickCopyToClipboard" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="51"/>
         </Grid>
 
         <Grid x:Name="grdLobbyWindow" Height="843" Width="1595" Visibility="Collapsed">
             <Rectangle HorizontalAlignment="Left" Height="63" Margin="76,65,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="46" Fill="White" RenderTransformOrigin="0.5,0.5" />
-            <Image x:Name="imgBackButtonLobbyWindow" HorizontalAlignment="Left" Height="100" Margin="49,56,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="NavigateToCreateGameWindow"/>
+            <Image x:Name="imgBackButtonLobbyWindow" HorizontalAlignment="Left" Height="100" Margin="49,56,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="ButtonClickNavigateToCreateGameWindow"/>
             <Rectangle x:Name="rectBackgroundPlayersJoinedGame" HorizontalAlignment="Left" Height="275" Margin="240,67,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="605" Fill="White"/>
             <Rectangle x:Name="rectBackgroundUserName" HorizontalAlignment="Left" Height="275" Margin="868,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="482" Fill="#FF12273C"/>
             <Rectangle x:Name="rectBackgroundChat" HorizontalAlignment="Left" Height="320" Margin="241,362,0,0" Stroke="Black" StrokeThickness="5" VerticalAlignment="Top" Width="1109" Fill="White"/>
@@ -77,10 +77,10 @@
             <Rectangle HorizontalAlignment="Left" Height="48" Margin="256,378,0,0" Stroke="#FFCEB640" VerticalAlignment="Top" Width="1078" Fill="#FFCEB640"/>
             <Label x:Name="lblTitleChat" Content="Chat" HorizontalAlignment="Left" Margin="766,381,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
             <Border HorizontalAlignment="Left" Height="54" Margin="261,616,0,0" VerticalAlignment="Top" Width="1004" Background="White" CornerRadius="30" BorderThickness="2" BorderBrush="#FF110D0D">
-                <TextBox x:Name ="Message" TextWrapping="Wrap" Text="" Margin="27,11,36,11" BorderBrush="White" FontSize="18" PreviewKeyDown="SendMessageEnter"/>
+                <TextBox x:Name ="Message" TextWrapping="Wrap" Text="" Margin="27,11,36,11" BorderBrush="White" FontSize="18" PreviewKeyDown="SendMessageOnEnter"/>
             </Border>
             <Ellipse x:Name="ellMessage" HorizontalAlignment="Left" Height="58" Margin="1267,614,0,0" Stroke="Black" VerticalAlignment="Top" Width="62" Fill="#FF959595"/>
-            <Image x:Name="imgSendMessageButton" HorizontalAlignment="Left" Height="46" Margin="1275,620,0,0" VerticalAlignment="Top" Width="53" Source="..\GameResources\Pictures\2762408.png" MouseLeftButtonDown="SendMessage"/>
+            <Image x:Name="imgSendMessageButton" HorizontalAlignment="Left" Height="46" Margin="1275,620,0,0" VerticalAlignment="Top" Width="53" Source="..\GameResources\Pictures\2762408.png" MouseLeftButtonDown="MouseClickSendMessage"/>
             <Ellipse x:Name="rectBackgroundPlayerCard" HorizontalAlignment="Left" Height="118" Margin="907,182,0,0" VerticalAlignment="Top" Width="121" Fill="#FF061A2E"/>
             <Image x:Name="imgPlayerCard" HorizontalAlignment="Left" Height="78" Margin="928,202,0,0" VerticalAlignment="Top" Width="78" Stretch="Fill"/>
             <Label x:Name="lblTitleUsername" Content="UserName" HorizontalAlignment="Left" Margin="1033,215,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Foreground="#FFFFFEFE" Width="316"/>
@@ -90,7 +90,7 @@
             <ScrollViewer Margin="261,431,266,233" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <WrapPanel x:Name ="wpChatMessages" Orientation="Vertical" Width="1065"/>
             </ScrollViewer>
-            <Button x:Name ="butStartGame" Content="{x:Static p:Resources.Play_Button}" HorizontalAlignment="Left" Margin="1124,718,0,0" VerticalAlignment="Top" Height="52" Width="226" Background="#FF6C25D2" Foreground="White" FontSize="22" FontWeight="Bold" Click="GoGameWindow" IsEnabled="True"/>
+            <Button x:Name ="butStartGame" Content="{x:Static p:Resources.Play_Button}" HorizontalAlignment="Left" Margin="1124,718,0,0" VerticalAlignment="Top" Height="52" Width="226" Background="#FF6C25D2" Foreground="White" FontSize="22" FontWeight="Bold" Click="ButtonClickGoGameWindow" IsEnabled="True"/>
         </Grid>
     </Grid>
 </Window>

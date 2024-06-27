@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:UIGameClientTourist.XAMLViews"
         mc:Ignorable="d"
         xmlns:p = "clr-namespace:UIGameClientTourist.Properties"
-        Title="JoinGame" WindowState="Maximized">
+        Title="JoinGame" WindowState="Maximized" KeyDown ="ExitJoinGameWindow">
     <Grid Margin="0,0,0,-6">
         <Image Height="1082" VerticalAlignment="Top" Source="..\GameResources\Pictures\1black_wood_-grain-texture_11-1024x647.jpg" HorizontalAlignment="Center" Width="1595"/>
         <Rectangle HorizontalAlignment="Center" Height="590" Stroke="Black" VerticalAlignment="Center" Width="1228" Fill="#FF12273C" RadiusX="23" RadiusY="23" />
         <Label x:Name="lbTitle" Content="{x:Static p:Resources.TitleNameGameName_Label}" HorizontalAlignment="Left" Margin="500,152,0,0" VerticalAlignment="Top" Foreground="#FFE0E0E0" FontFamily="STXingkai" FontSize="72" FontStretch="ExtraExpanded" FontWeight="Bold" RenderTransformOrigin="0.512,0.786"/>
         <Label Content="{x:Static p:Resources.WriteGameCode_Label}" HorizontalAlignment="Left" Margin="223,307,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" Foreground="#FFE9E9E9" FontFamily="Arial Rounded MT Bold"/>
         <TextBox x:Name="CodeGame" HorizontalAlignment="Left" Margin="223,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1105" Height="56" FontSize="36"/>
-        <Button Content="{x:Static p:Resources.SearchGame_Button}" HorizontalAlignment="Left" Margin="1107,558,0,0" VerticalAlignment="Top" Height="50" Width="221" FontSize="20" FontWeight="Bold" Click="SearchGame"/>
+        <Button Content="{x:Static p:Resources.SearchGame_Button}" HorizontalAlignment="Left" Margin="1107,558,0,0" VerticalAlignment="Top" Height="50" Width="221" FontSize="20" FontWeight="Bold" Click="ButtonClickSearchGame"/>
     </Grid>
 </Window>

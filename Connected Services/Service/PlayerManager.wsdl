@@ -94,6 +94,12 @@
   <wsdl:message name="IPlayer_PlayerSearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:PlayerSearchResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayer_ModifyPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_ModifyPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPasswordResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlayer_GetPlayerName_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlayerName" />
   </wsdl:message>
@@ -112,8 +118,35 @@
   <wsdl:message name="IPlayer_GetMyPlayersName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMyPlayersNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlayer_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_GetPlayerData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerData" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_GetPlayerData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_UpdatePlayerData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerData" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_UpdatePlayerData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="IPlayer_LogOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
   <wsdl:message name="IFriends_SavePlayerSession_InputMessage">
     <wsdl:part name="parameters" element="tns:SavePlayerSession" />
+  </wsdl:message>
+  <wsdl:message name="IFriends_SavePlayerSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePlayerSessionResponse" />
   </wsdl:message>
   <wsdl:message name="IFriends_MakeFriendRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:MakeFriendRequest" />
@@ -135,6 +168,9 @@
   </wsdl:message>
   <wsdl:message name="IFriends_UpdatePlayerSession_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePlayerSession" />
+  </wsdl:message>
+  <wsdl:message name="IFriends_UpdatePlayerSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerSessionResponse" />
   </wsdl:message>
   <wsdl:message name="IFriends_UpdateFriendRequest_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UpdateFriendRequest" />
@@ -181,6 +217,9 @@
   <wsdl:message name="IGameManager_UpdatePlayerGame_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePlayerGame" />
   </wsdl:message>
+  <wsdl:message name="IGameManager_UpdatePlayerGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerGameResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameManager_SelectedPiece_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectedPiece" />
   </wsdl:message>
@@ -195,6 +234,24 @@
   </wsdl:message>
   <wsdl:message name="IGameManager_InactivateBeginGameControls_InputMessage">
     <wsdl:part name="parameters" element="tns:InactivateBeginGameControls" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_CheckTakenPieces_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTakenPieces" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_InviteFriendToGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:InviteFriendToGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_InviteFriendToGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InviteFriendToGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_RemovePlayerFromGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePlayerFromGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_RemovePlayerFromGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePlayerFromGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameManager_UpdatePlayerListInGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerListInGame" />
   </wsdl:message>
   <wsdl:message name="IGameManager_AddVisualPlayers_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:AddVisualPlayers" />
@@ -226,12 +283,6 @@
   <wsdl:message name="IGameManager_PreparePieces_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PreparePiecesResponse" />
   </wsdl:message>
-  <wsdl:message name="IGameManager_UptdatePiecePlayer_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:UptdatePiecePlayer" />
-  </wsdl:message>
-  <wsdl:message name="IGameManager_UptdatePiecePlayer_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:UptdatePiecePlayerResponse" />
-  </wsdl:message>
   <wsdl:message name="IGameManager_BlockPiece_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:BlockPiece" />
   </wsdl:message>
@@ -259,20 +310,20 @@
   <wsdl:message name="IGameLogicManager_PlayTurn_InputMessage">
     <wsdl:part name="parameters" element="tns:PlayTurn" />
   </wsdl:message>
+  <wsdl:message name="IGameLogicManager_AdvanceTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceTurn" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_AdvanceTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceTurnResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameLogicManager_UpdatePlayerService_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePlayerService" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_PurchaseProperty_InputMessage">
     <wsdl:part name="parameters" element="tns:PurchaseProperty" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_StartAuction_InputMessage">
-    <wsdl:part name="parameters" element="tns:StartAuction" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_MakeBid_InputMessage">
-    <wsdl:part name="parameters" element="tns:MakeBid" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_StopAuction_InputMessage">
-    <wsdl:part name="parameters" element="tns:StopAuction" />
+  <wsdl:message name="IGameLogicManager_PurchaseProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurchasePropertyResponse" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_UpdateQueu_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateQueu" />
@@ -292,6 +343,30 @@
   <wsdl:message name="IGameLogicManager_PayPropertyMortgage_InputMessage">
     <wsdl:part name="parameters" element="tns:PayPropertyMortgage" />
   </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GoToJail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GoToJail" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ModifyProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProperty" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ExpelPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExpelPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_UpdatePlayersInGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlayersInGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_PayConstruction_InputMessage">
+    <wsdl:part name="parameters" element="tns:PayConstruction" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_PayConstruction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PayConstructionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GetNumberOfPlayersAtPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfPlayersAtPosition" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_GetNumberOfPlayersAtPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfPlayersAtPositionResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameLogicManager_PlayDie_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PlayDie" />
   </wsdl:message>
@@ -310,24 +385,6 @@
   <wsdl:message name="IGameLogicManager_ShowCard_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ShowCardResponse" />
   </wsdl:message>
-  <wsdl:message name="IGameLogicManager_OpenAuctionWindow_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OpenAuctionWindow" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_OpenAuctionWindow_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OpenAuctionWindowResponse" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_UpdateBids_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBids" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_UpdateBids_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBidsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_EndAuction_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:EndAuction" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_EndAuction_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:EndAuctionResponse" />
-  </wsdl:message>
   <wsdl:message name="IGameLogicManager_UpdateTurns_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UpdateTurns" />
   </wsdl:message>
@@ -339,18 +396,6 @@
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_LoadFriends_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:LoadFriendsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_ShowEvent_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ShowEvent" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_ShowEvent_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ShowEventResponse" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_GoToJail_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:GoToJail" />
-  </wsdl:message>
-  <wsdl:message name="IGameLogicManager_GoToJail_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:GoToJailResponse" />
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_NotifyPlayerOfEvent_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotifyPlayerOfEvent" />
@@ -381,6 +426,18 @@
   </wsdl:message>
   <wsdl:message name="IGameLogicManager_UpdatePropertyStatus_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UpdatePropertyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ExitToGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ExitToGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ExitToGame_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ExitToGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ShowButtonsForEnd_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowButtonsForEnd" />
+  </wsdl:message>
+  <wsdl:message name="IGameLogicManager_ShowButtonsForEnd_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowButtonsForEndResponse" />
   </wsdl:message>
   <wsdl:message name="IFriendList_GetFriendRequests_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFriendRequests" />
@@ -421,6 +478,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/PlayerSearch" message="tns:IPlayer_PlayerSearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/PlayerSearchResponse" message="tns:IPlayer_PlayerSearch_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/ModifyPassword" message="tns:IPlayer_ModifyPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/ModifyPasswordResponse" message="tns:IPlayer_ModifyPassword_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPlayerName">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/GetPlayerName" message="tns:IPlayer_GetPlayerName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/GetPlayerNameResponse" message="tns:IPlayer_GetPlayerName_OutputMessage" />
@@ -433,10 +494,27 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/GetMyPlayersName" message="tns:IPlayer_GetMyPlayersName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/GetMyPlayersNameResponse" message="tns:IPlayer_GetMyPlayersName_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/SendEmail" message="tns:IPlayer_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/SendEmailResponse" message="tns:IPlayer_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/GetPlayerData" message="tns:IPlayer_GetPlayerData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/GetPlayerDataResponse" message="tns:IPlayer_GetPlayerData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/UpdatePlayerData" message="tns:IPlayer_UpdatePlayerData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/UpdatePlayerDataResponse" message="tns:IPlayer_UpdatePlayerData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlayer/LogOut" message="tns:IPlayer_LogOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlayer/LogOutResponse" message="tns:IPlayer_LogOut_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IFriends">
     <wsdl:operation name="SavePlayerSession">
       <wsdl:input wsaw:Action="http://tempuri.org/IFriends/SavePlayerSession" message="tns:IFriends_SavePlayerSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFriends/SavePlayerSessionResponse" message="tns:IFriends_SavePlayerSession_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="MakeFriendRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/IFriends/MakeFriendRequest" message="tns:IFriends_MakeFriendRequest_InputMessage" />
@@ -452,6 +530,7 @@
     </wsdl:operation>
     <wsdl:operation name="UpdatePlayerSession">
       <wsdl:input wsaw:Action="http://tempuri.org/IFriends/UpdatePlayerSession" message="tns:IFriends_UpdatePlayerSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFriends/UpdatePlayerSessionResponse" message="tns:IFriends_UpdatePlayerSession_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateFriendRequest">
       <wsdl:output wsaw:Action="http://tempuri.org/IFriends/UpdateFriendRequest" message="tns:IFriends_UpdateFriendRequest_OutputCallbackMessage" />
@@ -489,6 +568,7 @@
     </wsdl:operation>
     <wsdl:operation name="UpdatePlayerGame">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UpdatePlayerGame" message="tns:IGameManager_UpdatePlayerGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/UpdatePlayerGameResponse" message="tns:IGameManager_UpdatePlayerGame_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectedPiece">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/SelectedPiece" message="tns:IGameManager_SelectedPiece_InputMessage" />
@@ -504,6 +584,20 @@
     </wsdl:operation>
     <wsdl:operation name="InactivateBeginGameControls">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/InactivateBeginGameControls" message="tns:IGameManager_InactivateBeginGameControls_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTakenPieces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/CheckTakenPieces" message="tns:IGameManager_CheckTakenPieces_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InviteFriendToGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/InviteFriendToGame" message="tns:IGameManager_InviteFriendToGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/InviteFriendToGameResponse" message="tns:IGameManager_InviteFriendToGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerFromGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/RemovePlayerFromGame" message="tns:IGameManager_RemovePlayerFromGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/RemovePlayerFromGameResponse" message="tns:IGameManager_RemovePlayerFromGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerListInGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UpdatePlayerListInGame" message="tns:IGameManager_UpdatePlayerListInGame_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddVisualPlayers">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/AddVisualPlayers" message="tns:IGameManager_AddVisualPlayers_OutputCallbackMessage" />
@@ -524,10 +618,6 @@
     <wsdl:operation name="PreparePieces">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/PreparePieces" message="tns:IGameManager_PreparePieces_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/PreparePiecesResponse" message="tns:IGameManager_PreparePieces_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UptdatePiecePlayer">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/UptdatePiecePlayer" message="tns:IGameManager_UptdatePiecePlayer_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameManager/UptdatePiecePlayerResponse" message="tns:IGameManager_UptdatePiecePlayer_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="BlockPiece">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameManager/BlockPiece" message="tns:IGameManager_BlockPiece_OutputCallbackMessage" />
@@ -550,20 +640,16 @@
     <wsdl:operation name="PlayTurn">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PlayTurn" message="tns:IGameLogicManager_PlayTurn_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AdvanceTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/AdvanceTurn" message="tns:IGameLogicManager_AdvanceTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/AdvanceTurnResponse" message="tns:IGameLogicManager_AdvanceTurn_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UpdatePlayerService">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePlayerService" message="tns:IGameLogicManager_UpdatePlayerService_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PurchaseProperty">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PurchaseProperty" message="tns:IGameLogicManager_PurchaseProperty_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StartAuction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/StartAuction" message="tns:IGameLogicManager_StartAuction_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="MakeBid">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/MakeBid" message="tns:IGameLogicManager_MakeBid_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StopAuction">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/StopAuction" message="tns:IGameLogicManager_StopAuction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PurchasePropertyResponse" message="tns:IGameLogicManager_PurchaseProperty_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateQueu">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateQueu" message="tns:IGameLogicManager_UpdateQueu_InputMessage" />
@@ -583,6 +669,26 @@
     <wsdl:operation name="PayPropertyMortgage">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PayPropertyMortgage" message="tns:IGameLogicManager_PayPropertyMortgage_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GoToJail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJail" message="tns:IGameLogicManager_GoToJail_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProperty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ModifyProperty" message="tns:IGameLogicManager_ModifyProperty_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpelPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ExpelPlayer" message="tns:IGameLogicManager_ExpelPlayer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayersInGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePlayersInGame" message="tns:IGameLogicManager_UpdatePlayersInGame_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PayConstruction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PayConstruction" message="tns:IGameLogicManager_PayConstruction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PayConstructionResponse" message="tns:IGameLogicManager_PayConstruction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfPlayersAtPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPosition" message="tns:IGameLogicManager_GetNumberOfPlayersAtPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPositionResponse" message="tns:IGameLogicManager_GetNumberOfPlayersAtPosition_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PlayDie">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/PlayDie" message="tns:IGameLogicManager_PlayDie_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/PlayDieResponse" message="tns:IGameLogicManager_PlayDie_InputCallbackMessage" />
@@ -595,18 +701,6 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/ShowCard" message="tns:IGameLogicManager_ShowCard_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ShowCardResponse" message="tns:IGameLogicManager_ShowCard_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OpenAuctionWindow">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/OpenAuctionWindow" message="tns:IGameLogicManager_OpenAuctionWindow_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/OpenAuctionWindowResponse" message="tns:IGameLogicManager_OpenAuctionWindow_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateBids">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateBids" message="tns:IGameLogicManager_UpdateBids_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateBidsResponse" message="tns:IGameLogicManager_UpdateBids_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EndAuction">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/EndAuction" message="tns:IGameLogicManager_EndAuction_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/EndAuctionResponse" message="tns:IGameLogicManager_EndAuction_InputCallbackMessage" />
-    </wsdl:operation>
     <wsdl:operation name="UpdateTurns">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateTurns" message="tns:IGameLogicManager_UpdateTurns_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdateTurnsResponse" message="tns:IGameLogicManager_UpdateTurns_InputCallbackMessage" />
@@ -614,14 +708,6 @@
     <wsdl:operation name="LoadFriends">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/LoadFriends" message="tns:IGameLogicManager_LoadFriends_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/LoadFriendsResponse" message="tns:IGameLogicManager_LoadFriends_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ShowEvent">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/ShowEvent" message="tns:IGameLogicManager_ShowEvent_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ShowEventResponse" message="tns:IGameLogicManager_ShowEvent_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GoToJail">
-      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJail" message="tns:IGameLogicManager_GoToJail_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/GoToJailResponse" message="tns:IGameLogicManager_GoToJail_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotifyPlayerOfEvent">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEvent" message="tns:IGameLogicManager_NotifyPlayerOfEvent_OutputCallbackMessage" />
@@ -642,6 +728,14 @@
     <wsdl:operation name="UpdatePropertyStatus">
       <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus" message="tns:IGameLogicManager_UpdatePropertyStatus_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatusResponse" message="tns:IGameLogicManager_UpdatePropertyStatus_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitToGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/ExitToGame" message="tns:IGameLogicManager_ExitToGame_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ExitToGameResponse" message="tns:IGameLogicManager_ExitToGame_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowButtonsForEnd">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameLogicManager/ShowButtonsForEnd" message="tns:IGameLogicManager_ShowButtonsForEnd_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameLogicManager/ShowButtonsForEndResponse" message="tns:IGameLogicManager_ShowButtonsForEnd_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IFriendList">
@@ -689,6 +783,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/ModifyPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetPlayerName">
       <soap12:operation soapAction="http://tempuri.org/IPlayer/GetPlayerName" style="document" />
       <wsdl:input>
@@ -716,6 +819,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/SendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerData">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/GetPlayerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerData">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/UpdatePlayerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <soap12:operation soapAction="http://tempuri.org/IPlayer/LogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IFriends" type="tns:IFriends">
     <wsp:PolicyReference URI="#NetTcpBinding_IFriends_policy" />
@@ -725,6 +864,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="MakeFriendRequest">
       <soap12:operation soapAction="http://tempuri.org/IFriends/MakeFriendRequest" style="document" />
@@ -758,6 +900,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateFriendRequest">
       <soap12:operation soapAction="http://tempuri.org/IFriends/UpdateFriendRequest" style="document" />
@@ -837,6 +982,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SelectedPiece">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/SelectedPiece" style="document" />
@@ -864,6 +1012,36 @@
     </wsdl:operation>
     <wsdl:operation name="InactivateBeginGameControls">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/InactivateBeginGameControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTakenPieces">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/CheckTakenPieces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InviteFriendToGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/InviteFriendToGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerFromGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/RemovePlayerFromGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerListInGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameManager/UpdatePlayerListInGame" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -906,15 +1084,6 @@
     </wsdl:operation>
     <wsdl:operation name="PreparePieces">
       <soap12:operation soapAction="http://tempuri.org/IGameManager/PreparePieces" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UptdatePiecePlayer">
-      <soap12:operation soapAction="http://tempuri.org/IGameManager/UptdatePiecePlayer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -968,6 +1137,15 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="AdvanceTurn">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/AdvanceTurn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdatePlayerService">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdatePlayerService" style="document" />
       <wsdl:input>
@@ -979,24 +1157,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="StartAuction">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/StartAuction" style="document" />
-      <wsdl:input>
+      <wsdl:output>
         <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="MakeBid">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/MakeBid" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="StopAuction">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/StopAuction" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateQueu">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdateQueu" style="document" />
@@ -1034,6 +1197,48 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="GoToJail">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GoToJail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProperty">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ModifyProperty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ExpelPlayer">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ExpelPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayersInGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdatePlayersInGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PayConstruction">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/PayConstruction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfPlayersAtPosition">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PlayDie">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/PlayDie" style="document" />
       <wsdl:input>
@@ -1061,33 +1266,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OpenAuctionWindow">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/OpenAuctionWindow" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateBids">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdateBids" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndAuction">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/EndAuction" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="UpdateTurns">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdateTurns" style="document" />
       <wsdl:input>
@@ -1099,24 +1277,6 @@
     </wsdl:operation>
     <wsdl:operation name="LoadFriends">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/LoadFriends" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ShowEvent">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ShowEvent" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GoToJail">
-      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/GoToJail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1162,6 +1322,24 @@
     </wsdl:operation>
     <wsdl:operation name="UpdatePropertyStatus">
       <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitToGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ExitToGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowButtonsForEnd">
+      <soap12:operation soapAction="http://tempuri.org/IGameLogicManager/ShowButtonsForEnd" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

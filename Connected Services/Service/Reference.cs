@@ -23,10 +23,19 @@ namespace UIGameClientTourist.Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> BanEndField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UIGameClientTourist.Service.FriendRequest[] FriendRequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UIGameClientTourist.Service.FriendRequest[] FriendRequest1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GamesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -36,6 +45,9 @@ namespace UIGameClientTourist.Service {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WinsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string eMailField;
@@ -53,6 +65,32 @@ namespace UIGameClientTourist.Service {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> BanEnd {
+            get {
+                return this.BanEndField;
+            }
+            set {
+                if ((this.BanEndField.Equals(value) != true)) {
+                    this.BanEndField = value;
+                    this.RaisePropertyChanged("BanEnd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
             }
         }
         
@@ -78,6 +116,19 @@ namespace UIGameClientTourist.Service {
                 if ((object.ReferenceEquals(this.FriendRequest1Field, value) != true)) {
                     this.FriendRequest1Field = value;
                     this.RaisePropertyChanged("FriendRequest1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Games {
+            get {
+                return this.GamesField;
+            }
+            set {
+                if ((this.GamesField.Equals(value) != true)) {
+                    this.GamesField = value;
+                    this.RaisePropertyChanged("Games");
                 }
             }
         }
@@ -117,6 +168,19 @@ namespace UIGameClientTourist.Service {
                 if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
                     this.PasswordField = value;
                     this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Wins {
+            get {
+                return this.WinsField;
+            }
+            set {
+                if ((this.WinsField.Equals(value) != true)) {
+                    this.WinsField = value;
+                    this.RaisePropertyChanged("Wins");
                 }
             }
         }
@@ -537,6 +601,18 @@ namespace UIGameClientTourist.Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GamesWinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool GuestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdPlayerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -552,13 +628,13 @@ namespace UIGameClientTourist.Service {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UIGameClientTourist.Service.Piece PieceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UIGameClientTourist.Service.Piece TokenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UIGameClientTourist.Service.Property[] propertiesField;
+        private int VotesToExpelField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -567,6 +643,58 @@ namespace UIGameClientTourist.Service {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Games {
+            get {
+                return this.GamesField;
+            }
+            set {
+                if ((this.GamesField.Equals(value) != true)) {
+                    this.GamesField = value;
+                    this.RaisePropertyChanged("Games");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GamesWin {
+            get {
+                return this.GamesWinField;
+            }
+            set {
+                if ((this.GamesWinField.Equals(value) != true)) {
+                    this.GamesWinField = value;
+                    this.RaisePropertyChanged("GamesWin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Guest {
+            get {
+                return this.GuestField;
+            }
+            set {
+                if ((this.GuestField.Equals(value) != true)) {
+                    this.GuestField = value;
+                    this.RaisePropertyChanged("Guest");
+                }
             }
         }
         
@@ -636,6 +764,19 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public UIGameClientTourist.Service.Piece Piece {
+            get {
+                return this.PieceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PieceField, value) != true)) {
+                    this.PieceField = value;
+                    this.RaisePropertyChanged("Piece");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Position {
             get {
                 return this.PositionField;
@@ -649,27 +790,14 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UIGameClientTourist.Service.Piece Token {
+        public int VotesToExpel {
             get {
-                return this.TokenField;
+                return this.VotesToExpelField;
             }
             set {
-                if ((object.ReferenceEquals(this.TokenField, value) != true)) {
-                    this.TokenField = value;
-                    this.RaisePropertyChanged("Token");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UIGameClientTourist.Service.Property[] properties {
-            get {
-                return this.propertiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.propertiesField, value) != true)) {
-                    this.propertiesField = value;
-                    this.RaisePropertyChanged("properties");
+                if ((this.VotesToExpelField.Equals(value) != true)) {
+                    this.VotesToExpelField = value;
+                    this.RaisePropertyChanged("VotesToExpel");
                 }
             }
         }
@@ -777,9 +905,6 @@ namespace UIGameClientTourist.Service {
         private string ColorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long DefinitiveCostField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ImageSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -795,10 +920,10 @@ namespace UIGameClientTourist.Service {
         private UIGameClientTourist.Service.Player OwnerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PosicitionXField;
+        private int PositionXField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PosicitionYField;
+        private int PositionYField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UIGameClientTourist.Service.Property.PropertySituation SituationField;
@@ -841,19 +966,6 @@ namespace UIGameClientTourist.Service {
                 if ((object.ReferenceEquals(this.ColorField, value) != true)) {
                     this.ColorField = value;
                     this.RaisePropertyChanged("Color");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long DefinitiveCost {
-            get {
-                return this.DefinitiveCostField;
-            }
-            set {
-                if ((this.DefinitiveCostField.Equals(value) != true)) {
-                    this.DefinitiveCostField = value;
-                    this.RaisePropertyChanged("DefinitiveCost");
                 }
             }
         }
@@ -924,27 +1036,27 @@ namespace UIGameClientTourist.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PosicitionX {
+        public int PositionX {
             get {
-                return this.PosicitionXField;
+                return this.PositionXField;
             }
             set {
-                if ((this.PosicitionXField.Equals(value) != true)) {
-                    this.PosicitionXField = value;
-                    this.RaisePropertyChanged("PosicitionX");
+                if ((this.PositionXField.Equals(value) != true)) {
+                    this.PositionXField = value;
+                    this.RaisePropertyChanged("PositionX");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PosicitionY {
+        public int PositionY {
             get {
-                return this.PosicitionYField;
+                return this.PositionYField;
             }
             set {
-                if ((this.PosicitionYField.Equals(value) != true)) {
-                    this.PosicitionYField = value;
-                    this.RaisePropertyChanged("PosicitionY");
+                if ((this.PositionYField.Equals(value) != true)) {
+                    this.PositionYField = value;
+                    this.RaisePropertyChanged("PositionY");
                 }
             }
         }
@@ -1031,9 +1143,9 @@ namespace UIGameClientTourist.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Card", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Wildcard", Namespace="http://schemas.datacontract.org/2004/07/Contracts.IGameManager")]
     [System.SerializableAttribute()]
-    public partial class Card : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Wildcard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -1164,10 +1276,19 @@ namespace UIGameClientTourist.Service {
         private string FriendNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GamesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GamesWinsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdFriendField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsOnlineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WinRateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1188,6 +1309,32 @@ namespace UIGameClientTourist.Service {
                 if ((object.ReferenceEquals(this.FriendNameField, value) != true)) {
                     this.FriendNameField = value;
                     this.RaisePropertyChanged("FriendName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Games {
+            get {
+                return this.GamesField;
+            }
+            set {
+                if ((this.GamesField.Equals(value) != true)) {
+                    this.GamesField = value;
+                    this.RaisePropertyChanged("Games");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GamesWins {
+            get {
+                return this.GamesWinsField;
+            }
+            set {
+                if ((this.GamesWinsField.Equals(value) != true)) {
+                    this.GamesWinsField = value;
+                    this.RaisePropertyChanged("GamesWins");
                 }
             }
         }
@@ -1218,6 +1365,19 @@ namespace UIGameClientTourist.Service {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WinRate {
+            get {
+                return this.WinRateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WinRateField, value) != true)) {
+                    this.WinRateField = value;
+                    this.RaisePropertyChanged("WinRate");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1244,6 +1404,12 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/PlayerSearch", ReplyAction="http://tempuri.org/IPlayer/PlayerSearchResponse")]
         System.Threading.Tasks.Task<int> PlayerSearchAsync(UIGameClientTourist.Service.PlayerSet player);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/ModifyPassword", ReplyAction="http://tempuri.org/IPlayer/ModifyPasswordResponse")]
+        int ModifyPassword(int playerId, string currentPassword, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/ModifyPassword", ReplyAction="http://tempuri.org/IPlayer/ModifyPasswordResponse")]
+        System.Threading.Tasks.Task<int> ModifyPasswordAsync(int playerId, string currentPassword, string newPassword);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/GetPlayerName", ReplyAction="http://tempuri.org/IPlayer/GetPlayerNameResponse")]
         string GetPlayerName(int IdPlayer);
         
@@ -1261,6 +1427,30 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/GetMyPlayersName", ReplyAction="http://tempuri.org/IPlayer/GetMyPlayersNameResponse")]
         System.Threading.Tasks.Task<string> GetMyPlayersNameAsync(int idPlayer, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/SendEmail", ReplyAction="http://tempuri.org/IPlayer/SendEmailResponse")]
+        int SendEmail(string verifyCode, string userEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/SendEmail", ReplyAction="http://tempuri.org/IPlayer/SendEmailResponse")]
+        System.Threading.Tasks.Task<int> SendEmailAsync(string verifyCode, string userEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/GetPlayerData", ReplyAction="http://tempuri.org/IPlayer/GetPlayerDataResponse")]
+        UIGameClientTourist.Service.Player GetPlayerData(int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/GetPlayerData", ReplyAction="http://tempuri.org/IPlayer/GetPlayerDataResponse")]
+        System.Threading.Tasks.Task<UIGameClientTourist.Service.Player> GetPlayerDataAsync(int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/UpdatePlayerData", ReplyAction="http://tempuri.org/IPlayer/UpdatePlayerDataResponse")]
+        int UpdatePlayerData(int idPlayer, string description, string nickName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/UpdatePlayerData", ReplyAction="http://tempuri.org/IPlayer/UpdatePlayerDataResponse")]
+        System.Threading.Tasks.Task<int> UpdatePlayerDataAsync(int idPlayer, string description, string nickName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/LogOut", ReplyAction="http://tempuri.org/IPlayer/LogOutResponse")]
+        int LogOut(int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlayer/LogOut", ReplyAction="http://tempuri.org/IPlayer/LogOutResponse")]
+        System.Threading.Tasks.Task<int> LogOutAsync(int idPlayer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1306,6 +1496,14 @@ namespace UIGameClientTourist.Service {
             return base.Channel.PlayerSearchAsync(player);
         }
         
+        public int ModifyPassword(int playerId, string currentPassword, string newPassword) {
+            return base.Channel.ModifyPassword(playerId, currentPassword, newPassword);
+        }
+        
+        public System.Threading.Tasks.Task<int> ModifyPasswordAsync(int playerId, string currentPassword, string newPassword) {
+            return base.Channel.ModifyPasswordAsync(playerId, currentPassword, newPassword);
+        }
+        
         public string GetPlayerName(int IdPlayer) {
             return base.Channel.GetPlayerName(IdPlayer);
         }
@@ -1329,16 +1527,48 @@ namespace UIGameClientTourist.Service {
         public System.Threading.Tasks.Task<string> GetMyPlayersNameAsync(int idPlayer, int idGame) {
             return base.Channel.GetMyPlayersNameAsync(idPlayer, idGame);
         }
+        
+        public int SendEmail(string verifyCode, string userEmail) {
+            return base.Channel.SendEmail(verifyCode, userEmail);
+        }
+        
+        public System.Threading.Tasks.Task<int> SendEmailAsync(string verifyCode, string userEmail) {
+            return base.Channel.SendEmailAsync(verifyCode, userEmail);
+        }
+        
+        public UIGameClientTourist.Service.Player GetPlayerData(int idPlayer) {
+            return base.Channel.GetPlayerData(idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task<UIGameClientTourist.Service.Player> GetPlayerDataAsync(int idPlayer) {
+            return base.Channel.GetPlayerDataAsync(idPlayer);
+        }
+        
+        public int UpdatePlayerData(int idPlayer, string description, string nickName) {
+            return base.Channel.UpdatePlayerData(idPlayer, description, nickName);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdatePlayerDataAsync(int idPlayer, string description, string nickName) {
+            return base.Channel.UpdatePlayerDataAsync(idPlayer, description, nickName);
+        }
+        
+        public int LogOut(int idPlayer) {
+            return base.Channel.LogOut(idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task<int> LogOutAsync(int idPlayer) {
+            return base.Channel.LogOutAsync(idPlayer);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Service.IFriends", CallbackContract=typeof(UIGameClientTourist.Service.IFriendsCallback))]
     public interface IFriends {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFriends/SavePlayerSession")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/SavePlayerSession", ReplyAction="http://tempuri.org/IFriends/SavePlayerSessionResponse")]
         void SavePlayerSession(int idPlayer);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFriends/SavePlayerSession")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/SavePlayerSession", ReplyAction="http://tempuri.org/IFriends/SavePlayerSessionResponse")]
         System.Threading.Tasks.Task SavePlayerSessionAsync(int idPlayer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/MakeFriendRequest", ReplyAction="http://tempuri.org/IFriends/MakeFriendRequestResponse")]
@@ -1359,11 +1589,11 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/RejectFriendRequest", ReplyAction="http://tempuri.org/IFriends/RejectFriendRequestResponse")]
         System.Threading.Tasks.Task<int> RejectFriendRequestAsync(int IdRequest);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFriends/UpdatePlayerSession")]
-        void UpdatePlayerSession(int idPlayer);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/UpdatePlayerSession", ReplyAction="http://tempuri.org/IFriends/UpdatePlayerSessionResponse")]
+        int UpdatePlayerSession(int idPlayer);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFriends/UpdatePlayerSession")]
-        System.Threading.Tasks.Task UpdatePlayerSessionAsync(int idPlayer);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFriends/UpdatePlayerSession", ReplyAction="http://tempuri.org/IFriends/UpdatePlayerSessionResponse")]
+        System.Threading.Tasks.Task<int> UpdatePlayerSessionAsync(int idPlayer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1436,11 +1666,11 @@ namespace UIGameClientTourist.Service {
             return base.Channel.RejectFriendRequestAsync(IdRequest);
         }
         
-        public void UpdatePlayerSession(int idPlayer) {
-            base.Channel.UpdatePlayerSession(idPlayer);
+        public int UpdatePlayerSession(int idPlayer) {
+            return base.Channel.UpdatePlayerSession(idPlayer);
         }
         
-        public System.Threading.Tasks.Task UpdatePlayerSessionAsync(int idPlayer) {
+        public System.Threading.Tasks.Task<int> UpdatePlayerSessionAsync(int idPlayer) {
             return base.Channel.UpdatePlayerSessionAsync(idPlayer);
         }
     }
@@ -1450,16 +1680,16 @@ namespace UIGameClientTourist.Service {
     public interface IGameManager {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddGame", ReplyAction="http://tempuri.org/IGameManager/AddGameResponse")]
-        void AddGame(UIGameClientTourist.Service.Game game);
+        int AddGame(UIGameClientTourist.Service.Game game);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddGame", ReplyAction="http://tempuri.org/IGameManager/AddGameResponse")]
-        System.Threading.Tasks.Task AddGameAsync(UIGameClientTourist.Service.Game game);
+        System.Threading.Tasks.Task<int> AddGameAsync(UIGameClientTourist.Service.Game game);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddPlayerToGame", ReplyAction="http://tempuri.org/IGameManager/AddPlayerToGameResponse")]
-        void AddPlayerToGame(int game, UIGameClientTourist.Service.Player player);
+        int AddPlayerToGame(int game, UIGameClientTourist.Service.Player player);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddPlayerToGame", ReplyAction="http://tempuri.org/IGameManager/AddPlayerToGameResponse")]
-        System.Threading.Tasks.Task AddPlayerToGameAsync(int game, UIGameClientTourist.Service.Player player);
+        System.Threading.Tasks.Task<int> AddPlayerToGameAsync(int game, UIGameClientTourist.Service.Player player);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddGuestToGame", ReplyAction="http://tempuri.org/IGameManager/AddGuestToGameResponse")]
         void AddGuestToGame(int idGame, int idPlayer);
@@ -1491,23 +1721,23 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/InitializeGame")]
         System.Threading.Tasks.Task InitializeGameAsync(UIGameClientTourist.Service.Game game);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UpdatePlayerGame")]
-        void UpdatePlayerGame(UIGameClientTourist.Service.Game game, int idPlayer);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UpdatePlayerGame", ReplyAction="http://tempuri.org/IGameManager/UpdatePlayerGameResponse")]
+        int UpdatePlayerGame(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Piece playersPiece);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UpdatePlayerGame")]
-        System.Threading.Tasks.Task UpdatePlayerGameAsync(UIGameClientTourist.Service.Game game, int idPlayer);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/SelectedPiece")]
-        void SelectedPiece(UIGameClientTourist.Service.Game game, string piece);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UpdatePlayerGame", ReplyAction="http://tempuri.org/IGameManager/UpdatePlayerGameResponse")]
+        System.Threading.Tasks.Task<int> UpdatePlayerGameAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Piece playersPiece);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/SelectedPiece")]
-        System.Threading.Tasks.Task SelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece);
+        void SelectedPiece(UIGameClientTourist.Service.Game game, string piece, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/SelectedPiece")]
+        System.Threading.Tasks.Task SelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece, int idPlayer);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UnSelectedPiece")]
-        void UnSelectedPiece(UIGameClientTourist.Service.Game game, string piece);
+        void UnSelectedPiece(UIGameClientTourist.Service.Game game, string piece, int idPlayer);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UnSelectedPiece")]
-        System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece);
+        System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece, int idPlayer);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CheckReadyToStartGame")]
         void CheckReadyToStartGame(UIGameClientTourist.Service.Game game);
@@ -1526,13 +1756,37 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/InactivateBeginGameControls")]
         System.Threading.Tasks.Task InactivateBeginGameControlsAsync(int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CheckTakenPieces")]
+        void CheckTakenPieces(UIGameClientTourist.Service.Game game, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/CheckTakenPieces")]
+        System.Threading.Tasks.Task CheckTakenPiecesAsync(UIGameClientTourist.Service.Game game, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/InviteFriendToGame", ReplyAction="http://tempuri.org/IGameManager/InviteFriendToGameResponse")]
+        void InviteFriendToGame(string codeGame, int friendId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/InviteFriendToGame", ReplyAction="http://tempuri.org/IGameManager/InviteFriendToGameResponse")]
+        System.Threading.Tasks.Task InviteFriendToGameAsync(string codeGame, int friendId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/RemovePlayerFromGame", ReplyAction="http://tempuri.org/IGameManager/RemovePlayerFromGameResponse")]
+        void RemovePlayerFromGame(UIGameClientTourist.Service.Game game, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/RemovePlayerFromGame", ReplyAction="http://tempuri.org/IGameManager/RemovePlayerFromGameResponse")]
+        System.Threading.Tasks.Task RemovePlayerFromGameAsync(UIGameClientTourist.Service.Game game, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UpdatePlayerListInGame")]
+        void UpdatePlayerListInGame(UIGameClientTourist.Service.Game game);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameManager/UpdatePlayerListInGame")]
+        System.Threading.Tasks.Task UpdatePlayerListInGameAsync(UIGameClientTourist.Service.Game game);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IGameManagerCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/AddVisualPlayers", ReplyAction="http://tempuri.org/IGameManager/AddVisualPlayersResponse")]
-        void AddVisualPlayers();
+        void AddVisualPlayers(System.Collections.Generic.Queue<UIGameClientTourist.Service.Player> playersInGame);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UpdateGame", ReplyAction="http://tempuri.org/IGameManager/UpdateGameResponse")]
         int UpdateGame();
@@ -1546,11 +1800,8 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/PreparePieces", ReplyAction="http://tempuri.org/IGameManager/PreparePiecesResponse")]
         void PreparePieces(UIGameClientTourist.Service.Game game, UIGameClientTourist.Service.Player[] playersInGame);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UptdatePiecePlayer", ReplyAction="http://tempuri.org/IGameManager/UptdatePiecePlayerResponse")]
-        UIGameClientTourist.Service.Piece UptdatePiecePlayer(UIGameClientTourist.Service.Game game);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/BlockPiece", ReplyAction="http://tempuri.org/IGameManager/BlockPieceResponse")]
-        void BlockPiece(string piece);
+        void BlockPiece(string piece, int idPlayer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameManager/UnblockPiece", ReplyAction="http://tempuri.org/IGameManager/UnblockPieceResponse")]
         void UnblockPiece(string piece);
@@ -1590,19 +1841,19 @@ namespace UIGameClientTourist.Service {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void AddGame(UIGameClientTourist.Service.Game game) {
-            base.Channel.AddGame(game);
+        public int AddGame(UIGameClientTourist.Service.Game game) {
+            return base.Channel.AddGame(game);
         }
         
-        public System.Threading.Tasks.Task AddGameAsync(UIGameClientTourist.Service.Game game) {
+        public System.Threading.Tasks.Task<int> AddGameAsync(UIGameClientTourist.Service.Game game) {
             return base.Channel.AddGameAsync(game);
         }
         
-        public void AddPlayerToGame(int game, UIGameClientTourist.Service.Player player) {
-            base.Channel.AddPlayerToGame(game, player);
+        public int AddPlayerToGame(int game, UIGameClientTourist.Service.Player player) {
+            return base.Channel.AddPlayerToGame(game, player);
         }
         
-        public System.Threading.Tasks.Task AddPlayerToGameAsync(int game, UIGameClientTourist.Service.Player player) {
+        public System.Threading.Tasks.Task<int> AddPlayerToGameAsync(int game, UIGameClientTourist.Service.Player player) {
             return base.Channel.AddPlayerToGameAsync(game, player);
         }
         
@@ -1646,28 +1897,28 @@ namespace UIGameClientTourist.Service {
             return base.Channel.InitializeGameAsync(game);
         }
         
-        public void UpdatePlayerGame(UIGameClientTourist.Service.Game game, int idPlayer) {
-            base.Channel.UpdatePlayerGame(game, idPlayer);
+        public int UpdatePlayerGame(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Piece playersPiece) {
+            return base.Channel.UpdatePlayerGame(game, idPlayer, playersPiece);
         }
         
-        public System.Threading.Tasks.Task UpdatePlayerGameAsync(UIGameClientTourist.Service.Game game, int idPlayer) {
-            return base.Channel.UpdatePlayerGameAsync(game, idPlayer);
+        public System.Threading.Tasks.Task<int> UpdatePlayerGameAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Piece playersPiece) {
+            return base.Channel.UpdatePlayerGameAsync(game, idPlayer, playersPiece);
         }
         
-        public void SelectedPiece(UIGameClientTourist.Service.Game game, string piece) {
-            base.Channel.SelectedPiece(game, piece);
+        public void SelectedPiece(UIGameClientTourist.Service.Game game, string piece, int idPlayer) {
+            base.Channel.SelectedPiece(game, piece, idPlayer);
         }
         
-        public System.Threading.Tasks.Task SelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece) {
-            return base.Channel.SelectedPieceAsync(game, piece);
+        public System.Threading.Tasks.Task SelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece, int idPlayer) {
+            return base.Channel.SelectedPieceAsync(game, piece, idPlayer);
         }
         
-        public void UnSelectedPiece(UIGameClientTourist.Service.Game game, string piece) {
-            base.Channel.UnSelectedPiece(game, piece);
+        public void UnSelectedPiece(UIGameClientTourist.Service.Game game, string piece, int idPlayer) {
+            base.Channel.UnSelectedPiece(game, piece, idPlayer);
         }
         
-        public System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece) {
-            return base.Channel.UnSelectedPieceAsync(game, piece);
+        public System.Threading.Tasks.Task UnSelectedPieceAsync(UIGameClientTourist.Service.Game game, string piece, int idPlayer) {
+            return base.Channel.UnSelectedPieceAsync(game, piece, idPlayer);
         }
         
         public void CheckReadyToStartGame(UIGameClientTourist.Service.Game game) {
@@ -1693,6 +1944,38 @@ namespace UIGameClientTourist.Service {
         public System.Threading.Tasks.Task InactivateBeginGameControlsAsync(int idGame) {
             return base.Channel.InactivateBeginGameControlsAsync(idGame);
         }
+        
+        public void CheckTakenPieces(UIGameClientTourist.Service.Game game, int idPlayer) {
+            base.Channel.CheckTakenPieces(game, idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task CheckTakenPiecesAsync(UIGameClientTourist.Service.Game game, int idPlayer) {
+            return base.Channel.CheckTakenPiecesAsync(game, idPlayer);
+        }
+        
+        public void InviteFriendToGame(string codeGame, int friendId) {
+            base.Channel.InviteFriendToGame(codeGame, friendId);
+        }
+        
+        public System.Threading.Tasks.Task InviteFriendToGameAsync(string codeGame, int friendId) {
+            return base.Channel.InviteFriendToGameAsync(codeGame, friendId);
+        }
+        
+        public void RemovePlayerFromGame(UIGameClientTourist.Service.Game game, int idPlayer) {
+            base.Channel.RemovePlayerFromGame(game, idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task RemovePlayerFromGameAsync(UIGameClientTourist.Service.Game game, int idPlayer) {
+            return base.Channel.RemovePlayerFromGameAsync(game, idPlayer);
+        }
+        
+        public void UpdatePlayerListInGame(UIGameClientTourist.Service.Game game) {
+            base.Channel.UpdatePlayerListInGame(game);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePlayerListInGameAsync(UIGameClientTourist.Service.Game game) {
+            return base.Channel.UpdatePlayerListInGameAsync(game);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1705,35 +1988,23 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PlayTurn")]
         System.Threading.Tasks.Task PlayTurnAsync(UIGameClientTourist.Service.Game game);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/AdvanceTurn", ReplyAction="http://tempuri.org/IGameLogicManager/AdvanceTurnResponse")]
+        void AdvanceTurn(int idGame, int idPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/AdvanceTurn", ReplyAction="http://tempuri.org/IGameLogicManager/AdvanceTurnResponse")]
+        System.Threading.Tasks.Task AdvanceTurnAsync(int idGame, int idPlayer);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/UpdatePlayerService")]
         void UpdatePlayerService(int idPlayer, int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/UpdatePlayerService")]
         System.Threading.Tasks.Task UpdatePlayerServiceAsync(int idPlayer, int idGame);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PurchaseProperty")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/PurchaseProperty", ReplyAction="http://tempuri.org/IGameLogicManager/PurchasePropertyResponse")]
         void PurchaseProperty(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PurchaseProperty")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/PurchaseProperty", ReplyAction="http://tempuri.org/IGameLogicManager/PurchasePropertyResponse")]
         System.Threading.Tasks.Task PurchasePropertyAsync(UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Player buyer, int idGame);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/StartAuction")]
-        void StartAuction(int idGame, UIGameClientTourist.Service.Property property);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/StartAuction")]
-        System.Threading.Tasks.Task StartAuctionAsync(int idGame, UIGameClientTourist.Service.Property property);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/MakeBid")]
-        void MakeBid(int idGame, int IdPlayer, int Bid);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/MakeBid")]
-        System.Threading.Tasks.Task MakeBidAsync(int idGame, int IdPlayer, int Bid);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/StopAuction")]
-        void StopAuction(int idGame, int winner, int winnerBid, UIGameClientTourist.Service.Property property);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/StopAuction")]
-        System.Threading.Tasks.Task StopAuctionAsync(int idGame, int winner, int winnerBid, UIGameClientTourist.Service.Property property);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/UpdateQueu")]
         void UpdateQueu(int idGame);
@@ -1742,10 +2013,10 @@ namespace UIGameClientTourist.Service {
         System.Threading.Tasks.Task UpdateQueuAsync(int idGame);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GetActionCard")]
-        void GetActionCard(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card);
+        void GetActionCard(int idGame, int idPlayer, UIGameClientTourist.Service.Wildcard wildcard);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GetActionCard")]
-        System.Threading.Tasks.Task GetActionCardAsync(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card);
+        System.Threading.Tasks.Task GetActionCardAsync(int idGame, int idPlayer, UIGameClientTourist.Service.Wildcard wildcard);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/JailPlayer")]
         void JailPlayer(int idGame, int idPlayer);
@@ -1770,6 +2041,42 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/PayPropertyMortgage")]
         System.Threading.Tasks.Task PayPropertyMortgageAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GoToJail")]
+        void GoToJail(UIGameClientTourist.Service.Player player, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/GoToJail")]
+        System.Threading.Tasks.Task GoToJailAsync(UIGameClientTourist.Service.Player player, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/ModifyProperty")]
+        void ModifyProperty(UIGameClientTourist.Service.Property property, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/ModifyProperty")]
+        System.Threading.Tasks.Task ModifyPropertyAsync(UIGameClientTourist.Service.Property property, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/ExpelPlayer")]
+        void ExpelPlayer(int idPlayer, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/ExpelPlayer")]
+        System.Threading.Tasks.Task ExpelPlayerAsync(int idPlayer, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/UpdatePlayersInGame")]
+        void UpdatePlayersInGame(int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IGameLogicManager/UpdatePlayersInGame")]
+        System.Threading.Tasks.Task UpdatePlayersInGameAsync(int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/PayConstruction", ReplyAction="http://tempuri.org/IGameLogicManager/PayConstructionResponse")]
+        void PayConstruction(int idPlayer, long constructionCost, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/PayConstruction", ReplyAction="http://tempuri.org/IGameLogicManager/PayConstructionResponse")]
+        System.Threading.Tasks.Task PayConstructionAsync(int idPlayer, long constructionCost, int idGame);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPosition", ReplyAction="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPositionResponse")]
+        int GetNumberOfPlayersAtPosition(UIGameClientTourist.Service.Game game, int position);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPosition", ReplyAction="http://tempuri.org/IGameLogicManager/GetNumberOfPlayersAtPositionResponse")]
+        System.Threading.Tasks.Task<int> GetNumberOfPlayersAtPositionAsync(UIGameClientTourist.Service.Game game, int position);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1779,19 +2086,10 @@ namespace UIGameClientTourist.Service {
         void PlayDie(int firstDieValue, int SecondDieValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/MovePlayerPieceOnBoard", ReplyAction="http://tempuri.org/IGameLogicManager/MovePlayerPieceOnBoardResponse")]
-        void MovePlayerPieceOnBoard(UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Property property);
+        void MovePlayerPieceOnBoard(UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Property property, UIGameClientTourist.Service.Game game);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/ShowCard", ReplyAction="http://tempuri.org/IGameLogicManager/ShowCardResponse")]
         void ShowCard(UIGameClientTourist.Service.Property property);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/OpenAuctionWindow", ReplyAction="http://tempuri.org/IGameLogicManager/OpenAuctionWindowResponse")]
-        void OpenAuctionWindow(UIGameClientTourist.Service.Property property);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpdateBids", ReplyAction="http://tempuri.org/IGameLogicManager/UpdateBidsResponse")]
-        void UpdateBids(int IdPlayer, int Bid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/EndAuction", ReplyAction="http://tempuri.org/IGameLogicManager/EndAuctionResponse")]
-        void EndAuction(UIGameClientTourist.Service.Property property, int winner, int winnerBid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpdateTurns", ReplyAction="http://tempuri.org/IGameLogicManager/UpdateTurnsResponse")]
         void UpdateTurns(System.Collections.Generic.Queue<UIGameClientTourist.Service.Player> turns);
@@ -1799,14 +2097,8 @@ namespace UIGameClientTourist.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/LoadFriends", ReplyAction="http://tempuri.org/IGameLogicManager/LoadFriendsResponse")]
         void LoadFriends(System.Collections.Generic.Queue<UIGameClientTourist.Service.Player> friends);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/ShowEvent", ReplyAction="http://tempuri.org/IGameLogicManager/ShowEventResponse")]
-        void ShowEvent(int action);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/GoToJail", ReplyAction="http://tempuri.org/IGameLogicManager/GoToJailResponse")]
-        void GoToJail();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEvent", ReplyAction="http://tempuri.org/IGameLogicManager/NotifyPlayerOfEventResponse")]
-        void NotifyPlayerOfEvent(string message);
+        void NotifyPlayerOfEvent(int messageNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpgradePlayerMoney", ReplyAction="http://tempuri.org/IGameLogicManager/UpgradePlayerMoneyResponse")]
         void UpgradePlayerMoney(long money);
@@ -1819,6 +2111,12 @@ namespace UIGameClientTourist.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/UpdatePropertyStatus", ReplyAction="http://tempuri.org/IGameLogicManager/UpdatePropertyStatusResponse")]
         void UpdatePropertyStatus(UIGameClientTourist.Service.Property property);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/ExitToGame", ReplyAction="http://tempuri.org/IGameLogicManager/ExitToGameResponse")]
+        void ExitToGame();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameLogicManager/ShowButtonsForEnd", ReplyAction="http://tempuri.org/IGameLogicManager/ShowButtonsForEndResponse")]
+        void ShowButtonsForEnd();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1857,6 +2155,14 @@ namespace UIGameClientTourist.Service {
             return base.Channel.PlayTurnAsync(game);
         }
         
+        public void AdvanceTurn(int idGame, int idPlayer) {
+            base.Channel.AdvanceTurn(idGame, idPlayer);
+        }
+        
+        public System.Threading.Tasks.Task AdvanceTurnAsync(int idGame, int idPlayer) {
+            return base.Channel.AdvanceTurnAsync(idGame, idPlayer);
+        }
+        
         public void UpdatePlayerService(int idPlayer, int idGame) {
             base.Channel.UpdatePlayerService(idPlayer, idGame);
         }
@@ -1873,30 +2179,6 @@ namespace UIGameClientTourist.Service {
             return base.Channel.PurchasePropertyAsync(property, buyer, idGame);
         }
         
-        public void StartAuction(int idGame, UIGameClientTourist.Service.Property property) {
-            base.Channel.StartAuction(idGame, property);
-        }
-        
-        public System.Threading.Tasks.Task StartAuctionAsync(int idGame, UIGameClientTourist.Service.Property property) {
-            return base.Channel.StartAuctionAsync(idGame, property);
-        }
-        
-        public void MakeBid(int idGame, int IdPlayer, int Bid) {
-            base.Channel.MakeBid(idGame, IdPlayer, Bid);
-        }
-        
-        public System.Threading.Tasks.Task MakeBidAsync(int idGame, int IdPlayer, int Bid) {
-            return base.Channel.MakeBidAsync(idGame, IdPlayer, Bid);
-        }
-        
-        public void StopAuction(int idGame, int winner, int winnerBid, UIGameClientTourist.Service.Property property) {
-            base.Channel.StopAuction(idGame, winner, winnerBid, property);
-        }
-        
-        public System.Threading.Tasks.Task StopAuctionAsync(int idGame, int winner, int winnerBid, UIGameClientTourist.Service.Property property) {
-            return base.Channel.StopAuctionAsync(idGame, winner, winnerBid, property);
-        }
-        
         public void UpdateQueu(int idGame) {
             base.Channel.UpdateQueu(idGame);
         }
@@ -1905,12 +2187,12 @@ namespace UIGameClientTourist.Service {
             return base.Channel.UpdateQueuAsync(idGame);
         }
         
-        public void GetActionCard(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card) {
-            base.Channel.GetActionCard(idGame, player, card);
+        public void GetActionCard(int idGame, int idPlayer, UIGameClientTourist.Service.Wildcard wildcard) {
+            base.Channel.GetActionCard(idGame, idPlayer, wildcard);
         }
         
-        public System.Threading.Tasks.Task GetActionCardAsync(int idGame, UIGameClientTourist.Service.Player player, UIGameClientTourist.Service.Card card) {
-            return base.Channel.GetActionCardAsync(idGame, player, card);
+        public System.Threading.Tasks.Task GetActionCardAsync(int idGame, int idPlayer, UIGameClientTourist.Service.Wildcard wildcard) {
+            return base.Channel.GetActionCardAsync(idGame, idPlayer, wildcard);
         }
         
         public void JailPlayer(int idGame, int idPlayer) {
@@ -1943,6 +2225,54 @@ namespace UIGameClientTourist.Service {
         
         public System.Threading.Tasks.Task PayPropertyMortgageAsync(UIGameClientTourist.Service.Game game, int idPlayer, UIGameClientTourist.Service.Property mortgagedProperty) {
             return base.Channel.PayPropertyMortgageAsync(game, idPlayer, mortgagedProperty);
+        }
+        
+        public void GoToJail(UIGameClientTourist.Service.Player player, int idGame) {
+            base.Channel.GoToJail(player, idGame);
+        }
+        
+        public System.Threading.Tasks.Task GoToJailAsync(UIGameClientTourist.Service.Player player, int idGame) {
+            return base.Channel.GoToJailAsync(player, idGame);
+        }
+        
+        public void ModifyProperty(UIGameClientTourist.Service.Property property, int idGame) {
+            base.Channel.ModifyProperty(property, idGame);
+        }
+        
+        public System.Threading.Tasks.Task ModifyPropertyAsync(UIGameClientTourist.Service.Property property, int idGame) {
+            return base.Channel.ModifyPropertyAsync(property, idGame);
+        }
+        
+        public void ExpelPlayer(int idPlayer, int idGame) {
+            base.Channel.ExpelPlayer(idPlayer, idGame);
+        }
+        
+        public System.Threading.Tasks.Task ExpelPlayerAsync(int idPlayer, int idGame) {
+            return base.Channel.ExpelPlayerAsync(idPlayer, idGame);
+        }
+        
+        public void UpdatePlayersInGame(int idGame) {
+            base.Channel.UpdatePlayersInGame(idGame);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePlayersInGameAsync(int idGame) {
+            return base.Channel.UpdatePlayersInGameAsync(idGame);
+        }
+        
+        public void PayConstruction(int idPlayer, long constructionCost, int idGame) {
+            base.Channel.PayConstruction(idPlayer, constructionCost, idGame);
+        }
+        
+        public System.Threading.Tasks.Task PayConstructionAsync(int idPlayer, long constructionCost, int idGame) {
+            return base.Channel.PayConstructionAsync(idPlayer, constructionCost, idGame);
+        }
+        
+        public int GetNumberOfPlayersAtPosition(UIGameClientTourist.Service.Game game, int position) {
+            return base.Channel.GetNumberOfPlayersAtPosition(game, position);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetNumberOfPlayersAtPositionAsync(UIGameClientTourist.Service.Game game, int position) {
+            return base.Channel.GetNumberOfPlayersAtPositionAsync(game, position);
         }
     }
     

@@ -12,53 +12,39 @@
         <Rectangle HorizontalAlignment="Center" Height="275" Margin="0,64,0,0" Stroke="Black" StrokeThickness="8" VerticalAlignment="Top" Width="1252" Fill="White" RadiusX="15" RadiusY="15" />
         <Rectangle HorizontalAlignment="Left" Height="369" Margin="172,382,0,0" Stroke="Black" StrokeThickness="8" VerticalAlignment="Top" Width="764" Fill="White" RadiusX="15" RadiusY="15"/>
         <Rectangle HorizontalAlignment="Left" Height="86" Margin="971,456,0,0" Stroke="Black" StrokeThickness="8" VerticalAlignment="Top" Width="453" Fill="White" RadiusX="15" RadiusY="15"/>
-        <Button Content="{x:Static p:Resources.Edit_Button}" HorizontalAlignment="Left" Margin="1043,607,0,0" VerticalAlignment="Top" Height="61" Width="324" Background="#FF6925FB" BorderBrush="#FF6925FB" Foreground="White" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name ="butUpdateProfile" Content="{x:Static p:Resources.Edit_Button}" HorizontalAlignment="Left" Margin="1043,572,0,0" VerticalAlignment="Top" Height="60" Width="324" Background="#FF6925FB" BorderBrush="#FF6925FB" Foreground="White" FontSize="24" FontWeight="Bold" Click="ButtonClickUpdateProfile"/>
         <Rectangle HorizontalAlignment="Left" Height="51" Margin="52,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="67" Fill="White"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="37,64,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="NavigateToMainMenuGame" />
-        <Image x:Name="imgUserProfile" HorizontalAlignment="Left" Height="230" Margin="214,88,0,0" VerticalAlignment="Top" Width="244" Source="D:\Proyectos .NET\UIGameClientTourist\GameResources\Pictures\UserProfiles\descarga (1).jpg"/>
-        <TextBox HorizontalAlignment="Left" Margin="490,124,0,0" TextWrapping="Wrap" Text="TheKingsLayer" VerticalAlignment="Top" Width="464" Height="66" FontSize="48" FontWeight="Bold" BorderBrush="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="631,226,0,0" TextWrapping="Wrap" Text="Descricion del usuario..." VerticalAlignment="Top" Height="86" Width="736"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="37,64,0,0" VerticalAlignment="Top" Width="100" Source="..\GameResources\Pictures\boton-de-retroceso.png" MouseLeftButtonDown="ButtonClickNavigateToMainMenuGame" />
+        <Image x:Name="imgUserProfile" HorizontalAlignment="Left" Height="262" Margin="201,64,0,0" VerticalAlignment="Top" Width="272" Source="..\GameResources\Pictures\_2a10b9f6-19c3-45c1-b35d-65691d37d8ff-removebg-preview.png" Stretch="Fill" StretchDirection="DownOnly"/>
+        <TextBox x:Name ="txtUserName" HorizontalAlignment="Left" Margin="490,124,0,0" TextWrapping="Wrap" Text="TheKingsLayer" VerticalAlignment="Top" Width="464" Height="66" FontSize="48" FontWeight="Bold" BorderBrush="White" />
         <Label Content="{x:Static p:Resources.Description_Label}" HorizontalAlignment="Left" Margin="490,216,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="20" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="62" Margin="983,468,0,0" Stroke="#FF1DA616" VerticalAlignment="Top" Width="260" Fill="#FF1DA616" RadiusX="15" RadiusY="15" />
         <Rectangle HorizontalAlignment="Left" Height="62" Margin="1248,468,0,0" Stroke="Black" VerticalAlignment="Top" Width="163"/>
         <Label Content="{x:Static p:Resources.Winrate_Label}" HorizontalAlignment="Left" Margin="989,479,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold"/>
+        <TextBlock x:Name ="txtWinRate" HorizontalAlignment="Left" Margin="1270,479,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="39" Width="119" FontSize="25"/>
+        <DataGrid x:Name="tblRankinFriends" Margin="193,406,677,345" HorizontalScrollBarVisibility="Hidden" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NickName" Binding="{Binding FriendName}" Width="250"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.GamesPlayed_Label}" Binding="{Binding Games}" Width="150"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.Victories_Label}" Binding="{Binding GamesWins}" Width="150"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.Winrate_Label}" Binding="{Binding WinRate}" Width="170"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
         
-        <Grid x:Name="profiles" Visibility="Collapsed">
-            <Rectangle HorizontalAlignment="Left" Height="494" Margin="474,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="731" RadiusX="10" RadiusY="10">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF1589FF" Offset="1"/>
-                        <GradientStop Color="#FF040C12" Offset="0"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Border x:Name="brdProfile1" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile1" HorizontalAlignment="Left" Height="100" Margin="864,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\√ Xbox 360 Og Gamerpics - 360 Gamerpics.jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile2" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile2" HorizontalAlignment="Left" Height="100" Margin="698,226,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (1).jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile3" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile3" HorizontalAlignment="Left" Height="100" Margin="542,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\☠️.jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile4" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile4" HorizontalAlignment="Left" Height="100" Margin="542,382,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (2).jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile5" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile5" HorizontalAlignment="Left" Height="100" Margin="1020,224,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga (3).jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile6" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile6" HorizontalAlignment="Left" Height="100" Margin="864,380,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\Xbox 360 dragon gamerpic.jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile7" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3">
-                <Image x:Name="imgProfile7" HorizontalAlignment="Left" Height="100" Margin="1020,380,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\Xbox 360 dog gamerpic.jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Border x:Name="brdProfile8" MouseLeftButtonDown ="ProfileImage_Click" BorderThickness="3" >
-                <Image x:Name="imgProfile8" HorizontalAlignment="Left" Height="100" Margin="698,382,0,0" VerticalAlignment="Top" Width="100" Source="\GameResources\Pictures\UserProfiles\descarga.jpg" RenderTransformOrigin="0.568,0.772"/>
-            </Border>
-            <Label Content="Elija Perfil" HorizontalAlignment="Left" Margin="745,139,0,0" VerticalAlignment="Top" Foreground="White" FontSize="35" FontFamily="Arial Rounded MT Bold"/>
-            <Button Content="Cambiar Perfil" HorizontalAlignment="Left" Margin="745,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.829,-12.588" Height="35" Width="176"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="631,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="86" Width="736" TextChanged="DescriptionTextBox_TextChanged"/>
+        <Label x:Name ="lblMaxLength" HorizontalAlignment="Left" Margin="1345,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.095,0.14"/>
+        <Button x:Name ="butUpdatePassword" Content="{x:Static p:Resources.ChangePassword}" HorizontalAlignment="Left" Margin="1043,657,0,0" VerticalAlignment="Top" Height="62" Width="324" Background="#FF2570FB" BorderBrush="#FF6925FB" Foreground="White" FontSize="24" FontWeight="Bold" Click="ButtonClickShowPasswordChangePanel"/>
+
+        <Grid x:Name="grdChangePasswordPanel" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" Height="412" Margin="414,190,0,0" Stroke="Black" VerticalAlignment="Top" Width="697" Fill="#FF051729" RadiusX="15" RadiusY="15" />
+            <Label Content="{x:Static p:Resources.CurrentPassword_Label}" HorizontalAlignment="Left" Margin="541,324,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+            <Label Content="{x:Static p:Resources.NewPassword_Label}" HorizontalAlignment="Left" Margin="541,389,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+            <TextBox x:Name="txtCurrentPassword" HorizontalAlignment="Left" Margin="742,326,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" FontSize="18"/>
+            <TextBox x:Name="txtNewPassword"  HorizontalAlignment="Left" Margin="742,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" FontSize="18"/>
+            <Label Content="{x:Static p:Resources.ChangePassword}" HorizontalAlignment="Left" Margin="621,231,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+            <Button x:Name="butCancelChangePassword" Content="{x:Static p:Resources.Cancel_Button}" HorizontalAlignment="Left" Margin="795,488,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="126" Click="ButtonClickClosePasswordChangePanel"/>
+            <Button x:Name="butConfirmChangePassword" Content="{x:Static p:Resources.OK_Button}" HorizontalAlignment="Left" Margin="605,488,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="131" Click="ButtonClickUpdatePlayerPassword"/>
         </Grid>
         
     </Grid>

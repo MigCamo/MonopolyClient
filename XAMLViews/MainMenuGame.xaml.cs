@@ -1,9 +1,11 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using UIGameClientTourist.GameLogic;
 using UIGameClientTourist.Service;
 
 namespace UIGameClientTourist.XAMLViews
@@ -13,36 +15,50 @@ namespace UIGameClientTourist.XAMLViews
     /// </summary>
     public partial class MainMenuGame : Window, IFriendsCallback
     {
-        private int idPlayer;
-        private TranslateTransform butProfileTranslateTransform;
-        private TranslateTransform butLogOutTranslateTransform;
-
-        Service.FriendsClient SesionContext;
-        private bool areButtonsVisible = false;
+        private readonly int _currentPlayerID;
+        private TranslateTransform _butProfileTranslateTransform;
+        private TranslateTransform _butLogOutTranslateTransform;
+        private static readonly ILog _ilog = LogManager.GetLogger(typeof(MainMenuGame));
+        private readonly FriendsClient _SesionContext;
+        private bool _areButtonsVisible = false;
+        private readonly PlayerClient _playerClient = new PlayerClient();
 
         public MainMenuGame(int idPlayer)
         {
-            this.idPlayer = idPlayer;
+            this._currentPlayerID = idPlayer;
             InitializeComponent();
             InitializeAnimation();
             InstanceContext context = new InstanceContext(this);
-            SesionContext = new Service.FriendsClient(context);
-            Service.PlayerClient playerClient = new Service.PlayerClient();
-            lblPlayerName.Content = playerClient.GetPlayerName(idPlayer);
-            SesionContext.SavePlayerSession(idPlayer);
+
+            try
+            {
+                _SesionContext = new FriendsClient(context);
+                lblPlayerName.Content = _playerClient.GetPlayerName(idPlayer);
+                _SesionContext.SavePlayerSession(idPlayer);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+
+            ((App)Application.Current).idPlayer = idPlayer;
         }
 
         private void InitializeAnimation()
         {
-            butProfileTranslateTransform = new TranslateTransform();
-            butProfile.RenderTransform = butProfileTranslateTransform;
-            butLogOutTranslateTransform = new TranslateTransform();
-            butLogOut.RenderTransform = butLogOutTranslateTransform;
+            _butProfileTranslateTransform = new TranslateTransform();
+            butProfile.RenderTransform = _butProfileTranslateTransform;
+            _butLogOutTranslateTransform = new TranslateTransform();
+            butLogOut.RenderTransform = _butLogOutTranslateTransform;
         }
 
-        private void OpenSlidingMenu(object sender, MouseButtonEventArgs e)
+        private void MouseClickOpenSlidingMenu(object sender, MouseButtonEventArgs e)
         {
-            if (areButtonsVisible)
+            if (_areButtonsVisible)
             {
                 HideButtons();
             }
@@ -55,76 +71,94 @@ namespace UIGameClientTourist.XAMLViews
         private void ShowButtons()
         {
             DoubleAnimation moveButProfile = new DoubleAnimation(0, 66, TimeSpan.FromSeconds(0.5));
-            butProfileTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButProfile);
+            _butProfileTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButProfile);
             DoubleAnimation moveButLogOut = new DoubleAnimation(0, 115, TimeSpan.FromSeconds(0.5));
-            butLogOutTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButLogOut);
-            areButtonsVisible = true;
+            _butLogOutTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButLogOut);
+            _areButtonsVisible = true;
         }
 
         private void HideButtons()
         {
             DoubleAnimation moveButProfile = new DoubleAnimation(63, 0, TimeSpan.FromSeconds(0.5));
-            butProfileTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButProfile);
+            _butProfileTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButProfile);
             DoubleAnimation moveButLogOut = new DoubleAnimation(126, 0, TimeSpan.FromSeconds(0.5));
-            butLogOutTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButLogOut);
-            areButtonsVisible = false;
+            _butLogOutTranslateTransform.BeginAnimation(TranslateTransform.YProperty, moveButLogOut);
+            _areButtonsVisible = false;
         }
 
-        private void GoToLobbyFromMainMenuGame(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToLobbyFromMainMenuGame(object sender, MouseButtonEventArgs e)
         {
-            Lobby lobbyWindow = new Lobby(0, idPlayer);
+            Lobby lobbyWindow = new Lobby(0, _currentPlayerID, false);
             this.Close();
             lobbyWindow.Show();
         }
 
-        private void GoToGamesFromMainMenu(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToGamesFromMainMenu(object sender, MouseButtonEventArgs e)
         {
             grdMainMenu.Visibility = Visibility.Collapsed;
             grdGames.Visibility = Visibility.Visible;
         }
 
-        private void GoToFriendsFromMainMenuGame(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToFriendsFromMainMenuGame(object sender, MouseButtonEventArgs e)
         {
-            Friends friendsWindow = new Friends(idPlayer);
+            Friends friendsWindow = new Friends(_currentPlayerID);
             this.Close();
             friendsWindow.Show();
         }
 
-        private void GoToUserProfileFromMainMenuGame(object sender, RoutedEventArgs e)
+        private void ButtonClickGoToUserProfileFromMainMenuGame(object sender, RoutedEventArgs e)
         {
-            UserProfile userProfileWindow = new UserProfile(idPlayer);
+            UserProfile userProfileWindow = new UserProfile(_currentPlayerID);
             this.Close();
             userProfileWindow.Show();
         }
 
-        private void GoToConfigurationFromMainMenuGame(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToConfigurationFromMainMenuGame(object sender, MouseButtonEventArgs e)
         {
-            Configuration configurationWindow = new Configuration(idPlayer);
+            Configuration configurationWindow = new Configuration(_currentPlayerID);
             this.Close();
             configurationWindow.Show();
         }
 
-        private void GoToJoinGameFromMainMenuGame(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToJoinGameFromMainMenuGame(object sender, MouseButtonEventArgs e)
         {
-            JoinGame joinGameWindow = new JoinGame(idPlayer);
+            JoinGame joinGameWindow = new JoinGame(_currentPlayerID, false);
             this.Close();
             joinGameWindow.Show();
         }
 
-        private void LogOut(object sender, RoutedEventArgs e)
+        private void ButtonClickLogOut(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+
+            try
+            {
+                _playerClient.LogOut(this._currentPlayerID);
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                HandleException(exception);
+            }
+            catch (TimeoutException exception)
+            {
+                HandleException(exception);
+            }
+            catch (CommunicationObjectFaultedException exception)
+            {
+                HandleException(exception);
+            }
+            
             this.Close();
             mainWindow.Show();
         }
 
-        private void GoToMainMenuFromGames(object sender, MouseButtonEventArgs e)
+        private void MouseClickGoToMainMenuFromGames(object sender, MouseButtonEventArgs e)
         {
             grdMainMenu.Visibility = Visibility.Visible;
             grdGames.Visibility = Visibility.Collapsed;
         }
 
-        private void NavigateToMenuWindow(object sender, MouseButtonEventArgs e)
+        private void MouseClickNavigateToMenuWindow(object sender, MouseButtonEventArgs e)
         {
             grdGames.Visibility = Visibility.Collapsed;
             grdMainMenu.Visibility = Visibility.Visible;
@@ -132,12 +166,27 @@ namespace UIGameClientTourist.XAMLViews
 
         public void UpdateFriendRequest()
         {
-            //throw new NotImplementedException();
+            int currentCount = int.Parse(lblConnectedPlayers.Content.ToString());
+            currentCount++;
+            lblConnectedPlayers.Content = currentCount.ToString();
         }
 
         public void UpdateFriendDisplay()
         {
-            //throw new NotImplementedException();
+            int currentCount = int.Parse(lblRequests.Content.ToString());
+            currentCount++;
+            lblConnectedPlayers.Content = currentCount.ToString();
+        }
+
+        private void AlertMessage()
+        {
+            MessageBox.Show(Properties.Resources.LostConnectionAlertLabel_Label, Properties.Resources.SuccessConfirmationAlert_Label, MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void HandleException(Exception exception)
+        {
+            _ilog.Error(exception.ToString());
+            AlertMessage();
         }
     }
 }

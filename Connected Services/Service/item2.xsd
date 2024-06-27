@@ -2,11 +2,15 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataBase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataBase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="PlayerSet">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BanEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FriendRequest" nillable="true" type="tns:ArrayOfFriendRequest" />
       <xs:element minOccurs="0" name="FriendRequest1" nillable="true" type="tns:ArrayOfFriendRequest" />
+      <xs:element minOccurs="0" name="Games" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wins" type="xs:int" />
       <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="friendship" nillable="true" type="tns:ArrayOffriendship" />
       <xs:element minOccurs="0" name="friendship1" nillable="true" type="tns:ArrayOffriendship" />
